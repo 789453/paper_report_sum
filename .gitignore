@@ -21,3 +21,8 @@ __pycache__/
 
 # Captured webpage with session metadata
 /sources/overleaf.html
+
+# Round-two reproducible local render previews and browser logs
+/qa/information-set-round2/
+/.playwright-cli/
+/output/playwright/

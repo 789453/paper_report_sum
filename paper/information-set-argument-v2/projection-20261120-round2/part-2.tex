@@ -1,0 +1,63 @@
+\section{数据与测度}
+\sectionlead{section-2}{二、数据与测度}{怎样从网页轨迹中识别家庭研究的标的、内容和订单时点？}
+
+\subsection{2.1 浏览样本与 URL}
+\begin{frame}[label=sample]{浏览面板能识别哪些交易家庭}
+  \crumb{Part 2}{2.1 浏览样本与 URL}{II.A · Table 1}
+  \begin{tabularx}{\linewidth}{@{}L{.22\linewidth}Y@{}}
+    \toprule 原始面板 & 美国，2007 年 1、2、3、6 月。数万户、约 20 亿条 URL；随机拨号招募等方式改善在线家庭覆盖。\\
+    分析样本 & 484 户在观察期至少有一笔推定的普通股或 ADR 交易。约 850 万点击、6 万小时上网、2,911 笔推定交易。\\
+    典型站点 & 样本浏览涉及 8 家券商，7 家有识别到的交易。站外包括 Yahoo Finance、CNBC 与 MarketWatch。\\\bottomrule
+  \end{tabularx}
+  \medskip
+  {\small\textbf{记录格式}\quad 匿名家庭 ID \(\mid\) 时间戳 \(\mid\) URL \(\mid\) 停留时长}
+  \finding{观察月份因户而异。券商网页可以识别订单行为，成交确认与完整持仓不在数据中。}
+\end{frame}
+
+\begin{frame}[label=urls]{三类 URL 如何读出股票、主题与展示参数}
+  \crumb{Part 2}{2.1 浏览样本与 URL}{II.A · Table IA1 构造例}
+  \small
+  \leadrow{券商下单 · 第 20 行}{\urllit{ordertype="sell"\&symbol=GOOG\&shares=100}\\
+  方向：卖出 \quad 标的：GOOG \quad 数量：100 股}
+  \medskip
+  \leadrow{专门页面 · 第 13 行}{\urllit{http://finance.yahoo.com/q/ao?s=IMCL}\\
+  域名：Yahoo Finance \quad 路径：分析师意见 \quad 参数：IMCL}
+  \medskip
+  \leadrow{复合图表 · 第 7 行}{\urllit{.../earnings/update\_earningsChart.asp?duration=1095}\\
+  路径：盈利图 \quad 参数：历史 1,095 天，另有前瞻与技术参数 \quad 标的：用相邻记录定位 IMCL}
+  \finding{同一条记录可留下标的、主题和展示线索。相邻记录和订单规则帮助把链接转成研究轨迹。}
+\end{frame}
+
+\begin{frame}[label=yahoo]{Yahoo Finance 的分析师页面保留相似结构}
+  \crumb{Part 2}{2.1 浏览样本与 URL}{Figure A1}
+  {\centering
+  \annotatedpanel{4.10cm}{a1.pdf}{
+    \draw[wine,semithick,-{Stealth[length=1.2mm]}] (.438,.943)--(.561,.855);
+    \draw[wine,semithick,-{Stealth[length=1.2mm]}] (.438,.773)--(.561,.982);
+    \draw[sampleteal,semithick,-{Stealth[length=1.2mm]}] (.438,.593)--(.561,.598);
+    \draw[samplegold,semithick,-{Stealth[length=1.2mm]}] (.438,.358)--(.561,.258);
+  }\par}
+  {\small\textbf{2007 年 2 月 23 日}\hfill\textbf{2026 年 4 月 15 日}\par}\smallskip
+  \pair{\small\textbf{供给侧}　样本主要站外入口。两期预测、EPS 和修正模块可对应。}
+       {\small\textbf{需求侧}　移动端、交易费用与社交渠道变化后，用户行为仍待复测。}
+\end{frame}
+
+\subsection{2.2 记录整理与交易归属}
+\begin{frame}[label=rules]{三条规则把浏览研究连到一笔订单}
+  \crumb{Part 2}{2.2 记录整理与交易归属}{Table IA1 · Steps 1、2、8 · p.\,37}
+  \small
+  \begin{tabularx}{\linewidth}{@{}L{.21\linewidth}Y@{}}
+    \toprule
+    \textbf{1 补缺码} & \texttt{IMCL} \(\to\) 缺代码新闻 \(\to\) \texttt{IMCL}\newline
+    同会话前后最近的已匹配记录均为同一股，补配该股。\\\midrule
+    \textbf{2 分会话}\newline \textbf{合并订单} &
+    财经站 \(\to\) Yahoo \(\to\) 券商 \(\to\) \texttt{GOOG sell}\newline
+    相邻点击 \(\leq 15\) 分钟属同会话；同股、同向候选订单 \(\leq 30\) 分钟则合并，取末次时点。\\\midrule
+    \textbf{3 归研究} &
+    周二研究 \(\to\) 周三卖出 \qquad 周四研究 \(\to\) 周五买入\newline
+    对准下一笔同股交易。此后无同股交易，归末笔后。\\
+    \bottomrule
+  \end{tabularx}
+  \finding{得到每户、每股、带内容和时间的研究记录，以及可用于归属的订单时间。}
+  \scriptsize\jump{appendix-4}{A4 · 原文处理步骤}
+\end{frame}

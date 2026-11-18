@@ -1,0 +1,94 @@
+\section{贡献与评价}
+\sectionlead{section-5}{五、贡献与评价}{浏览轨迹给资产定价的信息输入提供了哪些约束？}
+
+\subsection{5.1 证据与局限}
+\begin{frame}[label=scorecard]{五项事实怎样约束模型的信息输入}
+  \crumb{Part 5}{5.1 证据与局限 · 记分卡}{论文 I、VIII · 汇报人综合}
+  \begin{columns}[T,onlytextwidth]
+    \column{.34\textwidth}\footnotesize
+    \textbf{五项观测事实}\par\smallskip
+    \leadrow{\jump{depth}{研究较薄}}{5.7 分钟，50 户交易标的中位数／笔。}
+    \leadrow{\jump{topics}{常看价格}}{价格图覆盖 93\%，484 户。}
+    \leadrow{\jump{windows}{默认窗口}}{约 73\% 的访问是 1 日图。}
+    \leadrow{\jump{pc-two}{风格有别}}{快／慢信息与标的倾向同变。}
+    \leadrow{\jump{timing}{临近下单}}{同股研究在交易附近增加。}
+    \column{.64\textwidth}\footnotesize
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.06}
+    \begin{tabularx}{\linewidth}{@{}L{.29\linewidth}Y@{}}
+      \toprule 文献输入 & 观测证据与判断\\\midrule
+      组合选择 & 风险统计少见，风险判断未知\\
+      DSSW & 薄且偏价格，噪声程度未知\\
+      Hong--Stein & 风格有别，新闻和价格同侧\\
+      BSV & 部分一致：盈利覆盖 40\%\\
+      收益外推 & 价格图常见，未观测外推\\
+      股利信号 & 覆盖 17\%，信念证据弱\\
+      有限注意力 & 财报、事件有关注峰值\\
+      同质输入 & 投入右偏，研究风格分化\\
+      \bottomrule
+    \end{tabularx}
+  \end{columns}
+  \finding{点击流把测度、典型事实与模型的可见输入连在一起。}
+\end{frame}
+
+\newcommand{\riskcell}[2]{\cellcolor{wine!#1}#2}
+\begin{frame}[label=limitations]{五项事实分别依赖哪些条件}
+  \crumb{Part 5}{5.1 证据与局限 · 有效性矩阵}{论文 II--VII · 汇报人判断}
+  \footnotesize
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabularx}{\linewidth}{@{}L{.17\linewidth}YYYY@{}}
+    \toprule 事实 & 外部有效性 & 测度 & 样本 & 方法\\\midrule
+    研究薄：5.7 分钟 &
+      \riskcell{22}{移动端与低佣金} &
+      \riskcell{18}{线下信息、旧知识} &
+      \riskcell{26}{高匹配 50 户} &
+      合并订单改变分母\\
+    价格图：覆盖 93\% &
+      当代社交渠道 &
+      \riskcell{15}{快照和新闻插补} &
+      484 户也见此格局 &
+      点击只代表到访\\
+    日内窗：约 73\% &
+      \riskcell{19}{App 默认项改变} &
+      URL 解码的是曝光窗 &
+      当年平台供给 &
+      \riskcell{18}{缺默认值外生变化}\\
+    研究风格异质 &
+      自愿安装跟踪 &
+      倾斜为两个比例之差 &
+      \riskcell{20}{股票面板四个月} &
+      \riskcell{16}{主题二元化、PC2 较小}\\
+    交易前集中 &
+      只记录桌面浏览 &
+      \riskcell{18}{既有持仓、旧知识} &
+      \riskcell{26}{时点依赖高匹配样本} &
+      只保留主题首次出现\\
+    \bottomrule
+  \end{tabularx}
+  \finding{主题的总体格局在直接分类和插补下都可见。精确分钟、当代行为与因果解释需要额外证据。}
+\end{frame}
+
+\subsection{5.2 评价与延伸}
+\begin{frame}[label=evaluation]{这篇测度型论文的设计长处}
+  \crumb{Part 5}{5.2 评价与延伸 · 汇报人评价}{论文 II、III、V、VIII}
+  \leadrow{用四维组织同一数据}{可从家庭用时走到主题、标的和相对交易时点。不同分节的结果有共同的观测来源。}
+  \medskip
+  \leadrow{让匹配质量决定可回答的问题}{\jump{funnel}{484／50 双样本}把总体研究和交易标的时长分开，\jump{mixed}{直接分类与插补}展示价格主题的稳健性与量级差。}
+  \medskip
+  \leadrow{用外部证据核对测度}{券商日均研究 1.8 分钟，与 Gargano--Rossi 的 2.1 分钟可作量级比较。\jump{event}{日度事件}又可对照搜索。}
+  \finding{可见的是信息获取。点击之后形成什么信念、已有持仓如何影响买卖、研究是否改善交易，仍是独立问题。}
+\end{frame}
+
+\begin{frame}[label=next-tests]{把信息获取接到信念、订单和绩效}
+  \crumb{Part 5}{5.2 评价与延伸 · 研究设计}{论文 VIII · 汇报人延伸}
+  \small
+  \begin{tabularx}{\linewidth}{@{}L{.18\linewidth}YY@{}}
+    \toprule 出发点 & 问题 & 下一步设计\\\midrule
+    作者 · 绩效 & 看什么、看多久与交易结果有关吗？ & 逐次连接研究、实际成交与后续收益。\\
+    汇报人 · 默认窗 & 历史窗口会改变预期与下单吗？ & 随机更改默认窗，记录实际曝光、前后预期和订单。\\
+    汇报人 · 买卖 & 相似主题如何对应相反的方向？ & 联接信号值、持仓和交易方向，在相近曝光下比较。\\
+    汇报人 · 外推 & 当代移动端是否保留这样的主题排序？ & 用跨 App 日志复测原 topic 和 timing 口径。\\
+    \bottomrule
+  \end{tabularx}
+  \finding{论文把信息集变成可观察的研究对象。下一步要检验这些输入怎样进入实际判断。}
+\end{frame}

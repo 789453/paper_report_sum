@@ -1,0 +1,50 @@
+\documentclass[11pt,aspectratio=43,compress]{beamer}
+\usepackage{ruc-research}
+\usepackage{colortbl}
+\graphicspath{{assets/}}
+\definecolor{ink}{HTML}{29252A}
+\definecolor{slate}{HTML}{365E75}
+\definecolor{quiet}{HTML}{555159}
+\definecolor{papergray}{HTML}{F3F1F2}
+\definecolor{paperrose}{HTML}{F6EAEC}
+\definecolor{paperblue}{HTML}{EAF0F4}
+\colorlet{wine}{tsinghua}
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamercolor{title}{fg=wine,bg=white}
+\setbeamerfont{frametitle}{size=\fontsize{15}{17}\selectfont}
+\setbeamerfont{framesubtitle}{size=\small}
+\setbeamertemplate{mini frames}[default]
+\setbeamercolor{result strip}{fg=wine!88!black,bg=paperrose}
+\setbeamercolor{question strip}{fg=slate!80!black,bg=paperblue}
+\newcommand{\strap}[1]{\par{\small\color{slate}\bfseries #1}\par\smallskip}
+\newcommand{\finding}[1]{%
+  \par\smallskip\begin{beamercolorbox}[wd=\linewidth,sep=5pt,rounded=false]{result strip}%
+  \small #1\end{beamercolorbox}\par}
+\newcommand{\nextq}[1]{%
+  \par\smallskip\begin{beamercolorbox}[wd=\linewidth,sep=5pt,rounded=false]{question strip}%
+  \small #1\end{beamercolorbox}\par}
+\newcommand{\greatnum}[1]{{\fontsize{27}{29}\selectfont\bfseries\color{wine}#1}}
+\newcommand{\shortlabel}[1]{{\small\bfseries\color{slate}#1}}
+\newcommand{\urllit}[1]{\texttt{#1}}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.24}
+\tikzset{
+  storybox/.style={draw=quiet!25, fill=papergray, rounded corners=2pt, align=center,
+    minimum height=1.12cm, inner sep=3pt, font=\small},
+  storyfocus/.style={storybox, draw=wine!60, fill=paperrose},
+  storyarrow/.style={-{Stealth[length=2mm]}, semithick, draw=quiet},
+  grapharrow/.style={-{Stealth[length=2mm]}, semithick, draw=wine}
+}
+\title[个人投资者的信息集]{On the Information Set of\\Individual Investors}
+\author[Laarits \& Wurgler]{Toomas Laarits \texorpdfstring{\quad}{and } Jeffrey Wurgler}
+\institute[NYU Stern]{NYU Stern School of Business}
+\date{2026年4月27日 Working Paper}
+\input{revision-layout.tex}
+\begin{document}
+\input{part-1.tex}
+\input{part-2.tex}
+\input{part-3.tex}
+\input{part-4.tex}
+\input{part-5.tex}
+\input{appendix.tex}
+\end{document}
