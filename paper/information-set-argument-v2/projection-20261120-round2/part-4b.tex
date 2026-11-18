@@ -1,0 +1,131 @@
+\begin{frame}[label=pc-why]{同一家庭的研究主题如何共同出现}
+  \crumb{Part 4}{4.1 股票与家庭 · 换到投资者层}{VI · Table 5}
+  \pair{\textbf{股票月回答}\par\small
+    哪些股票更常被看，主题倾斜随什么变化？\par
+    一行是股票和月份，\(Y\) 是覆盖、用时或倾斜。}
+  {\textbf{家庭层回答}\par\small
+    同一个人会一起看哪些主题？这些模式与所关注股票的类型是否同变？\par
+    PCA 概括多列输入的主要变异方向。}
+  \medskip
+  \leadrow{交易频率只提供少量线索}{交易笔数与每笔研究分钟的 Pearson 相关为 \(-0.10\)，秩相关为 \(-0.22\)。}
+  \finding{把主题参与和股票倾向并列放进同一家庭矩阵，可以区分研究范围与研究风格。}
+\end{frame}
+
+\begin{frame}[label=pc-input]{PCA 输入：主题参与与投机标的倾向}
+  \crumb{Part 4}{4.1 股票与家庭 · 家庭矩阵}{VI · Table 5}
+  \[
+    B_{ik}=\mathbf{1}\{m_{ik}>2\},
+    \qquad X_i=(B_{i1},\ldots,B_{i,13},S_i).
+  \]
+  \small
+  \begin{tabularx}{\linewidth}{@{}L{.23\linewidth}YYY@{}}
+    \toprule 行索引 & 价格图 & … 其他主题 & 投机标的倾向\\\midrule
+    家庭 \(i\) & \(B_{i,\text{价格}}\) & \(B_{ik}\in\{0,1\}\) & \(S_i\in\mathbb R\)\\
+    家庭 \(i'\) & \(B_{i',\text{价格}}\) & \(B_{i'k}\in\{0,1\}\) & \(S_{i'}\in\mathbb R\)\\\bottomrule
+  \end{tabularx}\par\medskip
+  \(m_{ik}\) 为每户每月在该主题的研究分钟，只计可匹配的股票。风险统计参与太少，13 个主题之外加一个连续 \(S_i\)。高分偏小、新、高波动、低价股；低分偏大、成熟、分红股。
+  \finding{指标记录是否把主题纳入经常研究的范围，分钟数差异不会直接进入这些主题列。}
+  \small\jump{appendix-6}{A6 · 表注与正文措辞}
+\end{frame}
+
+\newcommand{\loadingbar}[4]{%
+  \node[anchor=east,inner sep=2pt] at (-.58,#1) {#2};
+  \fill[#4!75] (0,#1-.18) rectangle (#3,#1+.18);
+  \node[anchor=west,inner sep=2pt] at ({max(0,#3)},#1) {\pgfmathprintnumber[fixed,precision=2]{#3}};}
+\begin{frame}[label=pc-one]{第一主成分刻画跨主题的共同参与}
+  \crumb{Part 4}{4.1 股票与家庭 · PC1}{Table 5}
+  \begin{columns}[T,onlytextwidth]
+    \column{.63\textwidth}\centering
+    \begin{tikzpicture}[x=6.7cm,y=.55cm,font=\small]
+      \begin{scope}[xshift=2.3cm]
+      \node[anchor=east,inner sep=2pt] at (0,6) {主题或股票倾向};
+      \draw[quiet!30] (0,-.30)--(0,5.35);
+      \foreach \y/\name/\v in {5/{未知新闻}/.36,4/{快照}/.32,3/{分析师}/.32,2/{价格图}/.31,1/{盈利}/.29,0/{投机标的倾向}/.01}{
+        \node[anchor=east] at (0,\y) {\name};
+        \fill[sampleblue!70] (0,\y-.17) rectangle (\v,\y+.17);
+        \node[anchor=west] at (\v,\y) {\pgfmathprintnumber[fixed,precision=2]{\v}};}
+      \end{scope}
+    \end{tikzpicture}\par{\small 条长为载荷；选列展示。}
+    \column{.35\textwidth}
+    \greatnum{26.81\%}\par
+    {\small 解释输入总变异\\特征值 3.75}\par\medskip
+    {\small 13 项主题的载荷均为正，股票投机倾向近零。}
+  \end{columns}
+  \finding{PC1 较高的投资者通常同时参与更多主题。总分钟并非这一成分的直接输入。}
+\end{frame}
+
+\begin{frame}[label=pc-two]{第二主成分把快信息与投机标的联系起来}
+  \crumb{Part 4}{4.1 股票与家庭 · PC2}{Table 5}
+  \begin{columns}[T,onlytextwidth]
+    \column{.67\textwidth}\centering
+    \begin{tikzpicture}[x=4.6cm,y=.41cm,font=\scriptsize]
+      \draw[quiet!55] (0,-.36)--(0,8.36);
+      \loadingbar{8}{留言板}{.46}{wine}
+      \loadingbar{7}{投机标的}{.43}{wine}
+      \loadingbar{6}{综合快照}{.30}{wine}
+      \loadingbar{5}{价格图}{.19}{wine}
+      \loadingbar{4}{分析师}{0}{quiet}
+      \loadingbar{3}{技术信号}{-.11}{sampleteal}
+      \loadingbar{2}{其他基本面}{-.29}{sampleteal}
+      \loadingbar{1}{盈利}{-.34}{sampleteal}
+      \loadingbar{0}{股利}{-.47}{sampleteal}
+    \end{tikzpicture}\par
+    {\small 先读零线两侧，再看各条长短。选列载荷。}
+    \column{.31\textwidth}
+    \greatnum{8.77\%}\par
+    {\small 解释输入总变异\\特征值 1.23}\par\medskip
+    {\small 研究快信息与偏向投机标的在同一轴上。盈利、股利靠相反一侧。}
+  \end{columns}
+  \finding{这是主题与标的的联合变异。快慢两端也用于下文分组，不能用分组重新识别投机倾向的因果影响。}
+\end{frame}
+
+\subsection{4.2 交易时点与路径}
+\begin{frame}[label=timing]{交易附近累积出较多同股研究}
+  \crumb{Part 4}{4.2 交易时点与路径 · 研究何时发生}{Figure 3 · 50 户}
+  {\centering
+  \annotatedpanel{4.14cm}{fig3.pdf}{
+    \draw[samplegold,line width=.75pt] (.382,.43) rectangle (.412,.68);
+    \draw[samplegold,line width=.75pt] (.890,.16) rectangle (.922,.55);
+  }\par}
+  {\small 横轴：距本次交易的小时，\(0\) 为订单。纵轴：累计研究分钟。左侧均值与右侧中位数量程不同。}
+  \finding{先读右图：约到交易前五天才见中位数累积，主要跳升临近下单；均值在更早时点也有累积。}
+\end{frame}
+
+\begin{frame}[label=path]{新的同股路径常在首个主题后结束}
+  \crumb{Part 4}{4.2 交易时点与路径 · 主题之间的跳转}{Figure 4}
+  \begin{columns}[T,onlytextwidth]
+    \column{.61\textwidth}\centering
+    \annotatedpanel{4.6cm}{fig4.pdf}{
+       \draw[wine,line width=.55pt] (.01,.26) rectangle (.106,.91);
+       \draw[wine,line width=.55pt] (.226,.118) rectangle (.319,.586);
+       \draw[wine,line width=.55pt] (.907,.456) rectangle (.984,.517);
+    }
+    \column{.36\textwidth}\small
+    \leadrow{入口}{快照、价格图、新闻较常见。}
+    \leadrow{第二列 END}{最粗一支，表示首个主题后没有新增的计入主题。}
+    \leadrow{右端 Further}{仍有更多出现的主题。}
+    \medskip
+    线宽为路径数，原路径的重复主题已删除。
+  \end{columns}
+  \finding{例：价格图 \(\to\) 盈利 \(\to\) 再看价格图，图上只留价格图 \(\to\) 盈利。484 户，16,930 个同股十天窗口。}
+\end{frame}
+
+\begin{frame}[label=buy-sell]{买卖之前，粗粒度主题路径相近}
+  \crumb{Part 4}{4.2 交易时点与路径 · 按订单方向}{Figure 5 A/B}
+  \pair{\centering\small\textbf{A · 买入}\par
+    \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5a.pdf}\par}
+  {\centering\small\textbf{B · 卖出}\par
+    \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5b.pdf}\par}
+  {\small 从右端买卖向左，回看同股之前十天的主题。线宽为路径数。}
+  \finding{买卖前都常见快照和价格图。相似的是主题次序。}
+\end{frame}
+
+\begin{frame}[label=fast-slow]{按研究风格分组后，快信息组路径更窄}
+  \crumb{Part 4}{4.2 交易时点与路径 · 按 PC2 分组}{Figure 5 C/D}
+  \pair{\centering\small\textbf{C · 慢信息，PC2 最低五分位}\par
+    \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5c.pdf}\par}
+  {\centering\small\textbf{D · 快信息，PC2 最高五分位}\par
+    \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5d.pdf}\par}
+  {\small 对照前两步：慢信息组路径更宽，快信息组常见快照或快照加价格图。}
+  \finding{分组本身来自 PC2。接下来把主题分化及其他证据放回模型假设。}
+\end{frame}
