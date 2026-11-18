@@ -1,0 +1,11 @@
+{
+  "pages": 50,
+  "changed_pages": [
+    25,
+    32
+  ],
+  "other_48_pages_text_and_pixels_identical": true,
+  "compile_issues": [],
+  "invalid_internal_links": [],
+  "pdf_sha256": "ea2efa4983afb571b8bd3d7793115c37d83494671e5c5517b9d108a8bb0f77dd"
+}

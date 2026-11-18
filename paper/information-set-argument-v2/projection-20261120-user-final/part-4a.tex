@@ -6,11 +6,14 @@
 \begin{frame}[label=empirical-why]{为什么进一步比较股票、投资者与交易情境}
   \crumb{Part 4}{实证动机}{Tables 2--3 · V--VII}
   \small
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.35}
   \begin{tabularx}{\linewidth}{@{}L{.29\linewidth}YL{.24\linewidth}@{}}
-    \toprule 已见事实 & 需要进一步回答 & 分析方向\\\midrule
-    价格图关注最常见，均值远高于中位数 & 哪些股票和主题吸引更多研究？ & 股票 \(\times\) 月\\\midrule
-    交易笔数与每笔研究相关 \(-0.10\) & 交易频率，不足解释研究偏好 & 投资者（家庭）主题矩阵\\\midrule
-    - & 研究和交易时点如何？ & 相对订单时点与路径\\\bottomrule
+    \toprule\rowcolor{wine!10}
+    \textbf{已见事实} & \textbf{需要进一步实证} & \textbf{分析方向}\\\midrule
+    价格图关注最常见，均值远高于中位数 & 哪些股票和主题吸引更多研究？ & \textcolor{wine}{\textbf{股票 \(\times\) 月}}\\
+    \rowcolor{wine!5}交易笔数与每笔研究相关 \(\mathbf{-0.10}\) & 交易频率，不足解释研究偏好 & \textcolor{wine}{\textbf{投资者（家庭）主题矩阵}}\\
+    \multicolumn{1}{c}{\textcolor{quiet}{\textemdash}} & 研究和交易时点如何？ & \textcolor{wine}{\textbf{相对订单时点与路径}}\\\bottomrule
   \end{tabularx}\par\medskip
 \end{frame}
 
@@ -149,8 +152,8 @@
 
 \begin{frame}[label=tilt]{股票特征对“看什么”的解释度较低}
   \crumb{Part 4}{4.1 股票与投资者 · 内容倾斜}{Table 4 (5)--(6)}
-  {\small\textbf{被解释变量 \(D\)}＝看过价格类信息的投资者比例－看过基本面类信息的投资者比例。\par
-  \scriptsize 价格类：价格图、技术；基本面类：盈利、股利、其他基本面、分析师、官网。}\par\smallskip
+  {\small\textbf{被解释变量 \(D\)}＝看过价格类信息的投资者比例－看过基本面类的。\par\smallskip
+  \textcolor{slate}{\textbf{\(D\) 代表投机性偏好（研究内容倾斜）}：越高表示研究越偏价格类信息。}}\par\medskip
   \begin{columns}[T,onlytextwidth]
     \column{.61\textwidth}\small
     \textbf{价格覆盖率减基本面覆盖率，第 (6) 列}\par
@@ -163,11 +166,13 @@
       \foreach \x in {-.2,-.1,0,.1} \node[below] at (\x,-.34) {\pgfmathprintnumber{\x}};
     \end{tikzpicture}\par
     \column{.36\textwidth}\small
-    \textbf{对照覆盖率规格}\par
-    \greatnum{7.9\%}\par
-    {\small 第 (5) 列 \(R^2\)}\par\smallskip
-    {\large\bfseries\color{wine}9.0\%}\;第 (6) 列\par\smallskip
-    同类扩展规格解释覆盖率时，\(R^2=48.4\%\)。
+    \textbf{内容倾斜 \(D\) 的 \(R^2\)}\par\smallskip
+    \begin{tabularx}{\linewidth}{@{}Yr@{}}
+      \toprule 规格 & \(R^2\)\\\midrule
+      第 (5) 列 & {\large\bfseries\color{wine}7.9\%}\\
+      第 (6) 列 & {\large\bfseries\color{wine}9.0\%}\\\bottomrule
+    \end{tabularx}\par\smallskip
+    {\small 对照：覆盖率 \(A\) 的第 (3) 列，\(R^2=48.4\%\)。}
   \end{columns}
   \finding{股票特征只解释很少部分（8\%)的主题倾斜，说明高波动股票偏价格研究； 异质性的解释，需要继续对投资者考察。}
 \end{frame}
