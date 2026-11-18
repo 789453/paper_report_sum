@@ -1,0 +1,46 @@
+% XeLaTeX twice. This file is an editable, watermark-free regression specimen.
+\documentclass[11pt,compress]{beamer}
+\usepackage{ruc-research}
+\title[无水印模板测试]{中文科研组会模板}
+\subtitle{Chinese text, equations, tables and figures}
+\author[模板测试]{模板功能测试}
+\institute[科研组会]{可复用的 RUC Beamer 工程}
+\date{2026年11月15日}
+\begin{document}
+\begin{frame}[plain,noframenumbering]\titlepage\end{frame}
+\section{正文}
+\begin{frame}{公式与中英文混排}
+中文、English、$\alpha$、$\beta$、$R^2$ 与百分号 5\%。
+\begin{equation}\label{eq:example}
+ R_{i,t}=\alpha_i+\beta_i R_{m,t}+\varepsilon_{i,t}.
+\end{equation}
+式\eqref{eq:example}中的 $\beta_i$ 表示市场暴露。
+\source{排版测试示例；不是论文估计结果。}
+\end{frame}
+\begin{frame}{三线表、编号与引用}
+\begin{table}\centering
+\caption{示例数据}\label{tab:test}
+\begin{tabular}{lrr}\toprule
+项目 & 样本 A & 样本 B\\\midrule
+演示值 & 1.23 & 4.56\\
+样本数 & 100 & 120\\\bottomrule
+\end{tabular}
+\end{table}
+表\ref{tab:test}仅测试格式。
+\end{frame}
+\begin{frame}{图形、编号与可编辑对象}
+\begin{figure}\centering
+\begin{tikzpicture}[>=Stealth]
+\node[draw=tsinghua,minimum width=2.6cm,minimum height=1cm] (a) {研究问题};
+\node[draw=tsinghua,right=1.2cm of a,minimum width=2.6cm,minimum height=1cm] (b) {可核查证据};
+\draw[->,thick,tsinghua] (a)--(b);
+\end{tikzpicture}
+\caption{流程示意图}\label{fig:test}
+\end{figure}
+图\ref{fig:test}为 TikZ 矢量图。背景没有校徽。
+\end{frame}
+\appendix
+\begin{frame}{附录独立计数}
+正文总页数为 3；本页应显示 A1/1，封面不计数。
+\end{frame}
+\end{document}

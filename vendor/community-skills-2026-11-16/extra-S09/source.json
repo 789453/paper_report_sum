@@ -1,0 +1,13 @@
+{
+  "id": "S09",
+  "category": "academic-slides",
+  "repository": "AI-Business-Tools/claude-code",
+  "commit": "4ba9dabb07b3c54d95ae01fc909c411c8da6d2e7",
+  "path": "skills/slides-content/SKILL.md",
+  "url": "https://github.com/AI-Business-Tools/claude-code/blob/4ba9dabb07b3c54d95ae01fc909c411c8da6d2e7/skills/slides-content/SKILL.md",
+  "sha256": "2d4a4267564b91dded68161725d46dae0ad0ca663c82bc60a16b79625e7411ff",
+  "bytes": 22193,
+  "license_file": "LICENSE",
+  "license_preview": "MIT License\n\nCopyright (c) 2026 AI-Business-Tools\n\nPermission is hereby granted, free of charge, to any person obtaining",
+  "retrieved": "2026-11-16"
+}

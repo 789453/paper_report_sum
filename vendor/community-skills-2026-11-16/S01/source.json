@@ -1,0 +1,13 @@
+{
+  "id": "S01",
+  "category": "academic-slides",
+  "repository": "wenlzhang/beamer-skill",
+  "commit": "f98a66bb1d3c5d93fa21a07c5151afedf2b1d535",
+  "path": "SKILL.md",
+  "url": "https://github.com/wenlzhang/beamer-skill/blob/f98a66bb1d3c5d93fa21a07c5151afedf2b1d535/SKILL.md",
+  "sha256": "9664bd0131c1cadb499960436ec4370ca137cd6c8e07303756d3cdc3ac1ccd7d",
+  "bytes": 19083,
+  "license_file": "LICENSE",
+  "license_preview": "MIT License\n\nCopyright (c) 2026 Wenliang Zhang (https://github.com/wenlzhang)\n\nPermission is hereby granted, free of cha",
+  "retrieved": "2026-11-16"
+}

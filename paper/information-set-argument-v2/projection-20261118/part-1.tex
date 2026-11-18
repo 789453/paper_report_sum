@@ -1,0 +1,106 @@
+\begin{frame}[plain]
+  \vfill
+  {\small\color{wine}\bfseries 科研组会\par}
+  \vspace{5mm}
+  {\fontsize{22}{26}\selectfont\bfseries
+   On the Information Set of\\Individual Investors\par}
+  \vspace{3mm}
+  {\large\color{wine}个人投资者的信息集\par}
+  \vspace{3mm}
+  {\color{wine}\rule{.95\linewidth}{.75pt}}\par
+  \medskip
+  Toomas Laarits \quad Jeffrey Wurgler\par
+  {\small NYU Stern School of Business \hfill 2026年4月27日工作稿}
+  \vfill
+\end{frame}
+
+\section{研究问题}
+\subsection{1.1 信息输入}
+\begin{frame}{同一笔买入，背后看过什么？}
+  \strap{1.1\quad 理论需要什么信息输入}
+  \begin{center}
+    \begin{tikzpicture}
+      \node[storybox,text width=2.12cm] (menu) {可得资料\\[-1pt]\scriptsize 行情、财报};
+      \node[storyfocus,text width=2.12cm,right=5mm of menu] (see) {\textbf{在线获取}\\[-1pt]\scriptsize 股票、内容、时点};
+      \node[storybox,text width=2.12cm,right=5mm of see] (belief) {形成判断\\[-1pt]\scriptsize 预期与风险认识};
+      \node[storybox,text width=1.65cm,right=5mm of belief] (trade) {买卖\\[-1pt]\scriptsize 订单事件};
+      \draw[storyarrow] (menu)--(see);
+      \draw[storyarrow] (see)--(belief);
+      \draw[storyarrow] (belief)--(trade);
+    \end{tikzpicture}
+  \end{center}
+  \vspace{2mm}
+  \begin{columns}[T,onlytextwidth]
+    \column{.48\textwidth}\shortlabel{家庭甲}\par 查盈利预测后买入。
+    \column{.48\textwidth}\shortlabel{家庭乙}\par 查看近期价格后买入。
+  \end{columns}
+  \finding{本文测量在线信息获取，再用订单时点把研究放回交易情境。}
+  \refnote{决策链为概念示意，甲乙为教学例。论文 pp.~2–3、10–11。}
+\end{frame}
+
+\begin{frame}{模型对所需信号给出不同答案}
+  \strap{1.1\quad 理论需要什么信息输入}
+  \begin{tabularx}{\linewidth}{@{}L{.27\linewidth}YY@{}}
+    \toprule
+    \textbf{理论视角} & \textbf{模型中的输入} & \textbf{对应的经验问题}\\
+    \midrule
+    组合选择 & 收益分布与协方差 & 是否查过可用于判断风险的资料？\\
+    信息扩散 & 新闻与价格走势 & 哪些人接触了哪类内容？\\
+    收益外推 & 历史收益 & 实际看到多长的价格历史？\\
+    \bottomrule
+  \end{tabularx}
+  \medskip
+  \finding{个体获取了什么，决定理论中的信息输入能否与行为事实对接。}
+  \refnote{理论线索据论文 pp.~2–3、6–7。市场价格反映信息属于另一个层面的经验问题。}
+\end{frame}
+
+\subsection{1.2 注意力证据}
+\begin{frame}{搜索峰值之后，投资者打开了什么？}
+  \strap{1.2\quad 已有注意力证据与本文增量}
+  \begin{center}
+  \begin{tikzpicture}
+    \node[storybox,text width=2.5cm] (search) {某股搜索上升};
+    \node[storyfocus,text width=3cm,right=18mm of search,yshift=8mm] (chart) {可能打开价格图};
+    \node[storyfocus,text width=3cm,right=18mm of search,yshift=-8mm] (earn) {可能查盈利预测};
+    \draw[storyarrow] (search.east)--(chart.west);
+    \draw[storyarrow] (search.east)--(earn.west);
+  \end{tikzpicture}
+  \end{center}
+  \begin{tabularx}{\linewidth}{@{}L{.24\linewidth}Y@{}}
+    \textbf{搜索指数} & 看到哪些股票在什么时候引起关注。\\
+    \textbf{单一券商活动} & 可连接账户行为，站外阅读未纳入同一轨迹。\\
+    \textbf{本文的跨站浏览} & 能比较同一家庭访问的页面、内容与交易时点。\\
+  \end{tabularx}
+  \refnote{图为教学示意。相关文献与数据比较见论文 pp.~3、5–7、18–19。}
+\end{frame}
+
+\begin{frame}{把同一家庭的研究与交易连起来}
+  \strap{1.2\quad 同一数据怎样产生四类比较}
+  \begin{tabularx}{\linewidth}{@{}L{.30\linewidth}Y@{}}
+    \toprule
+    \textbf{记录提供什么} & \textbf{据此可以问什么}\\
+    \midrule
+    页面活动时间 & \textcolor{wine}{投入}：研究多少？\\
+    URL中的内容线索 & \textcolor{wine}{内容}：时间花在什么信息上？\\
+    家庭与股票标识 & \textcolor{wine}{差异}：哪些股票和哪些家庭形成了总体分布？\\
+    访问与订单时间戳 & \textcolor{wine}{时点}：研究在何时集中，主题按何种顺序出现？\\
+    \bottomrule
+  \end{tabularx}
+  \medskip
+  \nextq{起点是两条记录的连接。先看网址怎样给出股票、主题和交易。}
+\end{frame}
+
+\begin{frame}{从信息获取到交易情境}
+  \strap{报告路线}
+  \begin{tabularx}{\linewidth}{@{}L{.29\linewidth}Y@{}}
+    \toprule
+    \textbf{部分} & \textbf{要做的比较}\\
+    \midrule
+    一\enspace 研究问题 & 理论中的输入与已有注意力证据\\
+    二\enspace 数据与测度 & URL识别、交易连接与研究归属\\
+    三\enspace 总体事实 & 家庭投入、研究主题与价格窗口\\
+    四\enspace 实证比较 & 股票覆盖、家庭风格与同股交易路径\\
+    五\enspace 贡献与评价 & 信息输入的经验约束与后续检验\\
+    \bottomrule
+  \end{tabularx}
+\end{frame}

@@ -1,0 +1,25 @@
+from pathlib import Path
+import json
+R=Path(__file__).resolve().parents[1]
+S=json.loads((R/'paper/information-set-argument-v2/slides.json').read_text(encoding='utf-8'))
+n=len(S);ch=sum(sum('\u4e00'<=c<='\u9fff' for c in s['speech']) for s in S)
+t=(R/'scripts/build_redesign.py').read_text(encoding='utf-8').replace('information-set-redesign-20261117','information-set-argument-v2')
+t=t.replace('45',str(n)).replace('8,200',f'{ch:,}').replace('约42分钟',f"约{round(sum(s['seconds'] for s in S)/60)}分钟")
+t=t.replace("'σ':r'\\(\\sigma\\)'","'σ':r'\\(\\sigma\\)','Δ':r'\\(\\Delta\\)','′':\"'\"")
+t=t.replace("    if s['formula']:","    tex.append(r'{\\small\\color{tsinghua}'+esc(s['context'])+r'\\par}\\medskip')\n    if s['formula']:",1)
+t=t.replace("    else:\n        for line in s['lines']:tex.append(esc(line)+r'\\par\\medskip')", "    elif s['kind']=='authors':\n        for i,line in enumerate(s['lines']):\n            tex.append((r'{\\large\\textbf{' if i==0 else r'{\\small ')+esc(line)+('}}' if i==0 else '}')+r'\\par\\medskip')\n    else:\n        for line in s['lines']:tex.append(esc(line)+r'\\par\\medskip')")
+t=t.replace("h='4.8'", "h='3.65'").replace("else '4.45'","else '3.75'")
+# Leave more room for the now-visible parent question.
+t=t.replace('height=5.9cm','height=5.1cm').replace(r'\arraystretch}{1.22}',r'\arraystretch}{1.12}')
+(R/'scripts/build_argument_v2_generated.py').write_text(t,encoding='utf-8')
+js=(R/'scripts/build_redesign_pptx.mjs').read_text(encoding='utf-8').replace('information-set-redesign-20261117','information-set-argument-v2').replace('45',str(n))
+js=js.replace("let y=156;","box(slide,s.context,52,127,856,52,22,WINE);\n  let y=207;")
+js=js.replace("i*192+4,0,184,31","i*(960/sections.length)+4,0,960/sections.length-8,31")
+js=js.replace('s.page===35?23:24','23').replace('top:147,width:430,height:466','top:193,width:430,height:415').replace('top:147,width:580,height:397','top:191,width:580,height:321').replace('top:142,width:836,height:','top:190,width:836,height:').replace("?395:399","?320:320").replace('s.lines,52,548,856,22,1','s.lines,52,521,856,21,0')
+js=js.replace("54,161,852,s.page===15?118:94,29","54,205,852,94,27").replace("y=s.page===15?308:285","y=318")
+js=js.replace("let yy=147","let yy=191").replace('yy+=91','yy+=81')
+js=js.replace("}else if(s.lines.length){", "}else if(s.kind==='authors'){\n    let yy=206;for(let i=0;i<s.lines.length;i++){box(slide,s.lines[i],52,yy,856,i===0?66:52,i===0?31:23,i===0?WINE:'#222222',i===0);yy+=i===0?84:66;}\n  }else if(s.lines.length){")
+js=js.replace('s.table?24:27,s.table?9:21','s.table?22:25,s.table?5:15')
+js=js.replace("'01_46页报告.pptx'","'01_论证重建_46页.pptx'")
+(R/'scripts/build_argument_v2_generated.mjs').write_text(js,encoding='utf-8')
+print({'pages':n,'chinese_speech':ch,'seconds':sum(s['seconds'] for s in S)})

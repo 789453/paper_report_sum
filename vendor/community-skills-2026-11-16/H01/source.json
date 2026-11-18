@@ -1,0 +1,13 @@
+{
+  "id": "H01",
+  "category": "anti-AI-prose",
+  "repository": "blader/humanizer",
+  "commit": "b48c832f0f809c1b5658edbb838c2521b72f2413",
+  "path": "SKILL.md",
+  "url": "https://github.com/blader/humanizer/blob/b48c832f0f809c1b5658edbb838c2521b72f2413/SKILL.md",
+  "sha256": "804a119e924ac30295b298213e0b71b3e38b2667b8ef4fb7b69e9246369b9045",
+  "bytes": 32394,
+  "license_file": "LICENSE",
+  "license_preview": "MIT License\n\nCopyright (c) 2025 Siqi Chen\n\nPermission is hereby granted, free of charge, to any person obtaining a copy",
+  "retrieved": "2026-11-16"
+}

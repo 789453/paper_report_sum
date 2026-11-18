@@ -1,0 +1,109 @@
+=== PAGE 1 ===
+ 
+Page 1 of 3 
+ 
+EC501 Development and Growth- PhD seminar 
+O. Bandiera, T. Besley, G. Bryan, R. Burgess, G. Fischer, M. Ghatak, G. Padro 
+ 
+Guidelines for Presentations 
+  
+This workshop is intended to aid your transition from student to full-fledged researcher.  One skill 
+that you need to acquire is to make professional and well-thought-out presentations of your work. 
+First some rules: 
+1. If you have a supervisor among the development faculty listed above, you must present in 
+the EC501 seminar at least once per year. 
+2. We strongly prefer concise to rambling. 
+3. Failure is OK.  If your results fall apart the week before you are scheduled to present, you 
+should still present (see point 1 above).  In this situation, you should focus your presentation 
+on what went wrong, your ideas for next steps, and where feedback would help you 
+progress. 
+4. You should email your title, slides or a copy of your paper to your supervisor(s) and Laura 
+Derksen, who is organizing this year’s seminar, by the Sunday before your talk at the latest.  
+All materials should be in pdf format and will be posted on the course website.  
+Now for some guidelines. While there is no substitute for excellent ideas and analysis, even a good 
+piece of research can suffer when it is poorly presented.  Following is a minimal list of requirements 
+for a good presentation: 
+For all papers: 
+1. State your question(s) clearly in one slide.  Immediately. 
+2. Provide a good motivation. Why is this question interesting/relevant/important? 
+3. Make sure you know all related literature very well and state your contribution clearly without 
+replicating other people’s findings.  It is very important that you can answer questions on related 
+papers but the audience does not need to hear long summaries of existing work. 
+4. Presentation must look professional: all slides and tables must be legible from the back of the 
+room; all tables must be formatted to journal standards.  Note that many tables that are clearly 
+formatted for a journal are illegible for slide presentations.  18 pt font is probably the cutoff; 22 
+pt is even better.  Distil to just the key outcomes or, if you must, distribute handouts. 
+5. Be up front about any weaknesses.  Address as many as possible, preferably in your 
+introduction, and do not try to hide anything. 
+6. Write down comments.  Address them before subsequent presentations. 
+7. Make the most of your first five minutes.  If someone has to leave (or dozes off) after the first 
+five minutes of your seminar they should know what your question is, why it is important, how 
+you approached it, and the highlights of what you found.  In addition, they should know the 
+greatest threats to the validity of your research and how you mitigated them.  Yes, it’s a lot for 
+five minutes, but you have to do it. 
+8. For work-in-process presentations, it can be helpful to tell your audience during your 
+introduction where you want feedback.  
+
+=== PAGE 2 ===
+ 
+Page 2 of 3 
+ 
+For empirical papers: 
+1. Even if you do not have a fully-fledged model, you will need a basic theoretical framework to 
+organise ideas in a coherent way. Be clear on how the theory maps into the empirical analysis. 
+2. Be clear about data sources and spell out the definition of all variables.  Present and discuss 
+descriptive statistics for all the main variables. 
+3. Present your identification strategy, making clear which sources of variation you intend to 
+exploit. 
+4. Write down the model you are estimating and be prepared to justify the inclusion/exclusions of 
+all variables. 
+5. Discuss other identification issues (e.g., confounding factors) and how you address them (or plan 
+to). 
+For theoretical papers 
+1. Discuss the environment clearly (preferences, technology, who knows what - i.e., information 
+structure, what markets exist)  
+2. State explicitly the notation for the key variables and parameters. 
+3. State all your assumptions explicitly. 
+4. Make sure you can justify all the assumptions and know what happens if you relax them. 
+5. State the main results.  Unless a proof is insightful, logical or very innovative do not spend time 
+on technical discussion of the steps. 
+6. Discuss the intuition behind your results and try to convince the audience as to why they 
+are both (a) non-obvious and (b) relevant/useful in throwing light on the motivating 
+question/problem.  
+7. Simple examples (e.g., assuming specific functional forms) and graphs often help.  These become 
+critical for job market talks where you will present to a diverse audience including non-theorists. 
+Other Resources: 
+A lot of others have written thoughtfully about how to give effective presentations.  You should 
+consider looking at: 
+ 
+Presentation pointer’s from Busse & Zettelmeyer.  A link lives here: 
+http://personal.lse.ac.uk/fischerg/Links.htm.   
+ 
+Danvy’s “Talk on Talks” is general advice about giving scientific presentations, but is still 
+applicable for economics: http://www.brics.dk/~danvy/talk.html. 
+ 
+This is targeted at science folks as well, but also has some useful tips: 
+http://web.mit.edu/7.17/pdfs/OralPresentations.pdf.   
+Some good general advice on the economic job market and surviving graduate school in general can 
+be found here: 
+ 
+David Romer’s “Rule for Making it through Graduate School”: http://www.j-bradford-
+delong.net/Teaching_Folder/Romers_rules.html  
+ 
+David Levine’s Cheap Advice for Going on the job market: 
+http://faculty.haas.berkeley.edu/levine/cheap_advice.html.  Also has helpful thoughts on 
+writing a dissertation, presenting results, and starting as new faculty. 
+
+=== PAGE 3 ===
+ 
+Page 3 of 3 
+ 
+ 
+Harvard’s advice for job market candidates once lived here: 
+http://www.economics.harvard.edu/jobmarket/miscadvice.  It moves around—and the current 
+address appears to be unavailable—but is worth reading when you find it. 
+ 
+Slightly dated but still very helpful job market advice from Bob Hall: 
+http://faculty.chicagogsb.edu/monika.piazzesi/research/advice.pdf.   
+  
+ 

@@ -1,0 +1,23 @@
+# Local builds and previews
+build/
+__pycache__/
+*.py[cod]
+/output/pdf/
+/qa/source-previews/
+/qa/minimal_contact.jpg
+/qa/portable_compile/template/main.aux
+/qa/portable_compile/template/main.log
+/qa/portable_compile/template/main.nav
+/qa/portable_compile/template/main.out
+/qa/portable_compile/template/main.pdf
+/qa/portable_compile/template/main.snm
+/qa/portable_compile/template/main.toc
+/qa/portable_compile/template/pass*.txt
+/qa/information-set-argument-v2/research-reading/
+
+# Duplicate distribution archives
+/paper/information-set-argument-v2.zip
+/output/下载的模板与框架源码.zip
+
+# Captured webpage with session metadata
+/sources/overleaf.html

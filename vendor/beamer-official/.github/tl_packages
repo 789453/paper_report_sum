@@ -1,0 +1,53 @@
+# The test framework itself
+l3build
+#
+# Required to build formats
+latex-bin
+tex
+#
+# Assuming a 'basic' font set up, metafont is required to avoid
+# warnings with some packages and errors with others
+metafont
+mfware
+# Dependencies
+amscls
+amsfonts
+amsmath
+babel-english
+babel-german
+bitset
+booktabs
+cmap
+colortbl
+courier
+dehyph-exptl
+dvips
+ec
+epstopdf
+epstopdf-pkg
+etoolbox
+extsizes
+geometry
+helvetic
+hypdoc
+hyperref
+hyphen-german
+iftex
+infwarerr
+kvoptions
+latex-bin
+letltxmacro
+listings
+lm
+makeindex
+pgf
+pdfescape
+psnfss
+rsfs
+symbol
+times
+tools
+translator
+xcolor
+yfonts
+zapfding

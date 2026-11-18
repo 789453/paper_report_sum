@@ -1,0 +1,144 @@
+=== PAGE 1 ===
+Ruprecht-Karls-Universität Heidelberg
+Fakultät für Wirtschafts- und Sozialwissenschaften
+Alfred-Weber-Institut für Wirtschaftswissenschaften
+Guidelines for presenting a research paper
+Christoph Vanberg, Zeno Enders
+Universität Heidelberg
+This short note provides some hints for students presenting an academic paper. I'm
+assuming that you will have 15-30 minutes for your presentation. (Please look at your
+class syllabus to make sure.) Naturally, every presentation is unique and you may deviate
+from my suggestions if this seems appropriate. However, unless you have a specic reason
+to do otherwise, I suggest that you follow these guidelines closely.
+Focus on the big picture: Keep in mind that a presentation is never a substitute for the
+paper itself. You will not be able to explain everything that the authors have done in their
+paper. Instead, you must focus entirely on only the most important aspects. Begin by asking
+yourself: What is the main question, and what is the main conclusion? Then look at how the
+authors arrived at their conclusion. Focus only on the `big picture' - don't get lost in details.
+Your presentation should summarize this `big picture' so that the audience has an accurate but
+basic idea of what the paper you are presenting achieves.
+Keep it short: Do not prepare too many slides, and don't crowd slides with too much text. A
+single slide with 5 bullet points can easily take 4-5 minutes to present. If you have 15 minutes,
+that means 5 slides may be too much, and 10 slides is denitely too much. (Naturally, if some of
+your slides contain only a simple graph or table, this doesn't apply.) Practice your presentation
+to make sure you can do it in time without rushing. As a rule, you should never write things
+on slides that you do not intend to talk about. This (and too much text overall) is distracting
+for the audience. Ideally, listeners should be able to follow your talk without even looking at
+the slides.
+Be clear and precise: Put yourself into the shoes of your audience. Would you understand
+your own presentation? Think about the order in which you are introducing concepts and facts.
+Remember that the listener does not know what's coming later. Can he still understand what
+you are talking about now? Avoid using technical language. If you do, make sure to provide
+clear and precise denitions. Do not try to impress your audience by making your topic seem
+dicult. The most impressive presentation is one that makes the audience feel like you are
+talking about something simple and easy.
+1
+
+=== PAGE 2 ===
+Find the right `tone': You are giving an academic presentation. This means that you should
+use morally neutral, logically clear language. Do not try to impress your audience with elo-
+quence or excessive wit. Do not make political or moral appeals. Do not exaggerate your own
+knowledge or that of the authors you are discussing. Be modest and skeptical. Always remem-
+ber that there is no certainty even when people do good science. Never get caught saying `these
+authors have found out that storks bring babies.' Instead, say the following: `These authors
+investigated the hypothesis that storks bring babies. To do so, they compared the number of
+babies in households with and households without storks on their roofs, while controlling for
+other factors. They conclude that their evidence is consistent with the hypothesis that storks
+bring babies.'
+Follow a standard outline: You should stick to this unless there are special reasons to de-
+viate. The outline diers somewhat depending on whether you are presenting a theoretical or
+an empirical (perhaps experimental) paper. Let's begin with a typical outline for presenting a
+theoretical paper:
+Outline for a theoretical paper
+1. Motivation and preview
+2. Related Literature
+3. Theory / Model (Assumptions, solution concepts)
+4. Results (Propositions, Theorems)
+5. Conclusion / Discussion
+The motivation should begin with the main research question being addressed. Ideally, this
+should be only one question. You should also explain why the question is interesting. It is
+important at this stage to capture the attention of your audience. One way to do this is to give
+a real world example that listeners are likely to nd important and / or that they can relate
+to. Do not go into too much detail, though. You should also give a rough preview of the main
+conclusion that the paper will arrive at, without explaining why. That's what the rest of the
+presentation will be about. (The motivation should take no more than 1/5 of your time.)
+The related literature part of your talk should mention other papers that have dealt with the
+same question or very similar questions. In some cases, you may also want to mention papers
+that have used similar methods to address another question. Without going into any detail,
+just mention roughly what conclusions those papers come to and how the approach they take
+diers from the one you are presenting. Keep this very brief. (This part of your talk should
+take at most 1/5 of your time.)
+When you present the model or theory, you should identify the main assumptions. Avoid
+mentioning results or conclusions at this point. This is like the part of an exam question where
+the model is being described. The analysis comes later. Also avoid justifying or criticizing the
+assumptions at this point. This should be done at the end (Conclusion / Discussion). If you
+are presenting a game theoretic model, you should also identify the solution concept that will
+be employed (e.g. Nash Equilibrium, Subgame Perfect Equilibrium,...). (This part may take
+1/3 of the time you have available.)
+2
+
+=== PAGE 3 ===
+Next you present the results. These will normally be summarized in Propositions or Theorems.
+Focus on the main results. If possible, provide some intuition as to why they follow from the
+assumptions. Do not go through the details of the mathematical analysis. Keep equations to
+a minimum - avoid them entirely if possible. If you can, explain what the main results would
+imply in the example you mentioned during your motivation. (Use approximately 1/4 of your
+time.)
+Your Conclusion should begin with a single slide that briey restates the question, the type
+of model used, and the main result(s). You may also want to mention larger implications,
+referring back to your example. Following this, you should have at least one Discussion slide
+identifying important criticisms and / or possible extensions. In formulating these, concentrate
+on things that matter for the main conclusions. Avoid discussing aspects that could be changed
+without aecting the main conclusions. (This part may take 1/5 of your time.)
+Outline for an empirical paper
+If you are presenting an empirical paper, the outline will dier somewhat:
+1. Motivation and preview
+2. Related Literature
+3. Theory and Hypotheses
+4. Data
+5. Results
+6. Conclusion / Discussion
+When presenting empirical papers, it is important none the less to provide some theoretical
+justication for the hypotheses being tested. If the authors of your paper do not provide such
+a justication, you should say so explicitly. In either case, the emphasis in part (3) should be
+on identifying the most important empirical hypotheses to be tested. In part (4), you should
+describe the data being used. (What is the unit of observation? What variables were observed?
+How many observations are there? Etc.) In some cases, the order of parts (3) and (4) may be
+swapped if the theory and hypotheses cannot be explained without referring to the specic data
+set that the paper uses. Otherwise, you should nish part (4) by explicitly explaining how the
+main hypotheses can be tested using the data. The results section should summarize the main
+empirical ndings and how they can be interpreted. For each nding, mention the underlying
+test, the degree of statistical signicance, as well as the magnitude of the eects. Make sure
+to distinguish between statistical statements and interpretations. (For example, suppose the
+authors nd that stork nests are signicantly related to the number of children in a house -
+a statistical statement - and interpret this as support for the theory that storks bring babies.
+It would be wrong to say that the authors `nd that storks bring babies'.) In the discussion
+section, try to assess (a) whether the authors' interpretation of their data is plausible (`internal
+validity': did storks bring babies to the houses included in the data set?), and (b) whether
+these conclusions have implications for the world outside of their data (`external validity': do
+storks bring babies to other houses as well?).
+3
+
+=== PAGE 4 ===
+Outline for an experimental paper
+If you are presenting an experimental paper, the outline is almost identical.
+1. Motivation and preview
+2. Related Literature
+3. Theory and Hypotheses
+4. Experimental design and procedures
+5. Results
+6. Conclusion / Discussion
+The only dierence is that section (4) now describes how the experiment was conducted. Try
+to distinguish clearly between `design' and `procedures'.
+`Design' refers to the substantive
+content of the experiment, e.g. what decisions are participants being asked to make, what
+game are they playing, etc. `Procedures' refers to details such as how subjects were recruited,
+whether computers were used, etc. In a short presentation, you should spend almost no time
+on `procedures' unless they are very important for the paper you are presenting. You should
+mention where the experiment was conducted, the number of subjects involved, and the number
+of decisions being recorded. Don't waste time on details such as how many women or men there
+were, what elds they studied, etc. (again - unless these aspects are unusually important for the
+paper you are presenting). As above, Sections (3) and (4) might be interchanged if appropriate.
+If not, section (4) should specify exactly what the theory / hypotheses mean in the context
+of the experiment.
+4

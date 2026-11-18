@@ -1,0 +1,13 @@
+{
+  "id": "H04",
+  "category": "anti-AI-prose",
+  "repository": "ai-zixun/humanizer-zh",
+  "commit": "f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3",
+  "path": "SKILL.md",
+  "url": "https://github.com/ai-zixun/humanizer-zh/blob/f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3/SKILL.md",
+  "sha256": "d7ef1115ef9f05697bf08dc0218983e0c8fcb472e5c33eb4bb1d6faa200c0a32",
+  "bytes": 10116,
+  "license_file": "LICENSE",
+  "license_preview": "MIT License\n\nCopyright (c) 2026 aizixun\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof",
+  "retrieved": "2026-11-16"
+}

@@ -1,0 +1,96 @@
+% !TeX program = xelatex
+\documentclass[11pt,aspectratio=43,compress]{beamer}
+\usepackage{ruc-research}
+
+% 方括号内为页脚短标题、姓名和机构。
+\title[汇报标题]{汇报标题}
+\subtitle{副标题（可选）}
+\author[汇报人]{汇报人姓名}
+\institute[机构]{机构名称}
+\date{汇报日期}
+
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]
+  \titlepage
+\end{frame}
+
+% 删除目录页后，\section 仍可用于顶部导航。
+\begin{frame}{目录}
+  \tableofcontents
+\end{frame}
+
+\section{版式示例}
+
+\begin{frame}{分栏与文本框}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{.47\textwidth}
+      \textbf{正文栏}
+      \begin{itemize}
+        \item 一级条目
+        \item \alert{重点文字}
+      \end{itemize}
+    \end{column}
+    \begin{column}{.47\textwidth}
+      \begin{block}{文本框标题}
+        在此填写需要单独展示的文字。
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{公式与交叉引用}
+  \begin{equation}\label{eq:example}
+    y = \alpha + \beta x.
+  \end{equation}
+  式~\eqref{eq:example} 中，$\alpha$ 为截距，$\beta$ 为斜率。
+\end{frame}
+
+\section{图表示例}
+
+\begin{frame}{三线表}
+  \begin{table}
+    \centering
+    \caption{表格标题}\label{tab:example}
+    \begin{tabularx}{.84\textwidth}{@{}Yrr@{}}
+      \toprule
+      项目 & 组 A & 组 B \\
+      \midrule
+      指标一（单位） & 1.2 & 1.8 \\
+      指标二（单位） & 2.4 & 3.0 \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+  \source{表~\ref{tab:example} 使用占位数值。替换时可在此填写数据出处。}
+\end{frame}
+
+\begin{frame}{图形与图注}
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[
+      box/.style={draw=tsinghua, rounded corners=2pt, minimum width=2.3cm,
+                  minimum height=.85cm, align=center},
+      node distance=.85cm
+    ]
+      \node[box] (a) {环节一};
+      \node[box, right=of a] (b) {环节二};
+      \node[box, right=of b] (c) {环节三};
+      \draw[tsinghua, thick, -{Stealth}] (a) -- (b);
+      \draw[tsinghua, thick, -{Stealth}] (b) -- (c);
+    \end{tikzpicture}
+    % 使用自己的图时，可将 tikzpicture 换为下面这行，并填写实际文件名：
+    % \includegraphics[width=.9\linewidth,height=.48\textheight,keepaspectratio]{assets/figure.pdf}
+    \caption{流程示意}\label{fig:example}
+  \end{figure}
+  \source{图~\ref{fig:example} 为排版示意。替换时可在此填写图件出处。}
+\end{frame}
+
+% 不需要附录时，删除从 \appendix 到 \end{document} 之前的内容。
+\appendix
+\section{附录}
+
+\begin{frame}{附录示例}
+  在此填写补充材料。
+\end{frame}
+
+\end{document}

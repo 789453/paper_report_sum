@@ -1,0 +1,2642 @@
+
+=== PDF PAGE 1 ===
+ 
+1
+On the Information Set of Individual Investors* 
+ 
+ 
+ 
+ 
+Toomas Laarits 
+NYU Stern School of Business 
+ 
+Jeffrey Wurgler 
+NYU Stern School of Business and NBER 
+ 
+ 
+ 
+ 
+April 27, 2026 
+ 
+Abstract 
+ 
+Browser data from individual investors offers direct and detailed evidence about the information 
+that shapes their beliefs. The median individual investor spends approximately six minutes on 
+online research per trade on traded tickers, typically just before the trade, while the mean 
+investor spends around thirty minutes. On average, individual investors allocate most research 
+time to price charts, followed by analyst opinions, and do not show much interest in traditional 
+portfolio or risk statistics. Information-gathering behavior is also heterogeneous: investors differ 
+substantially in the depth and breadth of stock research, and those who trade speculative stocks 
+are more likely to focus on short-term information.  
+ 
+ 
+ 
+Keywords:  Individual investors; Clickstream data; Investor attention; Information acquisition; 
+Household finance
+ 
+* NYU Stern School of Business, 44 West 4th St., New York, NY 10012. Laarits: tlaarits@stern.nyu.edu; Wurgler: 
+jwurgler@stern.nyu.edu. We thank Valerie Baldinger, Myeongrok Doh, and Cody Wan for outstanding research 
+assistance. For helpful comments, we are grateful to Xing Huang, Fulin Li, Terry Odean, Raghu Rau, Noah 
+Stoffman, Paul Tetlock, Edward Tufte, and participants at the American Finance Association annual meeting, NYU 
+Stern, the University of Texas at Austin, Texas A&M University, the NBER Conference on Big Data and High-
+Performance Computing for Financial Economics, and the Colorado Finance Summit. 
+
+
+=== PDF PAGE 2 ===
+ 
+2
+I.  
+Introduction 
+Finance research often makes use of a stylized model of how individual investors trade. 
+First, investors acquire information, developing an information set. Second, they process this 
+information into beliefs. Third, they consider these beliefs in light of their preferences. Fourth, 
+based on this consideration, they trade and/or form portfolios. Each stage of the process is 
+complex, nuanced, and crucial to the next process. 
+The stage about which least is known might be the one that sets the process in motion: 
+what information investors actually gather. It is usually not possible to observe much detail about 
+this process at a private, micro level, so one must often make assumptions about the information 
+investors use to form beliefs. Such assumptions are diverse. Classic approaches presume interest 
+in variances and covariances (Markowitz (1952) and Sharpe (1964)). Noise trader models like 
+De Long, Shleifer, Summers, and Waldmann (1990) assume that some investors act on 
+fundamentals while others form beliefs based on irrelevant information. In Hong and Stein 
+(1999), some investors follow “news” while others react to price patterns. Barberis, Shleifer, and 
+Vishny (1998) model beliefs based on attention to earnings realizations. Dividend signaling 
+models posit that investors observe and interpret dividend payments. Several models emphasize 
+attention to past market returns and return extrapolation (Barberis, Greenwood, Jin, and Shleifer 
+(2015) and Adam, Marcet, and Beutel (2017)). Microstructure models and limited attention 
+approaches consider still other information setups. While the amount and types of information 
+investors gather often cannot be based on direct observation, the information structure is often 
+essential to the meaning of these models.  
+Information set concepts are also central to empirical research. Generations of finance 
+students and scholars have thought about market efficiency through information sets that include 
+
+
+=== PDF PAGE 3 ===
+ 
+3
+past prices only (weak form efficiency), all publicly available information (semi-strong form 
+efficiency), and all public and private information (strong form efficiency). Event studies are 
+interpreted in terms of the “market’s” information set that the results support.   
+In this paper, we offer a more comprehensive empirical picture of the information that 
+individual investors acquire. This allows us to treat the information set as an object as opposed to 
+a disparate set of individual pieces. The results are based on a large sample of browser data from 
+an approximately representative sample of U.S. individual investors. Timestamped URLs allow 
+us to observe—or, in some cases, reconstruct using the Internet Archive—the range of 
+investment-relevant stock research that occurs between and around an investor’s trades. To our 
+knowledge, the first paper that uses a sample of individual investor clickstream data is Gargano 
+and Rossi (2018). We build substantially on their findings, as their data are based on customers 
+of a single broker and relative to our data, only coarser aspects of research activity within that 
+one domain can be observed. More recently, Kwan, Liu, and Matthies (2026) use a clickstream 
+data set containing news article reading activity by institutional investors, focusing on how they 
+shift attention between macroeconomic and individual stock news as a function of aggregate 
+volatility. In short, relative to these samples, our data contain especially high resolution, allowing 
+us to uncover several basic facts about individual investor stock research and the information that 
+such investors acquire.  
+Specifically, the raw data for the investors that we focus on—households that trade any 
+individual U.S. stocks or ADRs in any online brokerage account over four months of 2007—
+include over 8 million clicks and 60,000 hours of Internet use. We identify 484 household-
+traders (“individual investors”) who make 2,911 trades in the sample. Altogether, they use at 
+least 28 distinct investment-relevant domains, including 8 online brokerages, and also sometimes 
+
+
+=== PDF PAGE 4 ===
+ 
+4
+consult the corporate websites of stocks that they research. We stress that layouts of popular 
+research domains have changed little since 2007, and even the top domains used in stock 
+research are largely the same, so the analysis remains relevant today. The URL text string allows 
+us to trace this activity and understand their information-gathering practices in some detail.  
+With these data in hand, we can provide a detailed picture of key aspects of the 
+information-gathering process and ultimately the basic building blocks of an individual 
+investor’s information set. The process is high-dimensional and can’t be boiled down to a 
+particular hypothesis test. To keep the analysis organized, we characterize research behavior in 
+four main respects: how much research individual investors do (depth), what topics they focus on 
+(topics), how these aspects differ across stocks and investors (heterogeneity), and when investors 
+do their research in the context of an actual trade (timing).  
+With respect to depth, our best estimate is that the median individual investor spends six 
+minutes per trade on research specifically on the ticker(s) traded. The mean individual investor 
+spends 29 minutes per trade. Including research about stocks that are not traded within the 
+sample, thus capturing a notion of information acquisition but with no immediate bearing on 
+market activity, leads to a best estimate that the median investor spends 36 minutes per trade and 
+the mean investor spends 144 minutes per trade. Many investors conduct research across a 
+number of domains; Yahoo Finance is by far the most important non-broker domain. 
+With respect to the topics of research interest, for most investors the plurality of research 
+time is devoted to price charts and technical information. This effort contrasts with standard 
+academic advice, and extensive empirical research, that such information is at best of marginal 
+investment value. Suggesting the importance of defaults, when price charts are consulted, the 
+lookback provided by the page is usually the only lookback horizon considered even when many 
+
+
+=== PDF PAGE 5 ===
+ 
+5
+other lookback horizons are easily selected. Simple snapshot pages with a set of summary 
+statistics, also including a price chart, are also frequently consulted; indeed, they mark the 
+beginning and end of many investor research sessions. Among fundamentals-oriented 
+information, analyst opinions are relatively frequently consulted. Another robust conclusion is 
+that traditional risk statistics attract relatively little specific attention, standing in contrast to the 
+normative emphasis on risk statistics in classical asset pricing theory. 
+We find significant heterogeneity both in the stocks of most aggregate interest as well as 
+research styles across investors. In an extension of Gargano and Rossi’s analysis of cross-stock 
+differences in aggregate interest, the main determinant of attention is firm size. Volatility, 
+including poor recent and momentum returns, and earnings announcement periods also lead to 
+greater attention. The first principal component of research differences across investors is the 
+level of research interest across all topics (depth); tying together dimensions of heterogeneity, the 
+second shows that investors who give most attention to speculative stocks tend to focus on short-
+term or fast-moving information, such as message board discussions and price charts, while 
+those who focus on more mature and stable firms are likelier to consider fundamentals.  
+Finally, with respect to timing, the median individual investor conducts the biggest burst 
+of her stock-specific research in the minutes before a trade. She spends a similar total amount of 
+time in wide windows around buy and sell trades, but attention ramps up more sharply prior to 
+buys. To conclude the investigation, we trace typical investors’ paths through topics and stages 
+of analysis that surround trades, which identifies the topics that attract initial research attention 
+and the topics that are the last to be considered prior to an actual trade. 
+The results contribute toward the unification of the large literature on investor attention, 
+since clickstream data offer a direct measure of attention and information gathering. Barber and 
+
+
+=== PDF PAGE 6 ===
+ 
+6
+Odean (2008) showed that stocks with heavy news coverage or extreme daily returns or volume 
+capture the attention of retail investors, although the underlying topics generating the news, 
+returns, and volume are not always clear; we are able to shed light on this. Tetlock (2010) studies 
+the impact of news on return reversal and volume-induced momentum. Da, Engelberg, and Gao 
+(2015) find that aggregate Google search volume about economic downturns predicts market 
+volatility and fund flows. Subsequent work has sought to further disaggregate types of 
+information commanding attention, such as Kwan et al. who study online news article accesses 
+and relate them to portfolio allocations of institutional investors. Drake, Roulstone, and 
+Thornock (2012) see an elevated level of Google search volume around earnings 
+announcements. 
+The attention literature has made much progress, but also presents some limitations that 
+we can address here. One pointed out by many authors is that direct measures of attention are 
+difficult to observe. Another is that the literature is a bit fragmented in that different papers 
+identify particular elements of attention. If the aggregate information set of individual investors 
+were a pot of alphabet soup, research has established the existence of certain letters somewhere 
+in somebody’s soup, such letters being earnings announcements or recent returns. However, 
+high-resolution micro data allow us to estimate the full distribution of letters in the aggregate pot, 
+directly observe the distribution within 484 particular bowls, and also observe trading activity 
+alongside attention. In this way, the analysis brings together some of the associations observed in 
+the attention literature and their distributions and relative prominence. 
+More generally, the stylized facts about depth, breadth, heterogeneity, and timing of 
+research behavior help to guide asset pricing frameworks toward promising assumptions about 
+the upstream information-gathering process, and thus toward more accurate information set 
+
+
+=== PDF PAGE 7 ===
+ 
+7
+assumptions on which to build downstream beliefs, trades and portfolios, and prices. As one 
+example, modeling approaches may need to incorporate a more explicit role for beliefs based on 
+historical price patterns, perhaps at default lookback horizons provided by research sources, to 
+get accurate predictions about individual investor behavior. Greenwood and Shleifer (2014) work 
+in this direction. On the other hand, models that suppose individual investors make trading 
+decisions based on considered judgments about fundamentals and risk characteristics are on 
+shakier foundations. As another example, models that feature heterogeneity across investors, 
+with different trading habitats working together with different research habits, may be more 
+promising than representative investor approaches meant to fit the whole cross-section of traders 
+and stocks. In the text, we use bullet points to highlight additional specific findings.  
+Section II describes the data and the sample of investors. Section III gives basic statistics 
+on total stock research. Section IV documents which categories of information are of most 
+interest. Section V studies how investor research varies across stocks. Section VI explores 
+heterogeneity in research approaches. Section VII studies research patterns in the context of a 
+trade. Section VIII concludes and comments on directions that we leave to future work, such as 
+connecting the details of information gathering to trading and performance in a more granular 
+way than can be done in the absence of this detail. The Internet Appendix supplements our brief 
+data section here with additional processing details.  
+ 
+II. 
+Sample and methodology 
+ 
+We begin by introducing the clickstream data structure, the main household (“individual 
+investor”) sample, and the approach to identifying stock research.  
+A. 
+Clickstream data 
+
+
+=== PDF PAGE 8 ===
+ 
+8
+ 
+Clickstream data are collected by several companies. Our data were made available by an 
+online research company and were used in a legal context by Bakos, Marotta-Wurgler, and 
+Trossen (2014) and Marotta-Wurgler (2011, 2012). The raw data contains the browsing behavior 
+of tens of thousands of U.S. households in January, February, March, and June 2007, in the form 
+of roughly two billion timestamped URLs. 
+The data provider makes sophisticated efforts to reduce selection biases and form as 
+representative a sample of U.S. households as practically possible. To paraphrase Bakos et al., 
+the households in the sample were recruited using random-digit-dialing distributions. They 
+installed a plug-in that collected the timing and sequence of URLs visited. All computers within 
+the household had such data gathered and aggregated (coincidentally, the timing of the sample 
+coincided with the announcement but not the widespread use of Apple’s iPhone). Confidential 
+and/or personally identifiable data were removed by the data provider.  
+To date, few studies in finance have had the opportunity to study clickstream data, and 
+the relative advantages of our sample vis-à-vis those analyzed in prior work, such as Gargano 
+and Rossi (2018) and Benamar, Foucault, and Vega (2021), are powerful. Our sample appears to 
+be more representative of online households in the U.S., allowing for a greater degree of external 
+validity; the data contain details at the URL level, allowing us to pursue a number of unique 
+questions; and it includes all domains, as opposed to, e.g., a single broker, allowing us to provide 
+a comprehensive account of an average individual investor’s activity.  
+A preliminary is the extent to which our 2007 data sheds light on present practices. We 
+suggest that it does. By 2007, online research and trading were already the norm (Bogan (2008)) 
+and, with respect to research, the Internet was not just the easiest but often the only way to gather 
+most of the stock-specific data items that we track. Consensus earnings, analyst updates, beta, 
+
+
+=== PDF PAGE 9 ===
+ 
+9
+insider selling, institutional ownership, recent price technical patterns, forward P/E ratios—such 
+metrics were, and are, easily accessible via free, continuously-updated data feeds which are a 
+click or two away from the Buy and Sell buttons. Without Internet research, such data are at best 
+cumbersome to obtain.  
+To underscore how little has changed, Figure A1 compares some of the stock-level data 
+detail available in Yahoo Finance in 2007 and today. Yahoo Finance is particularly relevant 
+because it has been the most popular finance research domain for at least twenty years.1 Panel A 
+shows what an investor who was interested in analyst estimates for Salesforce.com would have 
+seen in our sample period, while Panel B shows what the investor would see as of this writing. 
+The page layout is almost identical. The same information is presented, in the same order, with 
+the same historical comparisons. The few differences are minor. In the recent page, some tabular 
+information is also repeated in graphs, whereas in the older page, some additional detail about 
+growth estimates was presented that is no longer available. We have found that the layouts of 
+brokerage-domain research pages have also remained relatively static. In short, the sample 
+appears to reasonably reflect today’s online environment. The Internet was, and remains, the 
+obvious source for stock-specific information, and even the most-used domains have not 
+changed. 
+We focus on the households that trade at least one individual stock in the course of the 
+sample. Henceforth, where context allows, we refer to these household units as individual 
+investors, following Barber and Odean (2002) and others. These are identified from the presence 
+of links such as the following: 
+ 
+1 See https://ir.comscore.com/news-releases/news-release-details/yahoo-finance-ranks-top-financial-news-research-
+site-us-more-18 and https://www.semrush.com/website/top/united-states/finance/. 
+ 
+
+
+=== PDF PAGE 10 ===
+ 
+10
+https://[broker1].com/invest/socreateentry?ordertype="sell"&symbol=GOOG&shares=100. 
+The investor has placed a market order to sell 100 shares of ticker symbol GOOG. Based on the 
+presence of at least one link illustrating an individual stock or ADR trade, we identify a sample 
+of 484 individual investors, who make a total of 2,911 stock trades over the course of the sample 
+period. The raw data for the associated households include around 8.5 million clicks in roughly 
+60,000 hours of Internet use. The investors span eight online brokers, on seven of which trades 
+are executed. We do not have access to the total portfolio composition of these investors, so we 
+direct our analysis accordingly.  
+ 
+Within these investors’ clickstreams, we are able to document research activity, often 
+with some precision, through links such as: 
+http:/finance.yahoo.com/q/ao?s=IMCL. 
+This link indicates the investor’s interest in analyst opinions (“ao”) for the ticker IMCL. Also, 
+given the gap between the time stamp on this link and the subsequent link in the clickstream, we 
+can estimate how long this page was viewed.  
+As a more complex example, consider:  
+https://[broker1].com/stocks/earnings/update_earningsChart.asp?showQTRChange=1&
+display=mountain&overlay=&indicator=volume,1,13,EMA,13&duration=1095&daysfo
+rward=545&year=2006. 
+This investor charted earnings of IMCL (which can be deduced from immediately preceding 
+links) over the last three years (1095 days) and a prediction for the next one and one-half years 
+(545 days). Additional but less interesting details of presentation can be inferred from the link. 
+Every domain has a URL structure and requires processing to extract the useful information. See 
+the Internet Appendix for the main steps of data processing.  
+
+
+=== PDF PAGE 11 ===
+ 
+11
+ 
+While the data offer an account of the investor-level research process with both breadth 
+and granularity, there are some caveats. By definition, the data do not indicate what individual 
+investors learn or already knew from non-Internet sources. However, in a large number of 
+situations, this is less of a concern than it may seem. Already as of 2007, the Internet was, and 
+remains, the only convenient way for individual investors to gather almost all of the specific data 
+items that we track.  
+A subtler limitation is that the data do not indicate an investor’s accumulated “stock” of 
+knowledge as opposed to the flow of information in the clickstream. For information that is 
+short-lived, this is not an issue. An investor interested in a one-week-lookback price chart, for 
+example, cannot make use of that information for long. For longer-lived information, such as 
+dividend yields, it represents more of a limitation. To shed some light on this issue, we look into 
+how research ramps up prior to the trade, reasoning that if a trader was relying on a reservoir of 
+unobservable knowledge, we might not expect a burst of research on that stock prior to the trade. 
+Such a pattern turns out to be fairly typical. 
+Another qualification is that the time spent viewing a data item is not a perfect measure 
+of its relevance to beliefs. Time spent may sometimes exaggerate, rather than understate, the 
+effective scope of investor research, because we do not know how well investors actually 
+understand the information presented to them. Conversely, spending only a few seconds viewing 
+a bit of information does not always indicate a lack of understanding or a lack of interest. For 
+instance, price charts can be grasped quickly. We therefore tabulate not just the average amount 
+of time individual investors spend on a particular topic, but the percentage of investors that spend 
+any time at all. If there is no attention at all to a data item that was a labeled hyperlink away, it 
+was evidently not of much interest and did not enter the investor’s information set. 
+
+
+=== PDF PAGE 12 ===
+ 
+12
+B. 
+Investor sample summary statistics 
+ 
+As described above, we study 484 investors who make 2,911 total U.S. stock and ADR 
+trades over the four-month period. To maintain comparability across investors who may be in the 
+sample for a different number of months, in part because the data provider assembles rolling 
+panels, we report statistics on household-level data, normalized either by the months they spend 
+in the sample or the number of trades they carry out. For the same reason, we construct count 
+variables (such as the number of unique tickers researched) on the household-month level, and 
+average to the household level. 
+ 
+Panel A of Table 1 shows basic demographic information. Head-of-household income is 
+topcoded at $100,000/year ($155,000/year in 2025 dollars). The median is between $75,000 and 
+$100,000. The average age of the head of household is 50 years. The data provider balances the 
+sample to match the population distribution of other characteristics including family size, life 
+stage, and geography.2 We omit such summary statistics for brevity.  
+ 
+Panel B reports general browsing statistics for this sample. We define a browsing session 
+as a series of clicks with a break of no longer than 15 minutes. The mean household in this 
+sample carries out 103 such browsing sessions per month, and the median household comes in at 
+92 sessions per month. During these browsing sessions, the average household visits three 
+unique broker or other finance websites in a month. It spends over three and a half hours on 
+brokerage sites, and another one and a half hours on other finance websites. For comparison, all 
+other browsing time adds up to just over 37 hours per month (2,240 minutes). The time spent at 
+brokerage and other finance sites is skewed. The median household-investor spends 1.4 hours 
+ 
+2 We refer to the sample as “approximately” representative. Against the data provider’s extensive efforts to recruit a 
+representative panel, the selection is that the panel member acquiesces to its data being collected in return for a 
+minor financial incentive.  
+
+
+=== PDF PAGE 13 ===
+ 
+13
+per month (82 minutes) at brokerage sites and the 95th percentile spends close to fifteen hours 
+(880 minutes). 
+ 
+Panel C summarizes trading activity in individual stocks that we observe; we will now 
+switch more fully from “per household” to “per investor” terminology. The average investor in 
+our sample trades in 1.3 browsing sessions per month; the median investor records only half a 
+browsing session with a trade in the average month. Investors are required to trade once in the 
+four-month period to be included in our sample, hence the theoretical minimum value of per 
+month browsing sessions with a trade is 0.25. The average makes 2.2 trades per month, while the 
+median makes 0.7 trades per month. Trading activity is skewed: the 95th percentile investor 
+trades over nine times per month. Trades are roughly split between buys and sells. Among the 
+191 investors whose brokers’ URL format includes the trade size, the mean trade is $13.5 
+thousand, and the median is $2 thousand (we determine the trade price from CRSP and TAQ). 
+The trading-related segments of browsing sessions add up to just over six minutes per month on 
+average. 
+C. 
+Defining stock research 
+ 
+Learning about how individual investors distribute attention across underlying topics over 
+a comprehensive set of potential information sources—eight brokers and over twenty non-broker 
+websites/domains—is one of the most unique opportunities provided by the data.  
+Whereas asset pricing theory and some empirical work often distinguishes between cash 
+flow news and discount rate news, information is packaged differently in practice. Brokerage 
+sites, for example, provide access to a broadly similar list of company-specific data items, and 
+investors can then drill down into these within the same domain. Given a degree of heterogeneity 
+in how websites present content and the detail available in URLs, we must choose an appropriate 
+
+
+=== PDF PAGE 14 ===
+ 
+14
+level of granularity. If our topics are too granular, we risk misinterpreting patterns if an 
+investor’s brokerage or preferred websites happen to offer slightly less-detailed information. If 
+the topics are too coarse, we fail to use the full detail of the data. 
+Balancing these considerations, and giving some deference toward topics emphasized in 
+the literature, we identified the following as “stock research” and potentially essential aspects of 
+the information set: (1) risk statistics, (2) earnings, (3) dividends, (4) other fundamentals 
+(typically valuation ratios or financial statements), (5) analyst opinions, (6) informed ownership 
+and trading, e.g., by insiders, funds, institutions, or short sellers, (7) price charts and price-related 
+data, (8) technical signals, and (9) company website visits for research-relevant purposes. We 
+also classify links as (10) “other” if the topic is determinable but of only rare interest and as (11) 
+“indeterminate” if the link plainly constitutes stock research but lacks the detail to further 
+categorize. Also included within our research totals are “snapshot” or quotes pages that present 
+multiple topics at once; news items with insufficient detail to be classified further; and message 
+board pages where the underlying content is not observable. We describe how we apportion such 
+time to specific topics below and in the Internet Appendix.  
+Two further points are worth noting. First, while we organize the discussion with 
+reference to stock-specific information gathering, macroeconomic news also affects firm-level 
+beliefs. Such research would usually be included as “indeterminate” in our classification. See 
+Kwan et al. for a detailed study of institutional investor attention to macroeconomic versus 
+stock-specific news that uses clickstream data. Second, we choose to focus on content, not 
+presentation format. Essentially the same earnings information can be conveyed through a table, 
+a chart, a news article, or a text press release, for example. While URLs often indicate the 
+presentation format, and the manner in which a given unit of information is presented might 
+
+
+=== PDF PAGE 15 ===
+ 
+15
+impact beliefs through salience effects, we leave that as a topic for future research. Here, we treat 
+the content itself as the first-order input for forming beliefs and the natural starting point for 
+academic study.  
+ 
+III. 
+Research depth: Total time spent 
+ 
+With the sample of individual investors’ research behavior in hand, we start with some 
+broad patterns. The first question, given comprehensive data including all brokers and finance-
+related research for a roughly representative sample of individual investors, is simply how much 
+online investment-related research they actually do. Standard theory and efficient markets 
+research suggest it’s fruitless for an individual investor to spend much time reviewing public 
+information. Investment advertising and the widespread availability of stock information on the 
+Internet, on the other hand, suggests a different message. What are the facts?  
+A. 
+Total time (and main sources) 
+ 
+Table 2 summarizes the total research activity conducted by our investors, summing up 
+over all the topic categories and ticker symbols that were investigated. Panel A reports that 
+investing households spend between one and four months in the sample, three months being the 
+median. To maintain comparability between investors that spend different spells of time in the 
+sample, we construct summary research measures as investor-level averages of monthly values, 
+or normalize by the number of months in sample, or normalize by the number of trades by the 
+investor, as indicated.  
+Panel B provides summary statistics about overall research activity. Recall we define a 
+“browsing session” as a sequence of clicks with a break no longer than fifteen minutes. The 
+average investor carries out close to 29 such sessions a month that include at least some stock 
+
+
+=== PDF PAGE 16 ===
+ 
+16
+research component, and in the course of these research sessions the average investor sees 31 
+unique tickers and visits 3.3 distinct brokerage or other finance sites. We construct these count 
+measures on the investor-month level, average to the household level, and report the statistics of 
+the resulting distribution of N=484 values.  
+In terms of research frequency, the median investor conducts about 15 research sessions 
+per month and encounters 13 unique tickers over that time. The average browsing session with a 
+research component includes 3.6 minutes of stock research. Over the course of the month, the 
+average household carries out about 118 minutes of research, with a median at 37.1 minutes and 
+the 95th percentile clocking in at close to nine hours per month (530 minutes). This heterogeneity 
+(skew) across investors in research time gives more color to the heterogeneity in brokerage login 
+rates across customers in Sicherman, Loewenstein, Seppi, and Utkus (2016). 
+ 
+ We also calculate total research per trade. This measure sheds light on a basic Hayekian 
+question: how much incremental information could be reflected in a typical trade by a typical 
+individual investor. The full sample provides our best estimates of total research time per trade, 
+including research on both untraded and traded tickers (we will break this down further in the 
+next panel). The mean investor carries out 144.2 minutes of research per trade with the 95th 
+percentile coming in at eleven hours, while the 25th and 50th percentile are at 10.5 and 36.4 
+minutes, respectively.  
+The visibility into domains also allows us to establish which sites are most commonly 
+used. This shows the concentration of investor attention on individual websites, which in turn 
+governs the structure of information most easily accessible to individual investors. While 
+intellectual property interests of the data provider limit our ability to unmask most domains, we 
+can establish some key facts. One of the most noteworthy is that information gathering typically 
+
+
+=== PDF PAGE 17 ===
+ 
+17
+goes beyond the brokerage’s domain. Specifically, the mean (median) investor spends 55.7 
+(13.3) minutes per trade at the broker’s site, 45.3 (0.1) minutes at Yahoo Finance, and 41.9 (3.5) 
+minutes on one or more of the other twenty-odd finance-relevant sites that they use. For the 
+research-intensive investors that most affect the mean, non-broker time actually constitutes the 
+majority of their stock research time.  
+Yahoo Finance is by far the most important non-broker finance research site. Its 
+dominance continues to this day. Some investors are power users, but more than half consult it at 
+least once within the sample period. Yahoo Finance also appears at or near the top of any Google 
+search involving a particular stock, which perpetuates its dominance and explains why more than 
+half of investors use it at least once. Further attesting to the importance of this domain, 
+Lawrence, Ryans, Sun, and Laptev (2018) conduct a field experiment and show that earnings 
+announcement articles promoted to a mere 1% of Yahoo Finance users affect abnormal returns 
+and bid-ask spreads.  
+ 
+The websites of publicly traded U.S. corporations, specifically those that can be matched 
+to CRSP tickers, are another source of relevant information. Determining whether such browsing 
+constitutes deliberate investment-driven research requires assumptions guided by detailed 
+examination of the clickstream, since so much internet activity occurs on domains of public 
+corporations that is not especially investment-relevant (e.g., shopping on amazon.com or 
+reviewing bank balances at citibank.com). As described later and in the Internet Appendix, we 
+impose the requirement that a visit to a corporate website qualifies as “research” only when the 
+same household-investor clicks at least one link on another domain that constitutes investment-
+related research on the corresponding ticker. We also impose a running constraint that company 
+
+
+=== PDF PAGE 18 ===
+ 
+18
+website research cannot sum to more than twice the investor’s overall investment-relevant 
+research on that ticker.  
+ 
+Under these rules, more than half of individual investors in the sample consulted websites 
+of publicly traded companies that were also of demonstrated research interest to them. Among 
+the 20% of investors that clicked on a company domain, conducted other research on the same 
+stock, and traded the stock within our sample, the average spent about two minutes per trade on 
+that domain, and the median spent a few seconds (rounding to 0.0 minutes).  
+ 
+The above figures in this table represent best estimates—i.e., based on the largest (full) 
+sample of 484 investors—for overall research time. To answer such questions, which pool both 
+traded and untraded tickers, we do not require all research links to be ticker matched. We also 
+study a subset of 50 investors by requiring that the investor’s stock research has a very high 
+ticker-match rate in the URLs. Whether the ticker(s) being researched is listed in the URL, or can 
+be inferred from adjacent URLs, is determined by the domain’s setup, not by the investor. These 
+investors are not different from the full sample in any observable way—they trade with similar 
+frequency, perform similar levels of overall research, and have similar age and income 
+demographics. 
+ 
+Within this subsample, we can answer questions about how much time individuals spend 
+on research on the stock that they actually traded. Panel C shows key research statistics for this 
+subsample. We start by tabulating minutes per month and minutes per trade on research on both 
+traded and untraded tickers to confirm that the subsample has a similar distribution of overall 
+research time as the full sample. Now, with this subsample, we can estimate minutes per trade on 
+research on the stocks actually traded. Consistent with the considerably greater number of tickers 
+researched than the number of trades made, only a fraction of overall stock research time is 
+
+
+=== PDF PAGE 19 ===
+ 
+19
+devoted to stocks actually traded. Specifically, our best estimates are that the mean investor 
+spends 29.1 minutes per trade researching the traded ticker, and the median investor spends 5.7 
+minutes per trade.  
+ 
+There are only a few estimates in the literature available to compare to these. Lease, 
+Lewellen, and Schlarbaum (1974) conduct a survey of “long-term” customers of a “large 
+national retail brokerage” from 1964-1970. The response rate was 40%. The median respondent 
+reported spending three to five hours per month “in investment analysis and decision-making for 
+your securities portfolio” and a mean of nine hours per month. In light of the characteristics of 
+brokerage survey respondents who are “long-term” customers, one expects a bias toward active 
+investors, which may explain why the reported amount of time per month would put the Lease et 
+al. survey respondents in high percentiles of research per month in our sample. Perhaps the most 
+fundamental difference with ours is that the Lease et al. data reflect a different era in terms of 
+data availability and research environment.  
+ 
+The second point of comparison is in Gargano and Rossi. Their sample, like Lease et al.’s 
+sample, pertains to customers of a particular brokerage, and the data unfortunately do not contain 
+research activity outside their broker’s domain or details of the type of research. We do find 
+good agreement where comparisons can be made. In particular, in Gargano and Rossi’s data, the 
+reported time totals and sample size imply that the investors spend a mean of 2.1 minutes per 
+weekday of broker-site research. In our sample, when we limit information gathering to an 
+investor’s broker’s website only, we estimate a mean of 1.8 minutes per weekday of stock 
+research. This agreement increases our confidence in our sample and, in turn, the implication that 
+one must look outside the broker’s domain for research activity or risk missing more than half of 
+the mean investor’s total research time.  
+
+
+=== PDF PAGE 20 ===
+ 
+20
+ 
+Finally, for context, Panel D reports the time spent at brokerage or other finance sites for 
+reasons other than research, e.g., banking. Here we report the number of browsing sessions that 
+included time at any brokerage or finance site but did not include an explicit stock research 
+component. Since details of within-brokerage, non-research activity are not a special advantage 
+of our data, we refer the reader to Gargano and Rossi for these tabulations.  
+B. 
+Summary—Total research activity 
+ 
+ 
+The data present a number of new stylized and quantitative facts about “how much” 
+information enters the information set through a comprehensive set of Internet-based sources. 
+With respect to total research time, our best estimates are: 
+ The mean (median) investor spends around 144.2 minutes (36.4 minutes) per trade on 
+stock research on any ticker (or, occasionally, a fund, option, or other investment 
+instrument).  
+ The mean (median) investor spends 29.1 minutes (5.7 minutes) on stock research on the 
+tickers that he or she actually trades.  
+ For the mean investor, less than half of research time is spent within the brokerage 
+domain.  
+ 
+IV. 
+Research breadth: Interest by topic 
+We next break down the research time totals into types of underlying information 
+observed, which is perhaps the most unique opportunity of all presented by these data. We report 
+time spent on specific topics normalized by the number of trades that investor carries out over 
+the course of the sample. While a great deal of research establishes that individual investors are 
+stimulated to trade by certain types of information, e.g., earnings announcements, there has been 
+
+
+=== PDF PAGE 21 ===
+ 
+21
+little ability to document absolute interest at the investor level or per-trade level, or even relative 
+interest across types of information. 
+In this analysis, samples are again relevant. The full sample of 484 investors gives us the 
+best estimates of total time research breakdowns across categories. The subsample of investors 
+for which we are able to attach a very high fraction of the investors’ links to particular ticker 
+symbols provides our best estimates of the breakdown of research activity for the specific stocks 
+that are actually traded—in effect, a notion of the amount and types of firm-specific information 
+that the average individual investor’s trades might “inject” into prices. 
+A. 
+Mixed-content pages 
+A complexity to carefully address is that some pages present multiple types of 
+information. For example, investors frequently access detailed quote pages, often referred to as 
+“snapshots” by their broker site or Yahoo Finance, which contain a variety of information—
+earnings, price charts, dividends, and so on. Only eye-tracking software would allow us to 
+directly determine attention to the different content types within such pages. News articles of 
+indeterminate content and time spent on message boards present similar complexities. Although 
+snapshots, news, and message boards are characterizations of a dimension of research, they are 
+not specific types of content. After reporting time spent on such pages, we discuss a 
+methodology for attributing time to specific types of content.   
+A.1. 
+Snapshots 
+Snapshot pages will be familiar. They often serve as starting points for deeper research 
+through other links and tabs, but they also may constitute the entirety of a research session. 
+Further, in some cases, investors who trade a given ticker cannot avoid some form of quote page 
+based on the structure of the broker’s website, although she can choose to click past it quickly.  
+
+
+=== PDF PAGE 22 ===
+ 
+22
+Brokerage and finance research domains have largely converged on a format for the 
+snapshot page, with some modest differences in the mix of content displayed. Snapshots virtually 
+always contain current prices, daily percentage return, open/bid/ask, today’s volume, 52-week 
+range, market cap, dividend or yield, a brief earnings statistic, and a price chart with some 
+default lookback period. Beyond those statistics, practices vary. For example, beta was not 
+reported on Yahoo Finance’s snapshot page until years after our sample period, but it was 
+reported on other sites’ snapshot pages. Some snapshot pages include current headlines or 
+detailed analyst forecasts, compare today's volume to a moving average, or report other 
+fundamental data. Others are sparse or provide numerical data without context.  
+In Table 3, we report means and medians of snapshot research time across all investors 
+(in the left columns) and the high ticker match rate subsample (in the right columns), the 
+percentage of those investors spending any time on snapshots, and means and medians of 
+research time conditional on the investor spending some time on snapshots.  
+The mean investor spends 37 minutes per trade on snapshot pages. Nearly all investors 
+(93%) spend at least some time on such a page, but the median investor spends only 6.5 minutes 
+per trade. The mean investor in the high ticker match rate subsample shows roughly similar 
+behavior. Since investors may click on several stocks’ snapshots around any given trade, the 
+amount of time spent on the snapshot of a stock for which we actually observe a trade in the 
+sample is lower. Referencing the last columns, our best estimate is that the mean (median) 
+investor spends 11.1 minutes per trade (1.1 minutes) on snapshots of the traded stocks.  
+A.2. 
+News and message boards 
+
+
+=== PDF PAGE 23 ===
+ 
+23
+We often observe that an investor is reading a stock-related message board, but the nature 
+of the content that increments the information set is unknown.3 We treat the message board as a 
+format that reflects a mix of underlying content, and in this respect resembles snapshots. News 
+links present a similar challenge. The link may indicate that the article is about Intel but not 
+whether it involves an earnings announcement or an analyst interview. In such cases we label the 
+links as “Message Board” and “News – Indeterminate.” See Kwan et al. for an investigation of 
+institutional investor attention to a large set of financial news articles that is matched to funds’ 
+holdings. 
+Of these two types of mixed-content links, news is the more important, although both are 
+less important than snapshots. News of indeterminate nature occupies a median of 2.6 minutes 
+per trade, and message boards are used by only a fifth of investors; among these, a few spend a 
+good deal of time, but even the median message-board user spends less than two minutes per 
+trade. The last columns show that the majority of news pertains to stocks that are not actually 
+traded; the average investor who trades a certain ticker spends 1.2 minutes on news of unknown 
+content about that ticker.   
+B. 
+Imputing mixed-content links to specific content 
+In an attempt to provide a full, albeit imperfect, accounting of the types of information 
+that enter an investor’s information set, we also impute research time on these mixed-content 
+pages to specific types of content. The method for which we report results in Table 3 is described 
+fully in the Internet Appendix, and some alternatives are discussed there as well. The basic 
+approach we report herein is as follows. We allocate snapshot time to specific categories of 
+ 
+3 Twitter (now X) had just begun operations in mid-2006, and its usage was minuscule as of our sample period: 
+https://www.internetlivestats.com/twitter-statistics/. Blogging was also in its infancy. See Cookson, Mullins, and 
+Niessner (2024) and Cookson, Lu, Mullins, and Niessner (2024) for more recent evidence on social media as an 
+outlet for financial information.   
+
+
+=== PDF PAGE 24 ===
+ 
+24
+content based on investor interest in those specific categories when such attention can be 
+observed, as reported in the third column of Table 3. We allocate news of otherwise 
+indeterminate type to specific categories using breakdowns of present-day news articles 
+constructed by RavenPack. Finally, we allocate message board content using the distribution of 
+content that we find on the Reddit r/stocks message board as of the time of this writing. See 
+Antweiler and Frank (2004) for an analysis of the content of message board postings and 
+Neuhierl, Scherbina, and Schlusche (2013) for a detailed breakdown of the content of corporate 
+press releases.  
+C. 
+Specific topics 
+C.1. 
+Risk statistics 
+The standard academic advice for individual investors is to allocate a fraction of portfolio 
+wealth to a diversified portfolio and the rest to a riskless asset. Each investor in our sample has 
+disregarded that advice, at least to some extent, since he or she is trading individual stocks. For 
+such investors, academics offer the advice to, at a minimum, be sure to distinguish alpha from 
+beta. It is interesting to see the extent to which investors consult standard risk statistics, such as 
+beta and volatility, or perhaps ignore academic advice here as well.  
+The data suggest that very few investors dig into standard risk statistics. Only seven out 
+of 484 investors demonstrated specific interest in beta or volatility over the course of months in 
+the sample, and only a few drilled down into risk information on a ticker that they traded. This 
+may be an undercount of interest in risk statistics, because risk statistics are, in some domains, 
+also presented as line items in snapshots. Upon imputing snapshot time to specific content types 
+(which may, in contrast, lead to an overcount), we estimate that the mean investor spends 1.8 of 
+her 144.2 minutes per trade of total research on risk statistics; the median investor spends a 
+
+
+=== PDF PAGE 25 ===
+ 
+25
+fraction of a minute on risk statistics in all stocks, and a few seconds on such statistics of the 
+stocks that she actually trades.  
+C.2. 
+Dividends, earnings, and other fundamentals 
+ 
+Some investors seek out hard fundamental information: dividends, earnings, valuation 
+ratios, and the accounting statements and regulatory filings that underlie these figures. We find 
+more interest in this type of research, especially when considered as a whole. Around 40% of 
+investors seek out some sort of earnings information, with just under two minutes of research for 
+the mean investor. Dividends attract at least some direct attention by 17% of investors, and those 
+with that particular interest tend to spend relatively more time on research.  
+ 
+A considerable fraction of investors—53%—explicitly observe some non-earnings, non-
+dividend fundamental information. In this disparate category we group valuation ratios such as 
+price to sales, annual reports, cash flow statistics, and regulatory filings. On average, we see a 
+few minutes of such research per trade. 
+Earnings and sometimes dividend information is provided on snapshot pages. Upon 
+adding this imputed time in the manner described above, the mean investor’s time spent on 
+earnings, dividends, and other fundamentals rises considerably. Median behavior changes less.  
+C.3. 
+Analysts  
+Analyst reports and estimates are observed fairly frequently. 71% of investors consider 
+this type of information in some measure over the course of the sample. The mean investor 
+spends over 12 minutes per trade on analyst reports; conditional on doing any such research, the 
+mean investor spends 17.5 minutes. Time on analyst reports is skewed, with the median investor 
+with an interest in analyst behavior carrying out only 2.5 minutes of it per trade.  
+C.4. 
+Ownership 
+
+
+=== PDF PAGE 26 ===
+ 
+26
+Ownership-related research includes statistics about short-selling, institutional or mutual 
+fund ownership, or insider ownership or trading. This groups together market participants that 
+the average individual investor might, or perhaps should, suspect to have generally better 
+information. The median investor who consults this information does so for under a minute per 
+trade. This does not necessarily indicate disinterest, since as mentioned above it would not take 
+long to read the percentage of institutional ownership or short interest outstanding; so, it is more 
+telling that only about a quarter of individual investors actively seek out such information. Some 
+type of ownership information is included on most major brokers’ snapshot pages, although there 
+was none on the Yahoo Finance snapshots at the time. Overall, individual investor interest in this 
+category of information is low. 
+C.5. 
+Price charts and technical signals 
+ 
+By far the most commonly sought type of information is the price chart.4 Nearly all 
+individual investors do some of this research. The mean spends 39 minutes per trade on price 
+chart pages, which is even greater than the 37 minutes on snapshot pages—which themselves 
+usually already include a basic price chart.  
+ 
+For most domains, snapshot pages contain a chart showing the intraday path of the 
+nominal share price while dedicated price chart pages more often show the evolution of the share 
+price over the prior month. Only two broker and one non-broker websites deviate from this 
+standard, having one-year default lookbacks on the standard price chart page. Price charts carry 
+some implicit information about risk, which is useful since investors do not seek out detailed risk 
+ 
+4 In price data, we also group price information reported in a tabular form, or, e.g., a short news article about a stock 
+hitting a 52-week high or an analysis of a technical pattern, since the essential information conveyed to the investor 
+is roughly similar. A basic time-series chart is by far the most common way to encounter stock price information. 
+
+
+=== PDF PAGE 27 ===
+ 
+27
+statistics; of course, for context, a stock’s price should usually be considered against some index, 
+but that is generally not provided by default.  
+Figure 1 shows the various lookback horizons that individual investors consider when 
+observing price chart data. This sheds light on the nature of their beliefs about horizons of 
+extrapolation or expected reversal. Panel A includes charts that are shown with default lookback 
+windows and given that snapshots are the predominant type of research, over 70% of observed 
+charts show intraday data. The rest of chart consultations are mostly default chart pages with one 
+month lookback windows.  
+Panel B shows the distribution of lookback periods in the especially revealing case where 
+investors choose to opt out of the website’s default. When doing so, investors tend to look further 
+back. They are most likely to opt for lookback windows between one month and one year, with 
+only a few zooming into more recent data or zooming out beyond one year. Intuitively, this 
+seems consistent with the fact that most individual investors have an average holding period 
+longer than one month, but perhaps the main takeaway is that most investors observe past prices 
+only up to the default lookback. It is intriguing to consider whether the common one-month 
+default lookback relates to the stylized facts of return reversal within one month (Jegadeesh 
+(1990)) and momentum at longer horizons (Jegadeesh and Titman (1993)). 
+ 
+A category closely associated with price charts is technical analysis. We find that 45% of 
+investors look at charts that include additional elements of technical analysis, such as moving 
+averages, oscillators, Bollinger bands, or simpler return-based indicators such as 52-week highs. 
+Overall time spent on technical analysis averages about 6 minutes per trade for those investors 
+who carry out any such research. 
+C.6. 
+Company website visits 
+
+
+=== PDF PAGE 28 ===
+ 
+28
+ 
+For some firms, a potentially important source of stock market information is knowledge 
+about the company’s products. Indeed, advertising itself can be endogenous and manipulated to 
+attract investor attention (Lou (2014)). To capture this aspect of investor interest, we track time 
+the investor-households spend on the URLs associated with tickers that they also separately 
+research on any of the brokerage or finance sites. This means that an investor who has a Citibank 
+account, shops on Amazon.com, or routinely uses search websites such as Google or Yahoo does 
+not get research time “credit” for these tickers unless there is separate evidence of investment-
+related interest. Further, to prevent significant overcounting non-research time for those that do, 
+we limit the running total of company website research time to a maximum of twice the running 
+total of all their other research on the ticker.  
+ 
+In our sample, 290 investors (of 484 total) visit the website of at least one company they 
+also observe in other investment-relevant respects. However, and in spite of carefully managed 
+investor relations pages, company websites are not usually a venue for detailed individual 
+investor research information.  
+C.7.  
+Other and indeterminate 
+ 
+The mean investor spends an average of 13 minutes per trade of “other.” These are links 
+where we can observe or infer the type of research-related information, but it is more obscure 
+theoretically and empirically and doesn’t warrant its own primary category. An example would 
+be highly event-specific information such as executive turnover. The mean investor also spends 
+about 10 minutes per trade of research involving links that are truly “indeterminate,” meaning 
+that other than an ability to determine that the activity denotes investment-related information, 
+we cannot ascertain the content. 
+D. 
+Summary—Interest by topic 
+
+
+=== PDF PAGE 29 ===
+ 
+29
+ 
+The data provide a uniquely detailed portrait of how individual investors consider 
+different types of information. Regarding which types of information investors consider most 
+often, we consider the most interesting takeaways as follows: 
+ Investors spend a considerable amount of time reviewing price charts. Default lookback 
+periods are usually accepted without change.   
+ Much of the remaining information comes from the contents of the snapshot page.  
+ Individual investors display little explicit interest in traditional risk statistics. 
+ As with total research time, individual investors are heterogeneous with respect to which 
+topics they consider. 
+ 
+V. 
+Cross-stock and time series patterns in research 
+A. 
+Research across stocks 
+The most widely researched stock in our sample is Apple, Inc. More than one-quarter of 
+individual investors engage in at least some degree of AAPL investment-relevant research at 
+least once in the four sample months. This is an impressive degree of attention in a single stock 
+which, although quite large, was outside the top twenty in market capitalization. Gargano and 
+Rossi examine the cross-section of total time spent researching stocks in their sample as a 
+function of stock characteristics. We revisit and extend their analysis in a more representative 
+sample that includes both broker and non-broker domains as well as the ability to track specific 
+research topics, including price-based information versus fundamental information.  
+The regressions in Table 4 relate the overall breadth of investor research interest and 
+intensity to stock characteristics, the volume of news articles, and other exogenous and 
+endogenous factors. We consider the top 1000 stocks in market capitalization in these 
+
+
+=== PDF PAGE 30 ===
+ 
+30
+regressions.5 The first three columns focus on the overall percentage of investors with nonzero 
+research time in that ticker-month; the fourth column considers the log of the total number of 
+minutes that sample investors spent on research in that ticker-month; and the last two columns 
+examine relative interest between price- and fundamentals-oriented information. Right-side 
+variables are standardized unless otherwise indicated. 
+The first model shows the dominant effect of firm size in explaining breadth of interest. 
+As a single factor, log market cap explains 32% of the variation of the breadth of research 
+interest across stocks. A one-standard deviation increase in log market cap from its mean doubles 
+the percentage of investors conducting some research within the sample, from an unconditional 
+average of 1.01% to 2.04% (=1.01%+1.03%). In the closest regression to ours, Gargano and 
+Rossi find a weaker relationship to market cap, possibly because a linear market cap variable is 
+less effective in capturing the skewed distribution of research interest. 
+There are several reasons why large stocks get more overall research attention. For 
+example, based on print media article counts, Fang and Peress (2009) find that “firm size has an 
+overwhelming effect on media coverage” (p. 2030). Van Nieuwerburgh and Veldkamp (2009) 
+predict that investors should pay more attention to higher-cap stocks. Liquidity, ETF and index 
+inclusion, information availability, investment constraints, familiarity bias, basic equilibrium 
+considerations—it is hard to think of a mechanism that would not predict a strong positive 
+relationship between aggregate attention and market cap.  
+To look for more subtle effects, the next specification includes a number of relatively 
+exogenous covariates and Fama-French 49 industry dummies. Even collectively, these variables 
+increase cross-sectional explanatory power for total research time only another 13%, while 
+ 
+5 Restricting to stocks that receive nonzero research interest in the sample leads to similar conclusions. Over 80% of 
+stocks in the CRSP universe attract at least some research time in our sample.  
+
+
+=== PDF PAGE 31 ===
+ 
+31
+increasing the firm size effect. We start by adding two time-varying news variables. The first is 
+total news coverage, not necessarily investment focused, constructed as the number of unique 
+news items (articles and press releases) in the RavenPack database. Controlling for size, 
+companies that are more often in the news are subject to more research attention. This 
+specification also includes a dummy for whether the stock had an earnings announcement in the 
+same month. Drake, Roulstone, and Thornock (2012) observe an elevated level of Google search 
+volume around earnings announcements.  
+In terms of firm characteristics, research attention is also greater in lower-priced stocks, 
+higher-risk stocks, stocks with poor returns over the prior year, non-dividend paying stocks, and 
+stocks outside the S&P500 (albeit still within the top 1000 market cap). The effect of volatility in 
+our regressions is consistent with Barber and Odean (2008). Also, given that splits reduce 
+nominal price and increase volatility, these patterns are also consistent with Shue and Townsend 
+(2021). Among the unreported fixed effects, and consistent with Gargano and Rossi, we find that 
+consumer-facing retail and computer hardware and software industries gain wider research 
+interest among individual investors, other factors held constant.  
+ 
+The third specification adds three endogenous factors—the retail share of trading volume, 
+as estimated by Boehmer, Jones, Zhang, and Zhang (2021), and the percentage of individual 
+ownership, as measured by 100% minus the percentage of institutional ownership, and the log 
+number of total shareholders. Consistent with intuition, controlling for size, stocks that 
+individuals disproportionately hold and trade also disproportionately attract broader research 
+attention. In total, with the full set of exogenous and endogenous variables and industry fixed 
+effects, we can explain about half of the cross-section of breadth of research interest across the 
+top 1000 stocks.  
+
+
+=== PDF PAGE 32 ===
+ 
+32
+ 
+The next column uses the log of the total number of research minutes by investors in that 
+stock-month as the dependent variable, which is the specification closest to Gargano and Rossi. 
+This reflects both research interest breadth and research depth. In general, the same factors and 
+characteristics that drive breadth alone also drive this measure of research interest.  
+ 
+In the last columns, we consider how the relative breadth of interest in prices versus 
+fundamentals-related information varies across stocks. Roughly speaking, price information 
+attracts more attention for low nominal price stocks, and those with volatile and high recent 
+returns. In concert with the first set of results, this fleshes out the picture for research attention to 
+high-risk stocks: High price volatility is associated with elevated research attention to all topics, 
+but especially attention to prices themselves. An interesting question is whether this pattern 
+could contribute to price fragility or reflect a feedback loop.  
+B. 
+Research around events 
+Panel regressions from Table 4 suggest that elevated news coverage and earnings 
+announcement periods increase research activity, but the limited length of the panel prevents 
+firm fixed effects and pools data coarsely. In Figure 2, we analyze research attention during 
+news-intensive periods for three widely researched companies. We also compare the breadth of 
+research interest in our data to the search intensity measure from Google Trends. This is an 
+important extension because, lacking more detailed data, researchers have increasingly used 
+Google data as a proxy for general investor attention. For instance, Da, Engelberg, and Gao 
+(2011) create indices of investor attention using Google search data. They find that increased 
+search attention predicts higher prices in the subsequent weeks, eventual reversals over the long 
+run, and IPO underperformance. Da et al. (2015) find that aggregate Google search volume in 
+topics related to economic downturns has predictive power for market volatility and fund flows. 
+
+
+=== PDF PAGE 33 ===
+ 
+33
+ 
+What does granular data at the level of individual investors tell us? Panel A looks at a 
+month of Microsoft activity that includes a quarterly earnings announcement. We plot research 
+behavior in the clickstream data, measured as the number of investors engaged in investment-
+relevant research, alongside Google Trends search volume for the ticker symbol “MSFT” as a 
+proxy for investment-focused search activity.  
+ 
+There is a strong agreement between the methods for measuring research attention. This 
+has two encouraging and significant implications. First, it supports the use of Google search 
+volume as a general investor interest measure when lacking more detailed data that directly 
+captures actual research activity at a granular level. In both data sets, breadth of interest peaks 
+around the quarterly earnings announcement. Thus, our sample is large enough to capture 
+essential investment-related interest despite being far smaller than Google’s random sample. 
+Second, in the other direction, our sample validates that Google Trends can accurately measure 
+time variation in general investor interest and attention to individual tickers.6 
+ 
+As mentioned above, Apple is the most-researched company in our sample period— 
+Gargano and Rossi found the same in their more recent data. Panel B shows a month of activity 
+that includes both the announcement of the iPhone and a regular quarterly earnings 
+announcement. We again observe a local maximum in clickstream data interest around the 
+earnings announcement and another spike around the product announcement. Clickstream data 
+have the advantage that we can isolate investors who do at least one type of investment-related 
+research about Apple from those who are solely interested in a new product.  
+ 
+Our third example, in Panel C, involves Sirius, which has far greater research interest 
+than its capitalization would suggest. This is to a large extent driven by a merger announcement. 
+ 
+6 Due to Google Trends normalizations, one cannot directly use it to estimate absolute levels of investment-related 
+interest, i.e., the number or fraction of Googlers interested in a particular term.  
+
+
+=== PDF PAGE 34 ===
+ 
+34
+Extrapolating the number of investors in our sample who research Sirius to the population 
+implies an enormous focus of investor attention on this small stock around this singular event. 
+The talk show host Howard Stern had recently moved to Sirius prior to our sample, likely fueling 
+individual investor attention to corporate events. Here again, investor interest based on browser 
+data supports the use of Google Trends. Also, consistent with this particular episode, Drake et al. 
+find that acquisition announcements are particularly strong events in terms of boosting Google 
+search volume for a ticker symbol.  
+C. 
+Summary—Cross-stock patterns in research intensity 
+ 
+Primary patterns in the cross-section of research attention include: 
+ Market capitalization is the most important characteristic explaining research interest. 
+ Controlling for market cap, stocks that are riskier, lower nominal price, non-dividend 
+paying, and have high recent returns get more attention. 
+ Research attention tilts toward price-based information, as opposed to fundamental 
+information, in high-risk and high momentum stocks.  
+ Earnings announcements and unusual events can temporarily boost research attention far 
+beyond typical levels. 
+ 
+VI. 
+Research styles: Heterogeneity in depth, breadth, and focus  
+ 
+The summary statistics earlier showed substantial heterogeneity in the total amount of 
+time that investors spend on research. Upon investigation, the higher research time mean is not 
+driven by the more frequent traders. The correlation between an investor’s number of stock 
+trades and the average research minutes per trade is -0.10; and the rank correlation is -0.22. 
+Research per trade is even less correlated with dollars traded per trade. Hence, the heterogeneity 
+
+
+=== PDF PAGE 35 ===
+ 
+35
+is important. To understand how the bulk of research maps into trading and market outcomes, we 
+need to look broadly across investors.  
+ 
+We use principal components to characterize some of the heterogeneity in research 
+behavior in more detail. For this analysis, we restrict the data to research matched to tickers, and 
+we create indicator variables for any investor-category that sees more than two minutes of 
+research per month. (This leads to excluding the risk statistics category.) Ticker-matched 
+research allows us to augment these indicator variables with features that capture the nature of 
+the stocks that the particular investor focuses on. Specifically, we construct a stereotypical-stock-
+type variable based on the investor’s propensity to research stocks across the characteristics 
+included in Table 4. It is higher for an investor who tilts her interest toward volatile, small, 
+younger, lower nominal price “speculative” stocks and lower for an investor with more interest 
+in larger, older, dividend-paying “bond-like” stocks. This coarse separation is motivated by 
+patterns in Baker and Wurgler (2006). 
+The first principal component reported in Table 5 is the level effect. Some investors just 
+do more research on any and all topics than other investors. This shows the importance of the 
+skewness in overall research time that appeared in the summary statistics. The level effect 
+explains about 27% of the variation.  
+Whereas the depth of research is independent of a focus on speculative stocks, the second 
+principal component, which explains about 9% of the variation, does relate to the types of stocks 
+investigated. The second principal component distinguishes between speculative-stock investors, 
+who tend to focus on faster-moving information such as news, message boards, brief summary 
+statistics, and price charts, from investors who focus on less speculative stocks and tilt their 
+research time toward earnings and slow-moving “hard” fundamentals. This finding relates to 
+
+
+=== PDF PAGE 36 ===
+ 
+36
+some cross-stock patterns in Table 4. There, we saw that higher-risk stocks saw more price-based 
+research; here, we see that this to some extent reflects the styles adopted by a subset of investors 
+rather than a general tendency across all investors.  
+Beyond these two components, there is a large amount of unexplained heterogeneity in 
+research behavior and, hence, heterogeneity in information sets and beliefs. The results get a step 
+closer to the origins of Giglio, Maggiori, Stroebel, and Utkus (2021)’s conclusion that retail 
+investors’ “beliefs are mostly characterized by large and persistent individual heterogeneity” (p. 
+1481). 
+In summary, with respect to investor heterogeneity: 
+ Some investors show more attention to information of any and all types; the skewness of 
+the distribution of research time per trade is not driven by different investors paying 
+attention to different particular topics.  
+ Investors who research relatively speculative stocks give extra attention to fast-moving 
+information. Investors who research relatively bond-like stocks focus somewhat more on 
+slower-moving information. 
+ 
+VII. 
+Stock research in the context of trading 
+As a final step, we study research behavior in the context of an investor’s decision to 
+trade a specific stock, as opposed to their broad patterns of information gathering. While there is 
+no simple way to summarize the information gathering process for all trades, in all stocks, by all 
+individual investors, narrowing focus to this perspective ties a number of the previous analyses 
+together in perhaps the most important context. 
+A. 
+Time spent in the run-up to a trade 
+
+
+=== PDF PAGE 37 ===
+ 
+37
+These data capture the temporal pattern of overall research around a trade. In Figure 3, 
+we focus on trades made by the 50 investors whose links in the research-related clickstream can 
+be fully or almost fully associated with specific tickers, as in previous analyses that require this 
+level of detail. We allocate research time in a to-be-traded ticker to the next trade in that stock; if 
+no further trade occurs, we count research time as “post-trade” research. Cumulation of time for 
+any given investor-trade in a specific stock starts either at the beginning of the sample, or 
+immediately after a previous trade in the same stock. In cases where the investor trades multiple 
+times over the course of our sample, we create an average cumulation of research time per trade 
+as a summary of that investor’s approach to research efforts prior to a trade.  
+The left panel on Figure 3 plots the mean research time in the ticker traded at t=0 from 
+ten calendar days before the trade to two days after. Each vertical bar marks a 24-hour period, 
+and the periodic flat spots arise from pauses in research activity between typical trading hours. 
+Note that cumulative research at ten days prior to the trade is already different from zero, 
+reflecting the cumulation starting at the beginning of the sample or after the last trade in the 
+stock. Roughly half of the overall pre-trade research of 20 minutes takes place in the week prior 
+to trade, and about five minutes takes place in a burst just prior to trade. For the mean investor, 
+research on buys is somewhat more concentrated in the immediate run-up while research on 
+sells, being more likely to include monitoring and investigation of existing positions, is slightly 
+more spread out. 
+The median behavior in the right panel of Figure 3 is different. It is unaffected by outliers 
+generated by a few avid researchers, so it provides a more accurate characterization of a 
+“typical” investor’s behavior. The main finding is that a large fraction of individual investors do 
+only a few minutes of ticker-specific research, as shown previously, and much of this takes place 
+
+
+=== PDF PAGE 38 ===
+ 
+38
+in the minutes immediately prior to the trade, as shown here. The median investor carries out no 
+research at all until five days before a trade. The different median and mean behaviors illustrate 
+in another way the heterogeneity in research time spent across investors. 
+B. 
+Information search patterns 
+ 
+What topics draw investors into research, and how does the construction of an 
+information set proceed toward the crucial last topics considered before a trade? The clickstream 
+allows us to investigate these sequential paths. They can be quite complex within any given 
+session. In addition, for any given ticker, research can take place over numerous short or long 
+browsing sessions, and an investor can double back to the same underlying content topic. Sankey 
+diagrams are a useful way to summarize the prominent aspects of search paths.  
+B.1. 
+Search paths 
+ 
+We start by tracking information search paths forward in time unconditionally. When a 
+ticker is researched in any fashion, a fused investor-ticker-session is initiated that includes all 
+research on that ticker within the next ten days. If a given topic is considered multiple times, the 
+first is counted. We collapse all links into topics, given our focus here on the content itself rather 
+than the particular domains that investors consult.  
+ 
+For example, if a session begins with an investor looking into a price chart of a particular 
+ticker, then turns to some consideration of earnings, then turns to dividends, then comes back to 
+a price chart as a last step within a ten-day window, the path would be embedded in the diagram: 
+Price Chart -> Earnings -> Dividends -> END. To preserve original detail, we do not impute 
+topics, i.e., we show snapshot pages as elements of the sequence.  
+ 
+We record these paths in Figure 4. We drop all stocks that a given investor researches 
+within their first 20 days in the sample to create a purer look at a fresh ten-day research window 
+
+
+=== PDF PAGE 39 ===
+ 
+39
+with respect to a given ticker. Our 484 investors generate 16,930 fused investor-ticker-sessions. 
+In the diagram, the thickness of paths is proportional to the number of fused sessions in which 
+that path is taken. 
+ 
+The figure shows the following interesting features. First, snapshots are the modal entry 
+point into ticker-specific research, and price charts are also quite common. This is consistent 
+with Table 3 showing that such pages occupy a large fraction of research time. News of 
+indeterminate nature is also a common entry point. It is unique in that it appears to stimulate, or 
+is at least likelier to be followed by, further investigation, consistent with prior work showing 
+that news attracts investor attention. Second, most sessions terminate with only one type of 
+information (which may include snapshots) considered within a ten-day window. Third, the 
+number of topics consulted does not decline geometrically. Research frequently ends after a first 
+topic of consideration, but searches that proceed past more than one stage often continue to flow 
+to a longer, multi-topic research process. 
+B.2.  
+Search paths that precede a trade 
+ 
+From the perspective of market outcomes and the information injected into market prices, 
+information gathering that ends in trades is the most relevant. In Figure 5, we condition on the 
+end point of a fused session being a trade and look backward. We can then inspect the sequence 
+of information observed in the run-up to the trade. This sheds light on which topics were more 
+likely to have “triggered” a trade and/or provided the final confirmation of beliefs.  
+ 
+Panels A and B condition on buys and sells, respectively. An interesting and somewhat 
+surprising finding is that the sequence of topics reviewed prior to the decision to buy is similar to 
+the sequence prior to the decision to sell. In Figure 3, we noted that total research time and its 
+accumulation is roughly similar for buys and sells, so this figure adds evidence that, typically, 
+
+
+=== PDF PAGE 40 ===
+ 
+40
+buyers and sellers tend to review roughly the same sequence of research topics. Put together, 
+these patterns provide new perspective on models that highlight differences of opinion and 
+beliefs as a motivation to trade. Every buy must contemporaneously match to a sell, and—
+abstracting from the gap-filling role of institutional investors—it hints at how two investors 
+might review similar information, at similar depth and times, yet reach opposite decisions.  
+ 
+Finally, Panels C and D separate investors into tilts toward “fast information, speculative 
+stocks” and “slow information, safer stocks” based on scoring in the lowest or highest quintile in 
+the second principal component in Table 5. Though coarse, this categorization illuminates further 
+heterogeneity in research styles. Note that on average, the total thickness of the paths in any 
+given column in Panel C is thicker than in Panel D. The interpretation is that “slow information, 
+safer stocks” investors tend to consult a broader set of information topics, which by construction 
+involves more fundamentals-oriented information, while those that focus on more speculative 
+stocks are likelier to review only a snapshot, or a price chart and a snapshot, before a trade.  
+C. 
+Summary: Research around trades 
+ 
+In summary, with respect to research around trading: 
+ For the median investor, much of the time spent on research on a particular stock occurs 
+in the minutes before it is traded.  
+ Stock-specific information search around a trade can take many paths, but it usually does 
+not include more than two or three specific topics beyond a snapshot page.  
+ 
+VIII. Conclusions 
+ 
+Using uniquely detailed clickstream data, we document a number of new facts about the 
+research interests and information gathering patterns of individual investors that build up the 
+
+
+=== PDF PAGE 41 ===
+ 
+41
+information set—providing the crucial first input to their beliefs, trades and portfolios, and the 
+determinant of what information their trades inject into market prices. We present some first 
+results about how much stock-specific research is behind the typical investor’s trade, which 
+topics attract most attention, which stocks are most researched and toward what topic, what 
+characterizes investor heterogeneity in research approaches, and when information is gathered in 
+the context of a trade.  
+ 
+These facts significantly increase our understanding of individual investor behavior and 
+the information behind their activity. Of general interest is the fairly modest amount of research 
+on any topic that is done by the typical individual before a trade—on the order of minutes, often 
+concentrated just prior to the trade. Of interest to asset pricing and behavioral finance, individual 
+investors devote more attention to price charts than other topics such as risk statistics and 
+detailed fundamentals, and there is considerable heterogeneity in which stocks are most 
+frequently researched and how different individuals approach research. Default presentations 
+also appear to play a role. Taken together, these facts provide new color on how individual 
+investors form beliefs. 
+There are natural follow-up questions that can be addressed with these browser data. A 
+complex but particularly important one is how an individual investor gets from what she seeks 
+and observes to what she actually trades. This paper is devoted to the basic upstream information 
+gathering patterns, which are already rich. But the next question is, given that an investor sees a 
+particular price pattern in a chart, or certain statistics in a table, how does that drive the trading 
+decision? The full trading process involves beliefs and preferences in complex ways, but we are 
+exploring how browser-based research data provide insight into trading behavior. 
+
+
+=== PDF PAGE 42 ===
+ 
+42
+We can also ask whether individual investors’ research behavior is associated with 
+trading performance. It is an empirical question whether the average individual investor gains an 
+edge based on their own minutes (or, occasionally, hours) of research. For the typical individual 
+investor, is it true that “more research is needed”? If so, how much, and of what type? Are some 
+individual investors better than others and what distinguishes them? Gargano and Rossi take first 
+steps here using brokerage data; in work in progress, we are extending this to how individual 
+investors take advantage of information of the many sorts they have at hand, some of which, as 
+we show, are considered much more extensively than others.  
+
+
+=== PDF PAGE 43 ===
+ 
+43
+References 
+ 
+ 
+Adam, Klaus, Albert Marcet, and Johannes Beutel, 2017, Stock price booms and expected capital 
+gains, American Economic Review 107, 2352-2408. 
+ 
+Antweiler, Werner, and Murray Z. Frank, 2004, Is all that talk just noise? The information 
+content of internet stock message boards, The Journal of Finance 59(3), 1259-94.  
+ 
+Baker, Malcolm, and Jeffrey Wurgler, 2006, Investor sentiment and the cross-section of stock 
+returns, The Journal of Finance 61(4), 1645-1680. 
+ 
+Bakos, Yannis, Florencia Marotta-Wurgler, and David R. Trossen, 2014, Does anyone read the 
+fine print? Consumer attention to standard-form contracts, Journal of Legal Studies 43, 1-35. 
+ 
+Barber, Brad M., and Terrance Odean, 2002, Online investors: Do the slow die first? The Review 
+of Financial Studies 15(2), 455-488. 
+ 
+Barber, Brad M., and Terrance Odean, 2008, All that glitters: The effect of attention and news on 
+the buying behavior of individual and institutional investors, The Review of Financial Studies 21, 
+785-818. 
+ 
+Barberis, Nicholas, Andrei Shleifer, and Robert W. Vishny, 1998, A model of investor 
+sentiment, Journal of Financial Economics 49, 307-343. 
+ 
+Barberis, Nicholas, Robin Greenwood, Lawrence Jin, and Andrei Shleifer, 2015, X-CAPM: An 
+extrapolative capital asset pricing model, Journal of Financial Economics 115, 1-24. 
+ 
+Benamar, Hedi, Thierry Foucault, and Clara Vega, 2021, Demand for information, uncertainty, 
+and the response of U.S. Treasury securities to news, The Review of Financial Studies 34(7), 
+3403-3455.   
+ 
+Boehmer, Ekkehart, Charles M. Jones, Xiaoyan Zhang, and Xinran Zhang, 2021, Tracking retail 
+investor activity, The Journal of Finance 76, 2249-2305. 
+ 
+Bogan, Vicki, 2008, Stock market participation and the internet, Journal of Financial and 
+Quantitative Analysis 43(1), 191-211. 
+ 
+Cookson, J. Anthony, William Mullins, and Marina Niessner, 2024, Social media and finance. 
+Oxford Research Encyclopedia of Economics and Finance. Forthcoming.   
+ 
+Cookson, J. Anthony, Runjing Lu, William Mullins, and Marina Niessner, 2024, The social 
+signal, Journal of Financial Economics 158, 1038-70. 
+ 
+Da, Zhi, Joseph Engelberg, and Pengjie Gao, 2011, In search of attention, The Journal of 
+Finance 66, 1461-1499. 
+
+
+=== PDF PAGE 44 ===
+ 
+44
+ 
+Da, Zhi, Joseph Engelberg, and Pengjie Gao, 2015, The sum of all FEARS: Investor sentiment 
+and asset prices, Review of Financial Studies 28, 1-32.  
+ 
+De Long, J. Bradford, Andrei Shleifer, Lawrence H. Summers, and Robert J. Waldmann, 1990, 
+Noise trader risk in financial markets, Journal of Political Economy 98, 703-738. 
+ 
+Drake, Michael S., Darren T. Roulstone, and Jacob R. Thornock, 2012, Investor information 
+demand: Evidence from Google searches around earnings announcements, Journal of 
+Accounting Research 50, 1001-1040.  
+ 
+Fang, Lily, and Joel Peress, 2009, Media coverage and the cross-section of stock returns, The 
+Journal of Finance 64, 2023-52.  
+ 
+Gargano, Antonio, and Alberto G. Rossi, 2018, Does it pay to pay attention? The Review of 
+Financial Studies 31(12), 4595-4649. 
+ 
+Giglio, Stefano, Matteo Maggiori, Johannes Stroebel, and Stephen Utkus, 2021, Five facts about 
+beliefs and portfolios, American Economic Review 111(5), 1481-1522. 
+ 
+Greenwood, Robin, and Andrei Shleifer, 2014, Expectations of returns and expected returns, 
+Review of Financial Studies 27, 714-746. 
+ 
+Hong, Harrison, and Jeremy C. Stein, 1999, A unified theory of underreaction, momentum 
+trading, and overreaction in asset markets, The Journal of Finance 54, 2143-2184. 
+ 
+Jegadeesh, Narasimhan, 1990, Evidence of predictable behavior of security returns, The Journal 
+of Finance 45, 881-898. 
+ 
+Jegadeesh, Narasimhan, and Sheridan Titman, 1993, Returns to buying winners and selling 
+losers: Implications for stock market efficiency, The Journal of Finance 48, 65-91. 
+ 
+Kwan, Alan, Yukun Liu, and Ben Matthies, 2026, Institutional investor attention, The Journal of 
+Finance 81, 791-827.  
+ 
+Lawrence, Alastair, James Ryans, Estelle Sun, and Nikolay Laptev, 2018, Earnings 
+announcement promotions: A Yahoo Finance field experiment, Journal of Accounting and 
+Economics 66, 399-414. 
+ 
+Lease, Ronald C., Wilbur G. Lewellen, and Gary G. Schlarbaum, 1974, The individual investor: 
+Attributes and attitudes, The Journal of Finance 29, 413-433. 
+ 
+Lou, Dong, 2014, Attracting investor attention through advertising, Review of Financial Studies 
+27, 1797-1829. 
+ 
+Markowitz, Harry, 1952, Portfolio selection, The Journal of Finance 7, 77-91. 
+
+
+=== PDF PAGE 45 ===
+ 
+45
+ 
+Marotta-Wurgler, Florencia, 2011, Will increased disclosure help? Evaluating the 
+recommendations of the ALI’s ‘Principles of the Law of Software Contracts,’ University of 
+Chicago Law Review 78, 165-186.  
+ 
+Marotta-Wurgler, Florencia, 2012, Does contract disclosure matter? Journal of Institutional and 
+Theoretical Economics 168, p. 94-123.  
+ 
+Neuhierl, Andreas, Anna Scherbina, and Bernd Schlusche, 2013, Market reaction to corporate 
+press releases, Journal of Financial and Quantitative Analysis 48, 1207-40.  
+ 
+Sharpe, William F., 1964, Capital asset prices: A theory of market equilibrium under conditions 
+of risk, The Journal of Finance 19, 425-442. 
+ 
+Shue, Kelly, and Richard R. Townsend, 2021, Can the market multiply and divide? Non‐
+proportional thinking in financial markets. The Journal of Finance, 76(5), 2307-2357. 
+ 
+Sicherman, Nachum, George Loewenstein, Duane J. Seppi, and Stephen P. Utkus, 2016, 
+Financial attention, The Review of Financial Studies 29, 863-897. 
+ 
+Tetlock, Paul C., 2010, Does public financial news resolve asymmetric information? The Review 
+of Financial Studies 23, 3520-57. 
+ 
+Van Nieuwerburgh, Stijn, and Laura Veldkamp, 2009, Information immobility and the home bias 
+puzzle. The Journal of Finance 64, 1187-1215. 
+ 
+
+
+=== PDF PAGE 46 ===
+ 
+46
+Table 1. Summary statistics. Full sample of 484 households (“investors”) with at least one US common equity or ADR trade. All 
+measures are constructed on the household-month level and collapsed to the household level. Income is topcoded at $100,000 per year. 
+Age is of head of household. N = 484 unless otherwise indicated. 
+ 
+Percentiles
+Mean
+5th
+25th
+Median
+75th
+95th
+A. Demographics
+Income head of hh ($000) (N = 445)
+71.7
+12.5
+75.0
+75.0
+100.0
+100.0
+Age head of hh (N = 467)
+50.1
+29.0
+39.0
+50.0
+59.0
+74.0
+B. Overall Browsing per Month
+N Sessions
+102.8
+25.0
+65.8
+92.2
+137.0
+205.7
+Minutes per Session
+25.8
+10.1
+16.3
+22.8
+32.0
+51.8
+N Unique Broker or Finance Domains
+3.3
+0.7
+1.5
+3.0
+4.7
+7.0
+Minutes at Broker Domains
+214.2
+8.4
+25.8
+81.6
+211.8
+879.6
+Minutes at Other Finance Domains
+95.4
+0
+1
+14.4
+75.6
+385.2
+Minutes at Non-Finance Domains
+2239.8
+388.2
+1102.2
+1855.8
+2998.8
+5203.2
+C. Overall Trading per Month
+N Sessions with a Trade
+1.3
+0.3
+0.3
+0.5
+1.0
+6.0
+Minutes Trading
+6.5
+0.1
+0.7
+2.0
+5.7
+25.7
+N Stock Trades
+2.2
+0.3
+0.3
+0.7
+1.7
+9.5
+N Stock Buys
+1.1
+0
+0
+0.3
+0.7
+5.0
+N Stock Sells
+1.1
+0
+0
+0.3
+1.0
+4.5
+N Unique Tickers Traded
+1.5
+0.3
+0.3
+0.5
+1.3
+5.5
+USD Traded ($000) (N = 191)
+13.5
+0.1
+0.3
+2.0
+8.4
+52.0
+
+
+=== PDF PAGE 47 ===
+ 
+47
+Table 2. Aggregate research activity. Full sample of 484 investors except Panel C which restricts to investors whose research activity 
+can be almost entirely matched to specific tickers. To account for differential time in the sample, measures are normalized by number 
+of trading sessions, number of months in sample, or number of trades. Count measures (N) are constructed on the investor-month level 
+and averaged to the investor level. Research is total time spent on all categories of stock research.  
+Percentiles
+Mean
+5th
+25th
+Median
+75th
+95th
+A. HH Months in Sample
+3.0
+1
+2
+3
+4
+4
+B. All Research
+N Sessions Including Research
+29.4
+0.8
+4.3
+15.0
+39.0
+104.0
+N Unique Tickers Researched
+30.5
+1.0
+4.0
+12.5
+32.3
+123.7
+N Unique Broker or Finance Domains
+3.3
+0.7
+1.5
+3.0
+4.7
+7.0
+Minutes per Session Research
+3.6
+0.3
+1.1
+2.3
+4.5
+11.2
+Minutes per Month Research
+118.0
+1.0
+8.5
+37.1
+108.3
+530.4
+Minutes per Trade Research
+144.2
+1.9
+10.5
+36.4
+112.6
+658.9
+- At Any Broker
+55.7
+0.3
+3.5
+13.3
+41.8
+271.7
+- At Yahoo Finance
+45.3
+0.0
+0.0
+0.1
+8.3
+200.3
+- At Other Finance ex-Yahoo
+41.9
+0.0
+0.0
+3.5
+23.9
+188.9
+- At Researched Company Website
+1.3
+0.0
+0.0
+0.0
+0.4
+7.0
+C. All Research for High Ticker Match Rate Sample (N = 50)
+Minutes per Month Research
+122.0
+1.0
+11.7
+39.3
+127.8
+569.6
+Minutes per Trade Research
+96.8
+1.6
+16.1
+51.7
+127.4
+383.3
+- Matched to Traded Ticker
+29.1
+0.0
+1.7
+5.7
+31.5
+157.4
+D. Non-Research Financial Browsing
+N Sessions
+23.1
+1.0
+5.3
+14.1
+35.0
+72.0
+Minutes per Session
+5.4
+0.9
+2.2
+4.1
+6.7
+14.8
+Minutes per Month
+154.9
+4.4
+18.0
+58.0
+152.2
+657.0
+
+
+=== PDF PAGE 48 ===
+ 
+48
+Table 3. Minutes of research per trade. Investor-level averages of total number of minutes of research divided by total number of 
+trades. The full sample of 484 investors is in the left set of columns. The remaining columns analyze 50 investors for which a high 
+fraction of total stock research time can be matched to a CRSP-listed stock or ADR ticker. All Research may include a small 
+percentage of time on options, indexes, funds, or other instruments. For each category of research, minutes per trade are calculated for 
+the mean investor and the median investor. The percentage of investors with nonzero research time, and means and medians among 
+investors with nonzero research time, are also reported. Two columns for each sample show results when time on the three mixed-
+content pages is allocated across specific content categories in proportion to the number of all investors with interest in that specific 
+category per the third column; this interest-weighted imputation is described further in the Internet Appendix. Other denotes time on 
+research on miscellaneous topics. Indeterminate denotes time on research of unknown type. The last two rows show the investor-level 
+means and medians of research time per trade. 
+  
+ 
+ 
+
+
+=== PDF PAGE 49 ===
+ 
+49
+Table 4. Characteristics of researched stocks. Stock-month level regressions for top 1000 
+market capitalization CRSP stocks. Dependent variables are the percentage of investors with 
+non-zero research time in a given ticker-month; the percentage of investors with non-zero price-
+related research time (Price Charts + Technical) minus the percentage of investors with non-zero 
+fundamentals-related research time (Earnings + Dividends + Other Fundamentals + Analysts + 
+Company Website) in a given ticker-month; and the natural log of one plus the total number of 
+minutes of ticker-matched research by all the investors in the sample in a given ticker-month. 
+Right hand side variables are standardized except for indicator (0-1) variables.  ***, **, and * 
+denote statistical significance at the 1%, 5%, and 10% levels based on Newey-West standard 
+errors with two months of lags. 
+ 
+  
+ 
+% Investors t>0 
+ 
+Ln(1+Minutes) 
+ 
+% Investors t>0  
+(Prices) 
+- % Investors t>0 
+(Fundamentals) 
+Ln (Cap) 
+1.03*** 
+1.33*** 
+1.13*** 
+ 
+0.49*** 
+ 
+0.04 
+0.03 
+(14.42) 
+(13.57) 
+(11.35) 
+ 
+(15.23) 
+ 
+(0.81) 
+(0.61) 
+Retail Volume Share 
+0.34*** 
+ 
+0.19*** 
+ 
+-0.07* 
+(6.24) 
+ 
+(10.38) 
+ 
+(-1.94) 
+Individual Ownership Share 
+ 
+0.20*** 
+ 
+0.12*** 
+ 
+ 
+-0.03 
+ 
+(3.78) 
+ 
+(4.56) 
+ 
+ 
+(-1.02) 
+Ln (1+ N Shareholders) 
+ 
+0.12** 
+ 
+0.05** 
+ 
+ 
+0.07*** 
+ 
+(2.41) 
+ 
+(2.05) 
+ 
+ 
+(2.97) 
+Ln (1 + N News Articles) 
+0.02 
+0.11*** 
+ 
+0.05*** 
+ 
+0 
+-0.01 
+  
+  
+(0.80) 
+(2.63) 
+ 
+(3.44) 
+ 
+(0.08) 
+(-0.38) 
+Earnings Month (0-1) 
+0.30*** 
+0.26*** 
+ 
+0.24*** 
+ 
+0.04 
+0.04* 
+(6.25) 
+(5.21) 
+ 
+(8.73) 
+ 
+(1.51) 
+(1.66) 
+N Analysts Covering 
+ 
+0.07 
+0.11** 
+ 
+0.04** 
+ 
+-0.09** 
+-0.10** 
+ 
+(1.33) 
+(2.06) 
+ 
+(2.07) 
+ 
+(-2.40) 
+(-2.42) 
+Ln(Age) 
+ 
+-0.03 
+-0.04 
+ 
+0.01 
+ 
+0.07*** 
+0.06** 
+ 
+(-0.61) 
+(-0.96) 
+ 
+(0.63) 
+ 
+(2.60) 
+(2.53) 
+Ln(Price) 
+ 
+-0.17** 
+-0.08 
+ 
+-0.04* 
+ 
+-0.08 
+-0.09* 
+ 
+(-2.57) 
+(-1.26) 
+ 
+(-1.80) 
+(-1.64) 
+(-1.72) 
+CAPM Beta 
+ 
+0.10*** 
+0.08*** 
+ 
+0.04** 
+-0.02 
+-0.02 
+ 
+(2.89) 
+(2.62) 
+ 
+(1.98) 
+(-1.42) 
+(-1.24) 
+SD(Return) 
+ 
+0.15*** 
+0.09*** 
+ 
+0.10*** 
+0.04*** 
+0.06*** 
+ 
+(4.92) 
+(2.80) 
+ 
+(5.35) 
+(3.67) 
+(4.63) 
+
+
+=== PDF PAGE 50 ===
+ 
+50
+Return (Prior Month) 
+ 
+-0.11*** 
+-0.08*** 
+ 
+-0.02* 
+0 
+-0.01 
+ 
+(-3.97) 
+(-2.92) 
+ 
+(-1.65) 
+(0.14) 
+(-0.43) 
+Momentum Return 
+(Months [t-2, t-12]) 
+ 
+-0.07** 
+-0.07** 
+ 
+0.04** 
+0.05** 
+0.05** 
+ 
+(-2.10) 
+(-2.23) 
+ 
+(2.18) 
+(2.25) 
+(2.33) 
+Dividend>0 (0-1) 
+ 
+-0.23*** 
+-0.21*** 
+ 
+-0.22*** 
+  
+-0.02 
+-0.04 
+ 
+(-2.95) 
+(-2.86) 
+ 
+(-5.30) 
+(-0.51) 
+(-1.16) 
+Dividend Yield 
+ 
+0.05* 
+0.02 
+ 
+0.02 
+0 
+0 
+ 
+(1.70) 
+(1.02) 
+ 
+(1.09) 
+(-0.20) 
+(0.04) 
+Book-to-Market 
+ 
+0.01 
+0.06 
+ 
+0.01 
+0.02 
+0.01 
+ 
+(0.24) 
+(1.45) 
+ 
+(0.34) 
+(1.42) 
+(0.36) 
+Sales Growth 
+ 
+0.03 
+-0.01 
+ 
+-0.04** 
+-0.03 
+-0.02 
+ 
+(0.75) 
+(-0.22) 
+ 
+(-2.06) 
+(-1.41) 
+(-0.94) 
+External Finance 
+ 
+0.11*** 
+0.09** 
+ 
+0.07*** 
+0.01 
+0.02 
+ 
+(2.78) 
+(2.47) 
+ 
+(3.69) 
+(0.35) 
+(0.55) 
+SP500 Member (0-1) 
+ 
+-0.64*** 
+-0.58*** 
+ 
+-0.14*** 
+0.01 
+-0.02 
+ 
+(-5.93) 
+(-5.28) 
+ 
+(-3.10) 
+(0.12) 
+(-0.31) 
+Constant 
+1.01*** 
+1.13*** 
+0.84*** 
+ 
+-0.16 
+0.15* 
+0.28*** 
+(29.26) 
+(7.07) 
+(3.56) 
+ 
+(-0.96) 
+(1.70) 
+(3.37) 
+FF49 Industry FE 
+  
+Yes 
+Yes 
+ 
+Yes 
+Yes 
+Yes 
+Observations 
+3,962 
+3,962 
+3,962 
+ 
+3,962 
+3,962 
+3,962 
+R2 
+  
+0.315 
+0.447 
+0.484 
+ 
+0.400 
+0.079 
+0.09 
+
+
+=== PDF PAGE 51 ===
+ 
+51
+Table 5. Principal components of investor-level research focus. We restrict the data to 
+research matched to tickers, and we create indicator variables for any investor-category that sees 
+more than two minutes of research per month. Speculative Stock Focus is a continuous variable 
+based the investor’s propensity to trade stocks across the characteristics included in Table 4. It is 
+positive for an investor who tilts toward volatile, small, younger, lower nominal price stocks and 
+negative for one that tilts toward larger, older, dividend-paying stocks. Too few investors 
+observe risk statistics for a loading to be estimated. 
+ 
+First PC
+Second PC
+Snapshot 
+0.32
+0.30
+News - Indeterminate 
+0.36
+0.10
+Message Board – Indet. 
+0.16
+0.46
+Risk Statistics 
+.
+.
+Earnings 
+0.29
+-0.34
+Dividends 
+0.10
+-0.47
+Other Fundamentals 
+0.28
+-0.29
+Analysts 
+0.32
+0.00
+Ownership 
+0.18
+-0.18
+Price Chart 
+0.31
+0.19
+Technical 
+0.27
+-0.11
+Company Website 
+0.30
+-0.03
+Other 
+0.32
+0.08
+Indeterminate 
+0.27
+0.03
+Speculative Stock Focus 
+0.01
+0.43
+Eigenvalue
+3.75
+1.23
+Proportion Explained
+26.81
+8.77
+ 
+
+
+=== PDF PAGE 52 ===
+ 
+52
+Figure 1. Length of chart lookback windows. Lookback windows viewed by investors in the 
+full sample (N=484). Panel A includes the default lookback windows presented in the snapshot 
+or price chart pages. Panel B excludes such views and considers only opt-in lookback periods.  
+ 
+ 
+
+
+=== PDF PAGE 53 ===
+ 
+53
+Figure 2. Research around events: Clickstream data vs. Google Trends. Panel A shows the 
+number of investors in the full sample (N=484) with research activity on Microsoft stock in the 
+month of its January 25, 2007 quarterly earnings announcement and compares this to the Google 
+Trends index for interest in “MSFT”. Panel B shows these two series around Apple’s January 9, 
+2007 introduction of the iPhone and its January 17, 2007 quarterly earnings announcement, and 
+Panel C shows these series around the February 19, 2007 announcement of a merger between 
+Sirius and XM. Weekends are shaded. 
+ 
+ 
+ 
+ 
+
+
+=== PDF PAGE 54 ===
+ 
+54
+Figure 3. Research around trades. The sample is N=50 investors for which a high fraction of 
+total stock research time can be matched to a CRSP-listed stock or ADR ticker; plots are for 
+cumulative research time by these investors in tickers that they trade at hour 0, looking back ten 
+days and forward two days. Figures are plotted in ten-minute increments. Small shapes on right 
+edge indicate cumulative total research time in the traded stock until the end of the investor’s 
+sample.  
+ 
+
+
+=== PDF PAGE 55 ===
+ 
+55
+Figure 4. Sequential search over research topics. Sankey diagram that begins with investor 
+research matched to a given ticker and ends ten days later. The tickers researched in the first 20 
+days of an investor’s clickstream are omitted. Risk Statistics (rare), Corporate Website, Other, 
+Indeterminate, and repeats of prior topics are omitted. Thickness is proportional to number of 
+paths taken by 484 investors across 16,930 investor X ticker X 10-day windows.  
+ 
+ 
+
+
+=== PDF PAGE 56 ===
+ 
+56
+Figure 5. Sequential search before trades. Sankey diagram that looks backward up to 10 days from trades in a given ticker. The 
+tickers researched in the first 20 days of an investor’s clickstream are omitted. Risk Statistics (rare), Corporate Website, Other, 
+Indeterminate, and repeats of topics are omitted. Thickness is proportional to number of paths taken. Investor’s speculative propensity 
+defined as highest or lowest quintile scores on second principal component of research behavior in Table 5.  
+ 
+Panel A. Conditional on Buy, All Investors 
+Panel B. Conditional on Sell, All Investors 
+ 
+Panel C. Conditional on Trade, Less-Speculative Investors 
+Panel D. Conditional on Trade, More-Speculative Investors 
+ 
+
+
+=== PDF PAGE 57 ===
+ 
+57
+Figure A1. Layout of Yahoo Finance! analyst estimates page, 2007 (sample period) vs. 2026. 
+Panel A. February 23, 2007 
+Panel B. April 15, 2026 
+ 
+
+
+=== PDF PAGE 58 ===
+ 
+58
+Internet Appendix 
+Here we describe key data processing steps in more detail. The starting point is 
+clickstream data for a nationally representative sample of households for January, February, 
+March, and June of 2007. Households are present between one and four months; the mean and 
+median is three months. For each household we observe the timestamped sequence of all URLs 
+(clicks/links) that they visited, active time spent at each page, and a rough categorization of the 
+type of content served at the specific page. The raw data prior to any exclusions or focus on 
+investing households comprises roughly two billion links.  
+A stylized extract illustrates the level of detail that it may include. Table IA1 reports 
+fourteen minutes of a browsing session. The session may begin at any link. This particular 
+investor is a motorsports fan but soon switches to CNBC.com, where she clicks a link providing 
+current data on several U.S. and international stock market indices, the US 10-year Treasury 
+yield, and the USD-Euro exchange rate.  
+After a minute at that page, the investor logs into a brokerage account.7 Within her online 
+broker’s research pages, she seeks out the day’s most active names, which on that day included 
+ImClone (IMCL). Based on our own investigation, IMCL enjoyed good news for its cancer 
+drug’s prospects. Our investor then consults the quarterly earnings performance for IMCL. From 
+the link, we can infer that earnings were presented for the prior three years and estimates were 
+shown for the next two years. In a separate panel, the chart showed the daily volume for IMCL 
+over the prior three years, as well as a 13-day moving average. Further analysis of IMCL took 
+place on the highly popular Yahoo Finance website. The investor obtains a quote on symbol 
+(“?s=”) IMCL and then looks up the latest analysts’ estimates (“ae”).  
+ 
+7 The data provider scrubbed links to eliminate account numbers, personal information, email addresses, etc. 
+
+
+=== PDF PAGE 59 ===
+ 
+59
+Following a check-in with race results, the investor returns to her brokerage’s page and 
+takes a different path. This time, she looks for trading ideas through a stock screener, in 
+particular stocks with expected EPS growth of at least fifty percent over the next fiscal year. This 
+would have yielded many results, Google (GOOG) among them. A click or two later, the 
+investor comes to a snapshot page, which presents many types of financial and price information 
+on the given stock in an abbreviated form. After looking at a price chart, the investor enters a 
+market order to buy (“ordertype=1”) Google shares. Then she logs into e-mail and proceeds with 
+other activities. 
+ 
+Rendering this raw data appropriate for our analysis requires the following ten steps.  
+Step 1. Identifying investors 
+We begin with a list of 11 online brokerages operating at the time of the sample and the 
+associated domain names. We read through the entire dataset and create a subset of clicks on 
+these brokers’ websites. Within these we flag those that contain terms suggestive of stock trades: 
+we look for terms such as “trade”, “order”, “buy”, “sell”, “shares” and so on. For instance, the 
+URL in row 20 of Table IA1 would be flagged for the inclusion of at least two such terms:  
+https://[broker-
+1].com/invest/socreateentry?ordertype="sell"&symbol=GOOG&shares=100 
+Given a link that might represent a trade, we use regular expression (“regex”) matching 
+to find all links on that broker’s site that follow the same syntax. We additionally use regular 
+expression matching to read out the stock ticker, the trade action (buy or sell), and, if available, 
+the quantity traded and the trade price. We match the traded tickers to CRSP and keep those that 
+correspond to U.S. common stock and ADRs.  
+
+
+=== PDF PAGE 60 ===
+ 
+60
+Having identified potential trades, we take a close look at the click sequences to confirm 
+that they represent a stock trade. In many cases, a number of clicks occur in rapid succession 
+pertaining to the same underling ticker. When we see a sequence of potential trade clicks relating 
+to the same ticker and with the same trade action (buy or sell) with a gap of no longer than 30 
+minutes, we collapse those clicks into one trade, represented in time by the last trade in the 
+sequence, with the notion that roughly the same “research” is associated with trades within the 
+sequence. With this procedure we end up with 2,911 total common stock and ADR trades by 484 
+distinct trading households, i.e., investors. 
+Step 2. Processing browsing data 
+Once investors are identified, we set about documenting the stock-related research 
+information they acquire before and after trading. We read through the raw data once more and 
+keep all clicks associated with these 484 households, leaving around 8.5 million individual clicks 
+corresponding to some 60,300 combined hours of browsing. 
+We then carry out two pre-processing steps. First, we check the URLs for special 
+characters and characters that are reported in Unicode values and transform them into 
+corresponding characters. This makes it easier to process the URLs via regular expression 
+matching. Second, we organize the URLs into groups corresponding to the host site. For 
+instance, all clicks with the stems biz.yahoo.com, finance.yahoo.com, and quote.yahoo.com are 
+assigned to the same group—Yahoo Finance—which is subsequently processed in one shared 
+routine. The websites we process in this manner include brokerage sites and other non-broker 
+finance sites such as CNBC, Marketwatch, and SEC.gov. 
+Step 3. Identifying tickers and classifying content  
+ 
+The next six steps involve reading out tickers and research categories. Our first goal is to 
+
+
+=== PDF PAGE 61 ===
+ 
+61
+identify clicks associated with stock tickers. We proceed in an iterative manner, inspecting the 
+URLs until we find one that represents research associated with a ticker. For instance, at Yahoo 
+Finance we might come across the URL in row 10 of Table IA1:  
+http://finance.yahoo.com/q/ao?s=IMCL 
+and, with the help of the Wayback Machine at 
+https://web.archive.org/web/20070407055358/http:/finance.yahoo.com/q/ao?s=IMCL 
+we learn that the abbreviation “ao” refers to “analyst opinions”. We then use a regex pattern to 
+classify all such URLs as pertaining to analyst information and associate them with the 
+corresponding ticker. 
+In general, in the case of non-broker finance websites such as Yahoo Finance we are 
+often able to find a version of the page on the Wayback Machine, allowing us to directly verify 
+the type of content. Brokerage sites, however, typically require logging in to view the research 
+material, and hence are not captured by the Wayback Machine. We were in many cases able to 
+find promotional material or video guides that illustrated the content on various pages, but in 
+some cases, we must decide based on the URL alone. For instance, a URL might contain the 
+term “analystresearch” and a ticker, in which case it’s clear that the investor was looking up 
+analyst reports. In instances where we can deduce nothing about the type of content, we classify 
+the content as “Indeterminate”. 
+In the case of broker websites, we typically first allow the structure of the URLs to 
+dictate the original classification of a given link. For instance, we might come across the URL in 
+row 18 of Table IA1: 
+https://[broker-1].com/stocks/snapshot/snapshot.asp?symbol=GOOG 
+
+
+=== PDF PAGE 62 ===
+ 
+62
+and a regex pattern that reads out the terms separated by forward slashes identifies a slew of 
+different research sites: stock news, fundamentals, ownership and so on. We continue processing 
+URLs in this way until we find no more URLs pertaining to research that also contain ticker 
+information. 
+Step 4. Special considerations 
+A number of clicks require further attention to fully extract the available information. The 
+first such special case involves URLs that reference multiple tickers, such as row 3 in Table IA1. 
+In such cases we create duplicates of the underlying link and associate one copy of the link to 
+each of the associated tickers. We then split the time spent on the original link evenly between 
+each of the newly created copies. 
+Another special case involves URLs corresponding to charts. These often refer to charts 
+with multiple tickers as well as multiple types of information, e.g., a chart might plot the prices 
+and volume of two stocks. In such a case, we first proceed as above and split the original URL 
+into copies corresponding to each of the associated tickers. These resulting URLs, in turn, are 
+again split up to correspond to the different types of information. As before, we evenly split the 
+time spent at the original site between all the resulting copies of the URL. Chart URLs often 
+contain further information about the information the investor is seeking out, such as the 
+lookback window and frequency of data plotted. We again use regular expression matching to 
+extract such information. For instance, consider the URL in row 7 of Table IA1: 
+https://[broker1].com/stocks/earnings/update_earningsChart.asp?showQTRChange=1&di
+splay=mountain&overlay=&indicator=volume,1,13,EMA,13&duration=1095&daysforw
+ard=545&year=2006 
+
+
+=== PDF PAGE 63 ===
+ 
+63
+This link reveals that the investor was charting earnings over the last three years (1095 
+days) and a prediction for the next one and one-half years (545 days).  
+Step 5. Cleaning tickers 
+Having processed the URLs and extracted ticker information, we separately process the 
+ticker information using regular expression matching. We first read out any terms appended to 
+the ticker, such as country indicators for stocks trading abroad, “.PK” for pink sheets, and so on. 
+We then match the resulting tickers to CRSP. We inspect the unmatched tickers and, whenever 
+possible, match by hand. Reasons for unmatched tickers can be caused by stocks with multiple 
+share classes (such as GOOG and GOOGL), or user input errors when searching for a particular 
+entity. On occasion the ticker field instead represents the investor’s input of a company name 
+(“WALLMART”) which, whenever obvious, is assigned to the associated ticker. We do not 
+count the time from clicks involving misspelled tickers in the research time totals. 
+We separately create indicators for identifiers of indexes, mutual funds, options, and 
+currencies. These tickers are often indicated by a special character on brokerage sites. For 
+example, in row 3 of Table IA1, indexes are indicated by a leading period and exchange rates are 
+indicated with a double dollar sign. 
+Step 6. Other activity at brokerage sites 
+Having exhausted clicks that contain ticker information, we classify other time spent at 
+broker and finance sites. We first seek to classify research time without explicit tickers in the 
+URL. We follow a process similar to the one described above and use regular expression patterns 
+to read out any information pertaining to the content of the URL. 
+Additionally, we classify other activity on broker sites that may reference tickers but does 
+not constitute research and is not counted as research time in this paper. The two main categories 
+
+
+=== PDF PAGE 64 ===
+ 
+64
+that might contain ticker-related information are “portfolio” and “trading”: clicks involving 
+reviews of current investment positions, which are generally not revealed by the URLs, and 
+clicks involving inputting and confirming trades. We also classify other time spent at brokerage 
+sites such as time spent on logging in, time on the main homepage, and time on various types of 
+non-investing activities such as educational tools, bill payments, banking, and so on. 
+Step 7. Processing company website research 
+As a final type of research activity, we keep track of time spent on websites of companies 
+that are in the set of stocks otherwise researched by the investor. We use the COMPUSTAT 
+header file to link CRSP Permno identifiers to company website URLs and manually augment 
+the list of company websites for the companies in the top 100 in terms of research activity.  
+The idea behind keeping track of this time, not just obviously finance research-oriented 
+time, is to provide a sense of an investor’s familiarity with the products of a given company. For 
+that reason, the time an investor browses the newly released first generation iPhones on 
+Apple.com would count as research time, but only if they ever research AAPL on any of the 
+finance sites. We additionally impose an upper bound on such research time by constraining that 
+at each point it cannot exceed twice the total of other research on the same stock. This limit 
+ensures that the time spent at company websites does not skew research time totals. 
+Step 8. Processing non-ticker-matched research time 
+As discussed above, not all research clicks reveal the underlying stock or stocks. For 
+instance, consider the sequence of URLs in rows 10, 11 and 12 of Table IA1: 
+http://finance.yahoo.com/q?s=IMCL 
+http://biz.yahoo.com/bw/070530/000000000.html?.v=1 
+http://finance.yahoo.com/q?s=IMCL 
+
+
+=== PDF PAGE 65 ===
+ 
+65
+Here the investor is looking at the “snapshot” page for ImClone Corporation (IMCL), 
+then reads a Business Wire press release in which the ticker is not included in the URL, and then 
+returns to the IMCL snapshot page. While we don’t know the content of the press release—and 
+that particular page is not available via the Wayback Machine—the press release likely pertained 
+to IMCL because it was immediately preceded and succeeded by research on that ticker.  
+Based on the prevalence of such instances, we seek to assign unmatched research clicks 
+to tickers if the nearest ticker-matched research before and after the click in question pertains to 
+the same underlying ticker. We apply this procedure only if the bracketing ticker-matched clicks 
+contain exactly one ticker. 
+Step 9. Constructing content categories  
+After an iterative process of reviewing the processed data until we are confident that the 
+URLs are properly encoded, the preceding steps lead to around 3,000 hours of total research 
+time, with roughly 1,350 hours matched to an identifier, be it a ticker, a company name, or an 
+index. The last two steps involve harmonizing research content categories. As described above, 
+in processing the research clicks at the various domains we typically start with the content 
+categorizations by the domain itself. The categories that we obtain in this way are not perfectly 
+aligned across the different websites, but there are numerous broad commonalities. For instance, 
+all of the brokerage and most of the other sites see many visits to a standard page best described 
+as a “snapshot”: a ticker-specific summary page of different types of information that typically 
+includes price quotes, a chart of recent prices, brief data on earnings and dividends, and 
+potentially links to news and analyst views. Another typical page that is available is a charts page 
+with prices, volume, and perhaps technical indicators such as moving averages, candlesticks, and 
+so on.  
+
+
+=== PDF PAGE 66 ===
+ 
+66
+Beyond these two dominant categories, there are two other types of pages that are 
+prevalent across all broker and non-broker finance sites: analyst reports and fundamentals such 
+as earnings and dividends. Additionally, across different sites we may see more detailed pages on 
+risk metrics, technical research, ownership, or other categories as discussed in the text. For the 
+less-frequently clicked categories that amount to no more than a handful of distinct clicks, we 
+code the research as “Other”, indicating that we know the type of information the investor sought 
+out but that there is not enough investor interest to warrant inclusion in the tables. The “Other” 
+category includes disparate information such as time spent on snapshot pages where the 
+underlying security is a stock market index, or on other pages pertaining to industry- or market-
+wide developments. It also includes time spent on pages relating to aggregate business 
+conditions, which we construct based on keywords associated with inflation, unemployment, 
+GDP, and the FOMC. We additionally add time spent at the BLS and BEA websites to this 
+category. By definition, these research activities are not matched to tickers.  
+For pages where it is not possible to infer any aspect of the content, while the URL is 
+highly suggestive that it constitutes stock research, we code it as “indeterminate.” 
+Step 10. Imputing mixed-content links to content categories 
+ 
+Finally, three types of pages either contain a mixture of content or do not indicate the 
+specific category of content: snapshots, news, and message boards. In order to attempt a full 
+accounting of the content of information presented to investors, we construct an alternative 
+classification in which we assign research time on these pages into primary categories. 
+To impute snapshot links to specific categories of content, we obtain contemporaneous 
+captures of the structure of each domain’s snapshot using the Internet Archive and other sources. 
+We then allocate the time spent on the domain’s snapshot pages in three different ways. In the 
+
+
+=== PDF PAGE 67 ===
+ 
+67
+“equal-weighted” imputation, we divide the time spent on the snapshot page equally among the 
+specific categories represented. In the “visual-weighted” imputation, we estimate the relative 
+proportion of line items corresponding to each specific category represented. Finally, in the 
+“interest-weighted” imputation, we allocate snapshot time in proportion to the number of 
+households that expressed explicit interest in that particular category in links in our data that 
+could be specifically allocated (as reported in the third column of Table 3). The third imputation 
+is an appealing and objective measure, and it is what we use in the construction of relevant 
+columns of Table 3, but no results in Table 3 change appreciably under the two alternative 
+approaches (results available on request). 
+For news links, we often cannot trace the underlying news article for further analysis 
+because it was not cached in the Internet Archive. However, for two brokers we observe in the 
+URL the article title and source (Reuters, Wall Street Journal, etc.), as well as any associated 
+tickers. We extract the title, tickers, and the date, and match each click to an array of articles in 
+the RavenPack data using the ticker and a date range of three days. We then rank this set of 
+potential matches by measuring the distance between the two titles and keeping the closest, 
+subject to a minimum distance requirement. The resulting dataset of matched articles allows us 
+to estimate the breakdown of news article content using the detailed content classifications 
+provided by RavenPack.  
+We follow a similar procedure to estimate the content breakdown of stock-related 
+message boards, the last type of mixed-content link that we encounter. We scrape the present-day 
+Reddit r/stocks message board and for each discussion thread we match the title, “flair” (user-
+supplied keywords), and original post content to our specific research content categories. We 
+
+
+=== PDF PAGE 68 ===
+ 
+68
+then back out content category breakdowns by ascribing equal time to each post, dividing time 
+equally across all matched categories.  
+ 
+Table IA2 shows how these methods ultimately assign time to primary categories. There 
+are not dramatic differences based on the snapshot imputation approach, but one intuitive result 
+is that the visual-weighted and interest-weighted approaches tend to assign a greater proportion 
+of weight from visiting a snapshot page to price charts and technical information. This is because 
+the snapshot page is often visually dominated by price information, in the case of the visual-
+weighted imputation, and because investors display widespread interest in price charts when 
+such activity can be directly observed, in the case of the interest-weighted imputation. Message 
+boards and news, on the other hand, more often focus on earnings.  
+ 
+
+
+=== PDF PAGE 69 ===
+ 
+69
+Table IA1. Stylized example of browsing data. A constructed example of an investor’s browsing session in raw data format. The 
+session indicates visits to non-finance websites, finance or financial news websites, and broker websites. The finance and broker 
+websites indicate the nature of the content that is displayed, tickers involved, and some details of trades. 
+ 
+Row 
+Timestamp 
+Link 
+1 
+3/23/2007  2:31:11 PM 
+http://formula1.com/puriGP 
+2 
+3/23/2007  2:36:20 PM 
+http://cnbc.com/ 
+3 
+3/23/2007  2:36:28 PM 
+http://quote.cnbc.com/quote.htm?symbols=.DJIA|.NCOMP|.SPX|GB;FTSE|DE;DAXX| 
+FR;CAC|JP;N225|CN;SHI|US.10|$$EURUSD&requestMethod=quick&realtime=1 
+4 
+3/23/2007  2:37:30 PM 
+https://[broker-1].com/user/login 
+5 
+3/23/2007  2:37:37 PM 
+https://[broker-1].com/eresearch/markets_sectors/analysis/mostactives.jhtml 
+6 
+3/23/2007  2:38:01 PM 
+https://[broker-1].com/stocks/earnings/earnings.asp?symbol=IMCL 
+7 
+3/23/2007  2:38:22 PM 
+https://[broker-1].com/stocks/earnings/update_earningsChart.asp?showQTRChange=1&display=mountain 
+&overlay=&indicator=volume,1,13,EMA,13&duration=1095&daysforward=545&year=2006 
+8 
+3/23/2007  2:38:51 PM 
+https://[broker-1].com/charts/update_chart.asp?duration=365&frequency=1day&scaling=linear 
+&display=candlestickcolor 
+9 
+3/23/2007  2:39:14 PM 
+http://finance.yahoo.com/ 
+10 
+3/23/2007  2:39:20 PM 
+http://finance.yahoo.com/q?s=IMCL 
+11 
+3/23/2007  2:39:25 PM 
+http://biz.yahoo.com/bw/070530/000000000.html?.v=1 
+12 
+3/23/2007  2:39:29 PM 
+http://finance.yahoo.com/q?s=IMCL 
+13 
+3/23/2007  2:39:32 PM 
+http://finance.yahoo.com/q/ao?s=IMCL 
+14 
+3/23/2007  2:40:52 PM 
+http://formula1.com/puriGP 
+15 
+3/23/2007  2:43:03 PM 
+https://[broker-1].com/tradingideas/screener/stock_screener.asp 
+16 
+3/23/2007  2:43:10 PM 
+https://[broker-1].com/tradingideas/screener/stock_screener_results.asp 
+?c=IBES.EPSGrowthNFY:GEQ:50:LSS:100001 
+17 
+3/23/2007  2:43:33 PM 
+https://[broker-1].com/common/symbol_info/symbolInfo.asp?symbol=GOOG 
+18 
+3/23/2007  2:43:39 PM 
+https://[broker-1].com/stocks/snapshot/snapshot.asp?symbol=GOOG 
+19 
+3/23/2007  2:44:11 PM 
+https://[broker-1].com/stocks/charts/charts.asp?symbol=GOOG 
+20 
+3/23/2007  2:45:02 PM 
+https://[broker-1].com/invest/socreateentry?ordertype="sell"&symbol=GOOG&shares=100 
+21 
+3/23/2007  2:45:19 PM 
+https://[broker-1].com/user/logout 
+22 
+3/23/2007  2:45:31 PM 
+http://us.f518.mail.yahoo.com/ym/login?login 
+
+
+=== PDF PAGE 70 ===
+ 
+70
+Table IA2. Imputation of mixed-content pages to specific content categories. Time on “snapshot” pages is imputed to specific 
+content categories in three ways: equal-weighted across the categories presented in the snapshot page in that domain, visually-weighted 
+according to the relative prominence of the category on the snapshot page in that domain, and interest-weighted using the distribution of 
+investor interest in specific content categories in the third column of Table 3 (and which is used in Table 3’s imputed time columns). 
+Snapshot page structure varies across domains, so we present the min and max of the range of imputation proportions. The imputed 
+content distribution for time on message boards is based on the distribution of content on Reddit r/stocks message board discussions. The 
+imputed content distribution for financial news of unobservable type is based on the distribution of content across RavenPack’s detailed 
+finance article content classifications. Rows that do not quite sum to 100% indicate remaining indeterminate content.  
+ 
+Proportional Imputation to Content Category 
+Risk 
+Statistics 
+Earnings 
+Dividends 
+Other 
+Fundamentals 
+Analysts 
+Ownership 
+Price Charts 
+Technical 
+Other 
+Snapshot (Equal Weighted)
+0 - 0.20
+0 - 0.20
+0 - 0.20
+0 - 0.33
+0 - 0.20
+0 - 0.14
+0.10 - 0.33
+0 - 0.33
+0 - 0.22
+Snapshot (Visual Weighted)
+0 - 0.11
+0 - 0.13
+0 - 0.13
+0 - 0.14
+0 - 0.33
+0 - 0.13
+0.38 - 0.79
+0 - 0.20
+0 - 0.15
+Snapshot (Interest Weighted)
+0 - 0.01
+0 - 0.19
+0 - 0.08
+0 - 0.28
+0 - 0.23
+0 - 0.09
+0.18 - 0.49
+0 - 0.24
+0 - 0.34
+Message Board
+0
+0.27
+0.02
+0.07
+0.02
+0.01
+0.26
+0.02
+0.33
+News - Indeterminate
+0.06
+0.31
+0.03
+0.03
+0.07
+0.02
+0.12
+0.1
+0.25
+ 
+ 

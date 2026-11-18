@@ -1,0 +1,13 @@
+{
+  "id": "S03",
+  "category": "academic-slides",
+  "repository": "K-Dense-AI/claude-scientific-writer",
+  "commit": "9820740d252800ecf0b8fc066ffb5bf9659f4a51",
+  "path": ".claude/skills/scientific-slides/SKILL.md",
+  "url": "https://github.com/K-Dense-AI/claude-scientific-writer/blob/9820740d252800ecf0b8fc066ffb5bf9659f4a51/.claude/skills/scientific-slides/SKILL.md",
+  "sha256": "9c5c4f7e991140f997c03833313a3045a57c36298e290df5832a98cea34f66a8",
+  "bytes": 21539,
+  "license_file": "LICENSE",
+  "license_preview": "MIT License\n\nCopyright (c) 2025-2026 K-Dense Inc.\n\nPermission is hereby granted, free of charge, to any person obtaining",
+  "retrieved": "2026-11-16"
+}

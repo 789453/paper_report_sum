@@ -1,0 +1,45 @@
+{
+  "paper": {
+    "path": "On the Information Set of Individual Investors.pdf",
+    "version": "2026-04-27",
+    "pages": 70,
+    "sha256": "6f579bb189434f1ce6eb200cba3f70e96918a6748f4a3c37ff0c528a097ccc95"
+  },
+  "reference": {
+    "path": "raw_reference/chatgpt-export_论文深度讲解.md",
+    "role": "问题和解释思路；包含被后文纠正的2025旧稿数字，不作原始实证证据"
+  },
+  "web_checked_on": "2026-11-17",
+  "web": [
+    {
+      "url": "https://sites.google.com/view/toomaslaarits/research",
+      "supports": "Laarits为NYU Stern金融助理教授；本篇R&R，April 2026；未公开期刊"
+    },
+    {
+      "url": "https://pages.stern.nyu.edu/jwurgler/main.htm",
+      "supports": "Wurgler为Nomura Professor；BW情绪及Comovement代表作"
+    },
+    {
+      "url": "https://pages.stern.nyu.edu/~jwurgler/pdfs/cvshort8.pdf",
+      "supports": "历史CV列JFE与Management Science Associate Editor，历史任职而非当前职务"
+    },
+    {
+      "url": "https://www.nber.org/papers/w33625",
+      "supports": "旧题名及NBER WP 33625；本轮全文打开403，题名同时由已归档原文与搜索记录核对"
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5187645",
+      "supports": "SSRN记录标识；全文数字均来自用户本地完整稿，不依赖403页面"
+    }
+  ],
+  "native_skills": "保留vendor/community-skills-2026-11-16及固定commit/SHA清单；本地新增规范与原生文件分开。",
+  "explicit_corrections": [
+    "NTU应为NYU；Laarits是助理教授，Wurgler是Nomura讲席教授。",
+    "本篇工作稿R&R，但未公开期刊，不推测投稿。",
+    "5.7分钟为50户家庭内比率的横截面中位数。",
+    "新闻归因用部分可见新闻标题与RavenPack匹配；讨论板才明确使用当代Reddit。",
+    "理性预期不要求同质信息；讲解公式不是本文估计模型。",
+    "PC2投机指标参与构造，C/D分组也使用PC2，不是独立因果检验。"
+  ],
+  "integration": "Imported from half_material on 2026-11-17; current content is not academically approved."
+}

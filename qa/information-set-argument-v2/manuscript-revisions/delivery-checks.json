@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-17",
+  "chapter_structure": [
+    {
+      "file": "01_信息与行为资产定价.md",
+      "subsections": [
+        "1.1",
+        "1.2",
+        "1.3"
+      ],
+      "hanzi": 1830
+    },
+    {
+      "file": "02_URL数据与测度.md",
+      "subsections": [
+        "2.1",
+        "2.2",
+        "2.3"
+      ],
+      "hanzi": 2272
+    },
+    {
+      "file": "03_可比统计与总体事实.md",
+      "subsections": [
+        "3.1",
+        "3.2",
+        "3.3"
+      ],
+      "hanzi": 2551
+    },
+    {
+      "file": "04_实证比较与交易情境.md",
+      "subsections": [
+        "4.1",
+        "4.2",
+        "4.3"
+      ],
+      "hanzi": 3633
+    },
+    {
+      "file": "05_贡献与研究评价.md",
+      "subsections": [
+        "5.1",
+        "5.2",
+        "5.3"
+      ],
+      "hanzi": 2710
+    }
+  ],
+  "chapter_hanzi_including_notes": 12996,
+  "broken_links": [],
+  "placeholders": [],
+  "table_arithmetic": {
+    "mixed_minutes": 60.400000000000006,
+    "mixed_share_percent": 41.886269070735096,
+    "price_share_percent": 44.66019417475729,
+    "pc1_plus_pc2_percent": 35.58
+  },
+  "upstream_skill_hash_mismatches": [],
+  "source_feedback_sha256": "6df2d0147a950a5fc8a3899562bb1e721b5bec2d35fb938e23d2ab7aa80304b9",
+  "files": [
+    {
+      "path": "paper\\information-set-argument-v2\\manuscript\\00_整体论证与方案比较.md",
+      "sha256": "097658b9454ff04db42a8c42910947a3eb9bb0c4fe10c4f3d3aa57b8caf6ac64"
+    },
+    {
+      "path": "paper\\information-set-argument-v2\\manuscript\\01_信息与行为资产定价.md",
+      "sha256": "d89273369984165c0072707bcd37d57f32ecd9adbd9503a39255973dec8045f2"
+    },
+    {
+      "path": "paper\\information-set-argument-v2\\manuscript\\02_URL数据与测度.md",
+      "sha256": "ea15c84efa033ea09463028a3fe4ff14d6e954fee5276f79e4c5b36c603dae2b"
+    },
+    {
+      "path": "paper\\information-set-argument-v2\\manuscript\\03_可比统计与总体事实.md",
+      "sha256": "e3035d918d07aa2129e1818e1db1a015a86e649cc2d6ff88b6c6a093faf314db"
+    },
+    {
+      "path": "paper\\information-set-argument-v2\\manuscript\\04_实证比较与交易情境.md",
+      "sha256": "9b17bb772baed85ef27ea8c998ca10829a7506e4708fb055c61973e57fd9588a"
+    },
+    {
+      "path": "paper\\information-set-argument-v2\\manuscript\\05_贡献与研究评价.md",
+      "sha256": "41d173f9c8ceee3a6050e946a315a35316c32403714559d33039159dd96d8793"
+    },
+    {
+      "path": "paper\\information-set-argument-v2\\manuscript\\06_证据定位与待核问题.md",
+      "sha256": "a8db08560708cdb487cbcc458d837f70616c5ce544bd66a9469df441c31ef7fd"
+    },
+    {
+      "path": "paper\\information-set-argument-v2\\manuscript\\07_对比修订与自查.md",
+      "sha256": "71cbae99ff6d7c059e6c6dd7655a0d3d6139d20914a284df4f7d49c082176e55"
+    },
+    {
+      "path": "paper\\information-set-argument-v2\\manuscript\\README.md",
+      "sha256": "268efe1074245af700cbb6a003023beebd7d188ec62946ac3462268e53529174"
+    }
+  ],
+  "content_status": "complete chapter manuscript with documented self-revisions; no independent peer review or quality score",
+  "tex_generated_this_round": false
+}

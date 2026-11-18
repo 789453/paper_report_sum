@@ -1,0 +1,9 @@
+# Historical helper designs; adapt context before reuse.
+def frame(title, body):
+    return '\\begin{frame}{' + title + '}\n' + body.strip() + '\n\\end{frame}'
+
+def retitle(n, title):
+    return re.sub('\\\\begin\\{frame\\}\\{[^\\n]+\\}', lambda m: '\\begin{frame}{' + title + '}', F[n], count=1)
+
+def add(section, sub, body):
+    frames.append(dict(section=section, sub=sub, tex=body))

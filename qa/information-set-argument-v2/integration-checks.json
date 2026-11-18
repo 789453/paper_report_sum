@@ -1,0 +1,17 @@
+{
+  "import_hashes": {
+    "01_组会报告_46页.pdf": true,
+    "01_论证重建_46页.pptx": true,
+    "02_逐页逐字稿_46页对应.docx": true
+  },
+  "errors": [],
+  "pdf_pages": 46,
+  "pptx_slides": 46,
+  "pptx_notes": 46,
+  "speech_note_mismatch": [],
+  "visible_text_mismatch": [],
+  "speech_docx_mismatch": [],
+  "old_paths_remaining": [],
+  "source_seconds": 2845,
+  "status": "integrity checked; academic content requires rewriting"
+}

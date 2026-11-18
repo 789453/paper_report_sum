@@ -1,0 +1,64 @@
+% Local derivative settings; upstream RenminUniv.sty remains unchanged.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ruc-research}[2026/11/15 Chinese research group meeting]
+\RequirePackage{lmodern}
+% Direct xeCJK avoids a locally incompatible zhnumber dependency in CTeX.
+% No Chinese section-number/date macros are needed in these slides.
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+\IfFontExistsTF{KaiTi}{%
+  \setCJKmainfont{KaiTi}[AutoFakeBold=2]\setCJKsansfont{KaiTi}[AutoFakeBold=2]\setCJKmonofont{FangSong}%
+}{%
+  \setCJKmainfont{FandolKai-Regular}\setCJKsansfont{FandolKai-Regular}%
+  \setCJKmonofont{FandolFang-Regular}%
+}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+\AtBeginDocument{\renewcommand{\figurename}{图}\renewcommand{\tablename}{表}}
+\RequirePackage{amsmath,amssymb,booktabs,graphicx,tabularx}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\RequirePackage{RenminUniv}
+\usefonttheme{professionalfonts}
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+\usetikzlibrary{arrows.meta,positioning,calc}
+% Remove both the emblem watermark and any canvas background.
+\setbeamertemplate{background}{}
+\setbeamertemplate{background canvas}[default]
+\setbeamertemplate{navigation symbols}{}
+\AtBeginSection[]{}
+\AtBeginSubsection[]{}
+\setbeamertemplate{page number in head/foot}[appendixframenumber]
+\newif\ifRUCappendix
+\RUCappendixfalse
+\let\RUCoriginalappendix\appendix
+\renewcommand{\appendix}{\RUCoriginalappendix\RUCappendixtrue}
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[colsep=1.1pt]{upper separation line foot}\end{beamercolorbox}%
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\hfill\insertshortinstitute
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}{\hypersetup{linkcolor=white}\insertshorttitle}\hfill
+    \ifRUCappendix A\fi\usebeamertemplate{page number in head/foot}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.1pt]{lower separation line foot}\end{beamercolorbox}%
+}
+\setbeamersize{text margin left=.7cm,text margin right=.7cm}
+\setbeamerfont{frametitle}{size=\large}
+\setbeamerfont{caption}{size=\footnotesize}
+\setbeamerfont{block title}{size=\normalsize}
+\setbeamercolor{block body}{bg=tsinghua!4,fg=black}
+\setbeamercolor{alerted text}{fg=tsinghua}
+\setbeamercolor{section in head/foot}{fg=white,bg=tsinghua!50!black}
+\setbeamercolor{author in head/foot}{fg=white,bg=tsinghua}
+\setbeamercolor{title in head/foot}{fg=white,bg=tsinghua!50!black}
+\addtobeamertemplate{headline}{\begingroup\hypersetup{linkcolor=white}}{\endgroup}
+\setlength{\parskip}{3pt}
+\newcommand{\source}[1]{\par\smallskip{\fontsize{6.8}{8.2}\selectfont\color{black!65}#1\par}}
+\newcommand{\paperref}[1]{\source{来源：用户提供的 SSRN 稿（封面标 2023.10），#1。}}
+\newcommand{\judgement}[1]{\source{汇报人评议：#1}}
+\newcommand{\stars}{\source{括号为原表 $t$ 值；***、**、* 分别表示 1\%、5\%、10\% 显著性水平。}}
+\newcommand{\takeaway}[1]{\par\medskip\alert{#1}\par}
+\hypersetup{colorlinks=true,linkcolor=tsinghua,urlcolor=tsinghua,citecolor=tsinghua}

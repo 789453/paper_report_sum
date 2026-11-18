@@ -1,0 +1,113 @@
+\section{数据与测度}
+\subsection{2.1 样本}
+\begin{frame}{从浏览面板识别有股票交易的家庭}
+  \strap{2.1\quad 美国，2007年1、2、3、6月}
+  \begin{center}
+    \begin{tikzpicture}[node distance=7mm]
+      \node[storybox,text width=8.6cm] (all)
+        {\textbf{原始面板}\quad 数万户、约20亿条带时间戳的URL};
+      \node[storyfocus,text width=8.6cm,below=of all] (sub)
+        {\textbf{\large 484户 \quad 2,911笔交易}\\[-1pt]\small 入选家庭约850万条浏览记录};
+      \draw[grapharrow] (all.south)-- node[right,font=\scriptsize]{识别至少一笔美国普通股或ADR交易} (sub.north);
+    \end{tikzpicture}
+  \end{center}
+  \small
+  线上研究公司通过随机拨号等方式招募。经同意安装插件，汇总同一家庭的跨站活动并匿名化。
+  \par
+  观察单位为家庭。订单可识别股票、方向和时点，数据缺少完整持仓。
+  \refnote{论文 pp.~8–13、58–60，Table 1。}
+\end{frame}
+
+\subsection{2.2 URL识别}
+\begin{frame}{一个网址如何变成一条研究记录}
+  \strap{2.2\quad 专门页面}
+  \vspace{1mm}
+  {\large\urllit{http://finance.yahoo.com/q/\textcolor{wine}{ao}?s=\textcolor{wine}{IMCL}}\par}
+  \medskip
+  \begin{tabularx}{\linewidth}{@{}L{.25\linewidth}YY@{}}
+    \toprule
+    \textbf{来源网站} & \textbf{研究主题} & \textbf{研究标的}\\
+    \midrule
+    Yahoo Finance & \urllit{ao} 经历史网页核验为分析师意见 & \urllit{s=IMCL} 给出股票代码\\
+    \bottomrule
+  \end{tabularx}
+  \vspace{3mm}
+  \finding{\textbf{研究记录}\quad IMCL \quad｜\quad 分析师意见 \quad｜\quad 时点与活动时间}
+  \refnote{论文 p.~10，附录 Step 3、Table IA1 第13行。IA1为作者构造例。}
+\end{frame}
+
+\begin{frame}{复合图表要辨认内容，也要分配时长}
+  \strap{2.2\quad 同一页面显示多种信息}
+  {\small\urllit{.../stocks/earnings/update\_earningsChart.asp?}\par}
+  \medskip
+  \small
+  \begin{tabularx}{\linewidth}{@{}L{.58\linewidth}Y@{}}
+    \toprule
+    \textbf{网址中的线索} & \textbf{可辨认的信息}\\
+    \midrule
+    \urllit{duration=1095 \& daysforward=545} & 约3年历史、约1.5年前瞻\\
+    \urllit{indicator=volume,1,13,EMA,13} & 成交量与移动平均图形\\
+    相邻记录 \urllit{symbol=IMCL} & 补足该图表的股票归属\\
+    \bottomrule
+  \end{tabularx}
+  \vspace{2mm}
+  \finding{遇到多标的或多内容记录，在可辨类别间均分活动时长。分配总和等于原时长。}
+  \refnote{论文 p.~10，附录 Step 4、Table IA1 第6–7行。参数为作者构造例。}
+\end{frame}
+
+\begin{frame}{上下文可以补股票，新闻主题仍未知}
+  \strap{2.2\quad 何时能补配缺失股票代码}
+  \vspace{3mm}
+  \begin{center}
+    \begin{tikzpicture}
+      \node[storybox,text width=2.6cm] (a) {\scriptsize 14:39:20\\ \textbf{IMCL}\\ 综合行情};
+      \node[storyfocus,text width=2.6cm,right=8mm of a] (b) {\scriptsize 14:39:25\\ 新闻地址\\ 缺股票代码};
+      \node[storybox,text width=2.6cm,right=8mm of b] (c) {\scriptsize 14:39:29\\ \textbf{IMCL}\\ 综合行情};
+      \draw[storyarrow] (a)--(b);
+      \draw[storyarrow] (b)--(c);
+    \end{tikzpicture}
+  \end{center}
+  \vspace{2mm}
+  \finding{前后最近的已匹配研究都只涉及同一只股票，才将中间记录补配给该股。}
+  \refnote{附录 Steps 8–9，Table IA1 第10–12行，作者构造例。}
+\end{frame}
+
+\subsection{2.3 交易配对}
+\begin{frame}{从券商操作识别一次订单事件}
+  \strap{2.3\quad 交易记录为研究提供时间锚点}
+  {\large\urllit{ordertype="sell"\&symbol=GOOG\&shares=100}\par}
+  \smallskip
+  {\small 卖出方向 \hspace{1.8cm} GOOG \hspace{1.9cm} 100股\par}
+  \medskip
+  \begin{tabularx}{\linewidth}{@{}L{.23\linewidth}Y@{}}
+    \toprule
+    \textbf{处理对象} & \textbf{规则}\\
+    \midrule
+    浏览会话 & 相邻点击间隔不超过15分钟，划作同一会话。\\
+    候选交易 & 同股、同方向且间隔不超过30分钟的候选点击合并，以末次点击时点代表交易。\\
+    \bottomrule
+  \end{tabularx}
+  \refnote{论文 pp.~10、12，附录 Steps 1–2，Table IA1 第20行。方向按示例URL。}
+\end{frame}
+
+\begin{frame}{同股研究归到下一笔交易}
+  \strap{2.3\quad 同一家庭、同一股票的研究时点}
+  \begin{center}
+    \begin{tikzpicture}[x=1.04cm,y=1cm]
+      \draw[storyarrow] (.15,0)--(10.05,0);
+      \foreach \x/\t in {.65/周一买入,4.05/周三卖出,7.45/周五买入}{
+        \draw[semithick] (\x,-.11)--(\x,.14);
+        \node[above,font=\small\bfseries] at (\x,.15) {\t};
+      }
+      \draw[grapharrow] (.82,-.64)--(4.02,-.64) node[midway,above,font=\scriptsize] {周二读同股盈利};
+      \draw[grapharrow] (4.22,-.64)--(7.42,-.64) node[midway,above,font=\scriptsize] {周四看同股行情};
+      \draw[storyarrow,draw=slate] (7.62,-.64)--(10.03,-.64) node[midway,above,font=\scriptsize] {周末查同股资料};
+      \node[below,font=\small\bfseries,text=wine] at (2.42,-.78) {周三交易前};
+      \node[below,font=\small\bfseries,text=wine] at (5.82,-.78) {周五交易前};
+      \node[below,font=\small\bfseries,text=slate] at (8.83,-.78) {末笔交易后};
+    \end{tikzpicture}
+  \end{center}
+  \finding{下一笔同股交易是归属边界。观察期内此后没有同股交易，则计入末笔后的研究。}
+  \nextq{有了家庭、内容和时点，先问研究投入多大、时间花在何处。}
+  \refnote{归属规则见论文 p.~37。时间线为教学示意。}
+\end{frame}

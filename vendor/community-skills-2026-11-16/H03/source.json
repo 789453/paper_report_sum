@@ -1,0 +1,13 @@
+{
+  "id": "H03",
+  "category": "anti-AI-prose",
+  "repository": "neuromechanist/research-skills",
+  "commit": "cf52ffe6e518281ec574f2e1b4365c8bdf467d6f",
+  "path": "plugins/manuscript/skills/humanizer/SKILL.md",
+  "url": "https://github.com/neuromechanist/research-skills/blob/cf52ffe6e518281ec574f2e1b4365c8bdf467d6f/plugins/manuscript/skills/humanizer/SKILL.md",
+  "sha256": "5f8d9d94cc029593a029f41ca1e7f8ac5869a2dbb76bc41311348950f3f155e7",
+  "bytes": 61447,
+  "license_file": "LICENSE",
+  "license_preview": "BSD 3-Clause License\n\nCopyright (c) 2026, Seyed (Yahya) Shirazi\n\nRedistribution and use in source and binary forms, with",
+  "retrieved": "2026-11-16"
+}

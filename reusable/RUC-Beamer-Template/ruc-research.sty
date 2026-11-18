@@ -1,0 +1,69 @@
+% Local derivative of the RUC Beamer theme. See README.md and LICENSE-RUC.txt.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ruc-research}[2026/11/18 Portable Chinese Beamer layout]
+
+\RequirePackage{lmodern}
+% Use xeCJK directly to keep the template independent of CTeX/zhnumber.
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+\IfFontExistsTF{KaiTi}{%
+  \setCJKmainfont{KaiTi}[AutoFakeBold=2]%
+  \setCJKsansfont{KaiTi}[AutoFakeBold=2]%
+}{%
+  % Let fontspec select an available OpenType script for Fandol.
+  \setCJKmainfont{FandolKai-Regular.otf}[Script=CustomDefault,AutoFakeBold=2]%
+  \setCJKsansfont{FandolKai-Regular.otf}[Script=CustomDefault,AutoFakeBold=2]%
+}
+\IfFontExistsTF{FangSong}{%
+  \setCJKmonofont{FangSong}%
+}{%
+  \setCJKmonofont{FandolFang-Regular.otf}[Script=CustomDefault]%
+}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+\AtBeginDocument{\renewcommand{\figurename}{图}\renewcommand{\tablename}{表}}
+
+\RequirePackage{amsmath,amssymb,booktabs,graphicx,tabularx}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\RequirePackage{RenminUniv}
+\usefonttheme{professionalfonts}
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+% Override the original watermark before Beamer draws any frame.
+\setbeamertemplate{background}{}
+\setbeamertemplate{background canvas}[default]
+\setbeamertemplate{navigation symbols}{}
+\AtBeginSection[]{}
+\AtBeginSubsection[]{}
+
+\setbeamertemplate{page number in head/foot}[appendixframenumber]
+\newif\ifRUCappendix
+\let\RUCoriginalappendix\appendix
+\renewcommand{\appendix}{\RUCoriginalappendix\RUCappendixtrue}
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[colsep=1.1pt]{upper separation line foot}\end{beamercolorbox}%
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\hfill\insertshortinstitute
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}{\hypersetup{linkcolor=white}\insertshorttitle}\hfill
+    \ifRUCappendix A\fi\usebeamertemplate{page number in head/foot}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.1pt]{lower separation line foot}\end{beamercolorbox}%
+}
+
+\setbeamersize{text margin left=.7cm,text margin right=.7cm}
+\setbeamerfont{frametitle}{size=\large}
+\setbeamerfont{caption}{size=\footnotesize}
+\setbeamerfont{block title}{size=\normalsize}
+\setbeamercolor{block body}{bg=tsinghua!4,fg=black}
+\setbeamercolor{alerted text}{fg=tsinghua}
+\setbeamercolor{section in head/foot}{fg=white,bg=tsinghua!50!black}
+\setbeamercolor{author in head/foot}{fg=white,bg=tsinghua}
+\setbeamercolor{title in head/foot}{fg=white,bg=tsinghua!50!black}
+\addtobeamertemplate{headline}{\begingroup\hypersetup{linkcolor=white}}{\endgroup}
+\setlength{\parskip}{3pt}
+\newcommand{\source}[1]{\par\smallskip{\fontsize{6.8}{8.2}\selectfont\color{black!65}#1\par}}
+\hypersetup{colorlinks=true,linkcolor=tsinghua,urlcolor=tsinghua,citecolor=tsinghua}

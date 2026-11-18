@@ -1,0 +1,4 @@
+interface:
+  display_name: "金融论文深读与组会汇报"
+  short_description: "按读者理解组织经济问题、实证方法和证据；需要幻灯片时沿用RUC Beamer模板"
+  default_prompt: "使用 $academic-paper-beamer，先核对论文与证据，再按读者思路讲清经济问题、核心方法和增量，并按当前指定格式交付。"

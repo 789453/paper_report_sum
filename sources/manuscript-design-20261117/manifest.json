@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-17",
+  "feedback_source": "E:\\Basic_material\\Downloads\\学术汇报周二第一组科研批评_原文.md",
+  "local_copy": "raw_reference\\2026-11-17_46页汇报批评_用户原文.md",
+  "sha256": "6df2d0147a950a5fc8a3899562bb1e721b5bec2d35fb938e23d2ab7aa80304b9",
+  "paper_sha256": "6f579bb189434f1ce6eb200cba3f70e96918a6748f4a3c37ff0c528a097ccc95",
+  "sources": [
+    {
+      "path": "sources\\manuscript-design-20261117\\Cochrane2022.pdf",
+      "url": "https://bfi.uchicago.edu/wp-content/uploads/2022/06/Cochrane-John-phd_paper_writing_slides.pdf",
+      "sha256": "323d337d504c861c3104dcefd7cff63df1891b07fda0fa37d8ca16223ff2507a"
+    },
+    {
+      "url": "https://sites.nd.edu/esims/files/2024/01/slides_presentations_2024.pdf",
+      "download_error": "403 Client Error: Forbidden for url: https://sites.nd.edu/esims/files/2024/01/slides_presentations_2024.pdf"
+    },
+    {
+      "path": "sources\\manuscript-design-20261117\\DallasFed-discussant.pdf",
+      "url": "https://www.dallasfed.org/~/media/documents/educate/events/esp/tipsdiscussant.pdf",
+      "sha256": "355e34cd1197f48626f9d3becc71bff0526b896c7f33240e28f6e87a04916bc1"
+    }
+  ],
+  "web_consulted": [
+    {
+      "url": "https://sites.nd.edu/esims/files/2024/01/slides_presentations_2024.pdf",
+      "status": "Read with web tool; direct download 403; no local PDF claimed"
+    },
+    {
+      "url": "https://academic.oup.com/rfs/article-abstract/31/12/4595/4982028",
+      "status": "Search abstract and metadata; direct page fetch failed; full final article not independently reviewed"
+    },
+    {
+      "url": "https://ftp.aeaweb.org/articles/pdf/doi/10.1257/aer.20200243",
+      "status": "Metadata only; not used as independent full-paper evidence"
+    },
+    {
+      "url": "https://www.reddit.com/r/AskAcademia/comments/17aazd7/questions_on_presenting_an_oral_presentation_at_a/",
+      "status": "Read as presentation experience, not technical research evidence"
+    }
+  ]
+}

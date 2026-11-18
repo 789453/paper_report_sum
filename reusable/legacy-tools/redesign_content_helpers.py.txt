@@ -1,0 +1,3 @@
+# Historical helper designs; adapt context before reuse.
+def add(title, section, purpose, say, *, lines=None, table=None, formula=None, asset=None, source='', seconds=55, note='', kind='text'):
+    slides.append(dict(page=len(slides) + 1, title=title, section=section, purpose=purpose, speech=say, lines=lines or [], table=table, formula=formula, asset=asset, source=source, seconds=seconds, speaker_note=note, kind=kind))

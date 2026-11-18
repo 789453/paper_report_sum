@@ -1,0 +1,42 @@
+{
+  "chart_all": {
+    "paper_pdf_page": 52,
+    "pdf_clip_rect": [
+      125,
+      130,
+      490,
+      390
+    ],
+    "method": "vector PDF crop; no inferred data"
+  },
+  "event_msft": {
+    "paper_pdf_page": 53,
+    "pdf_clip_rect": [
+      180,
+      168,
+      422,
+      355
+    ],
+    "method": "vector PDF crop; no inferred data"
+  },
+  "paths": {
+    "paper_pdf_page": 55,
+    "pdf_clip_rect": [
+      72,
+      195,
+      502,
+      485
+    ],
+    "method": "vector PDF crop; no inferred data"
+  },
+  "timing_median": {
+    "paper_pdf_page": 54,
+    "pdf_clip_rect": [
+      311,
+      173,
+      546,
+      515
+    ],
+    "method": "vector PDF crop; no inferred data"
+  }
+}
