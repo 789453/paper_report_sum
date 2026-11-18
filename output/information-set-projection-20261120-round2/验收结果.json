@@ -1,0 +1,22 @@
+{
+  "pages": 50,
+  "main_pages": 44,
+  "appendix_pages": 6,
+  "validated_page_labels": 49,
+  "hyperlinks": 2135,
+  "invalid_internal_links": 0,
+  "appendix_source_unchanged": true,
+  "font_records": 61,
+  "all_fonts_embedded": true,
+  "oral_sections": 44,
+  "estimated_oral_seconds": 1800,
+  "compile_problems": [],
+  "source_sha256": {
+    "raw_reference\\第二轮仔细微调_原文.md": "f39c41c2e83ce2c3c938e3ecda77c4cab2b943ee8ef5069c7e2376c69acdcdb1",
+    "On the Information Set of Individual Investors.pdf": "6f579bb189434f1ce6eb200cba3f70e96918a6748f4a3c37ff0c528a097ccc95",
+    "output\\information-set-projection-20261120\\个人投资者的信息集_11-20组会放映.pdf": "0d46cd24a93097975c0ef2c87b0b8d768113a394ed1b62f7d7bef512f9e1afd5",
+    "paper\\information-set-argument-v2\\projection-20261120-round2\\appendix.tex": "16222b88d89269ac3be480e526f128b4ac0b54fb0641681ddecfe72524fd842e",
+    "paper\\information-set-argument-v2\\projection-20261120-round2\\build\\main.pdf": "8c72a5e65c29326c143d10ce5030e42208d3f0e43d4543402221704366ca9798"
+  },
+  "limits": "Screen renders inspected separately; no live projector or human timed rehearsal."
+}

@@ -1,0 +1,14 @@
+{
+  "source_commit": "edacafc5c70c18d325468bfddda6616decf0a27c",
+  "archive_files": 51,
+  "files": {
+    "个人投资者的信息集_11-20组会放映_第二轮.pdf": "8c72a5e65c29326c143d10ce5030e42208d3f0e43d4543402221704366ca9798",
+    "个人投资者的信息集_第二轮LaTeX源码.zip": "8b294d350ebaab31a26abf03569724c6d86a37c524ea26e1ab546622dcc06e99",
+    "约30分钟口述讲稿.md": "6ac6daceacfae83d45a62e2c527daca0d221a8bf8f76e17515316f45aa06af13",
+    "讲述与计时.md": "c63dadd2ba9d72247007f7802eb162d29f649d7ccd353d1cd57dcbfd3b9973b0",
+    "第二轮微调_校订要求与核查.md": "6d154be488455c9ff41f787cad0b801b207b3ce4b66235aeffe2aa230af3dba9",
+    "验收结果.json": "e0519808c7a776409bd5e947f46a9a3739d4832318deac1db9101e7580ef9639"
+  },
+  "archive_crc_and_bytes_validated": true,
+  "all_tex_inputs_and_figures_in_archive": true
+}
