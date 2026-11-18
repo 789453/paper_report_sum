@@ -26,3 +26,5 @@ __pycache__/
 /qa/information-set-round2/
 /.playwright-cli/
 /output/playwright/
+
+/qa/information-set-user-final/

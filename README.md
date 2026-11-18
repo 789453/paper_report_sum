@@ -4,6 +4,8 @@
 
 ## 本轮研究文稿
 
+最新为按用户手改生成的[汇报总结版 PDF](output/information-set-projection-20261120-user-final/个人投资者的信息集_用户定稿_汇报总结版.pdf)，[TeX 入口](paper/information-set-argument-v2/projection-20261120-user-final/README.md)与[对照记录](docs/2026-11-18_用户定稿对照与总结页调整.md)。其余历史版本继续保留。
+
 **当前交付是第二轮仔细微调。** [放映 PDF](output/information-set-projection-20261120-round2/个人投资者的信息集_11-20组会放映_第二轮.pdf)、[工程与交付入口](paper/information-set-argument-v2/projection-20261120-round2/README.md)、[语义校订](docs/第二轮微调_01_语义校订与执行规范.md)、[逐页清单](docs/第二轮微调_02_逐页调整清单.md)和[核查记录](docs/第二轮微调_03_核查记录.md)。正文 44 页，备份 A1–A6；六块 Markdown/TeX 分阶段修改并提交。另有完整口述稿及约 30 分钟预算。下列版本保留作历史对照。
 
 用户自行调整请使用独立的[用户微调版](paper/information-set-argument-v2/projection-20261120-user-edit/README.md)。复制起点与第二轮一致，附逐页文件定位和编译命令；在该副本修改 TeX 后重新生成 PDF。

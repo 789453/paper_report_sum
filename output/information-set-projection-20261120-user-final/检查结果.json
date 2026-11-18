@@ -1,0 +1,20 @@
+{
+  "pages": 50,
+  "main_pages": 44,
+  "appendix_pages": 6,
+  "compile_issues": [],
+  "invalid_internal_links": [],
+  "link_count": 2135,
+  "all_fonts_embedded": true,
+  "user_wording_unchanged_except_authorized_frames": true,
+  "changed_frames": [
+    28,
+    43,
+    44
+  ],
+  "page_28": "original descriptions retained inside chart, 7pt, wrapped; math CJK fixed",
+  "page_43": "report summary with bold numbers and colored bands",
+  "page_44": "return link title updated",
+  "pdf_sha256": "75121b722089e144f9472a13c78e43188525cefbc1d919f4a7c93978cb10f8ac",
+  "visual_review": "All 50 pages checked through nine contact sheets; pages 28,43,44 inspected enlarged."
+}

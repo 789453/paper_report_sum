@@ -1,0 +1,556 @@
+diff --git a/paper/information-set-argument-v2/projection-20261120-user-edit/part-1.tex b/paper/information-set-argument-v2/projection-20261120-user-edit/part-1.tex
+index b7091bd..0491a27 100644
+--- a/paper/information-set-argument-v2/projection-20261120-user-edit/part-1.tex
++++ b/paper/information-set-argument-v2/projection-20261120-user-edit/part-1.tex
+@@ -10,20 +10,20 @@
+   \vspace{3mm}
+   {\color{wine}\rule{.95\linewidth}{.75pt}}\par\medskip
+   Toomas Laarits \quad Jeffrey Wurgler\par
+-  {\small NYU Stern School of Business \hfill 2026 年 4 月 27 日 Working Paper}\par
++  {\small New York University \hfill 26 年 4 月 Working Paper}\par
+   \vspace{4mm}{\small 汇报人：杨博远\quad 27国金博0}\vfill
+ \end{frame}
+ 
+ \begin{frame}[label=authors]{作者与选文}
+   \crumb{开场}{作者与版本}{NBER WP 33625 · SSRN 5187645}
+-  \leadrow{Jeffrey Wurgler}{NYU Stern，Nomura 金融学讲席教授；资产定价与行为金融领域的资深学者。}
++  \leadrow{Jeffrey Wurgler}{NYU 教授；资产定价与行为金融领域的资深学者。}
+   \smallskip
+   {\small
+   \textbf{Baker--Wurgler (2006), \textit{Journal of Finance}}\par
+   \textit{Investor Sentiment and the Cross-Section of Stock Returns}\par
+-  综合投资者情绪指数；情绪与股票横截面收益。\par\smallskip
++  Baker--Wurgler；情绪指数。\par\smallskip
+   \textbf{Barberis--Shleifer--Wurgler (2005), \textit{JFE}}\par
+-  \textit{Comovement}：指数成分变动与股票收益联动。\par}
++  \textit{Comovement}：SP500指数成分变动与股票收益联动。\par}
+   \smallskip
+   \leadrow{Toomas Laarits}{NYU Stern，金融学助理教授。}
+   \smallskip\small
+@@ -56,9 +56,9 @@
+   \]
+   {\small 常用定价式。\(M\) 为随机折现因子，\(X\) 为支付，\(\mathcal I_t\) 为条件信息集。}
+   \medskip
+-  \pair{\small\textbf{甲（讲解例）：}\; 查盈利与基本面\\
++  \pair{\small\textbf{甲：}\; 查盈利与基本面\\
+        \(\to\) 上调现金流预期 \(\to\) 买入}
+-       {\small\textbf{乙（讲解例）：}\; 看近期价格下行\\
++       {\small\textbf{乙：}\; 看近期价格下行\\
+        \(\to\) 预期跌势延续 \(\to\) 卖出}
+   \finding{甲乙的预期不同，可能源于所依据的信息集不同。}
+ \end{frame}
+@@ -68,10 +68,10 @@
+   \small
+   \begin{tabularx}{\linewidth}{@{}L{.31\linewidth}YY@{}}
+     \toprule 文献 & 关注的信息假设 & 常见经验观察\\\midrule
+-    Markowitz／Sharpe & 预期收益和风险量参与配置 & 组合权重、收益与风险\\
+-    Hong--Stein (1999) & 新闻逐步扩散，价格信号引导动量交易 & 价格延续与反转\\
++    Markowitz／Sharpe & 预期收益和风险 M-V & 组合权重、收益与风险\\
++    Hong--Stein (1999) & 新闻逐步扩散，引导动量交易 & 价格延续与反转\\
+     Barberis et al. (2015) & 历史收益进入外推信念 & 预期调查与历史收益\\
+-    Barber--Odean (2008) & 显著事件和极端表现进入候选集合 & 新闻、成交量与买单\\
++    Barber--Odean (2008) & 显著事件和极端表现的影响 & 新闻、成交量与买单\\
+     \bottomrule
+   \end{tabularx}
+   \finding{特定资产定价模型依赖特定的信息集与信息假设。}
+@@ -81,22 +81,22 @@
+ \begin{frame}[label=proxies]{注意力代理能看到什么}
+   \crumb{Part 1}{1.2 注意力证据}{引言 pp.\,3--7}
+   \small
+-  现有注意力与信息集测度，多依赖搜索、新闻阅读和单券商记录等零散代理。
++  现有注意力的信息集测度，间接且零散。
+   \medskip
+   \begin{tabularx}{\linewidth}{@{}L{.32\linewidth}Y@{}}
+     \toprule 数据 & 可见对象\\\midrule
+-    搜索量、新闻阅读量 & 股票或新闻受关注的时间和强度\\
+-    单券商点击与账户活动 & 站内查阅，以及客户的订单或交易\\
++    搜索量、新闻阅读量 & 受关注的时间和强度\\
++    单券商点击与账户活动 & 站内查阅客户交易\\
+     \textbf{本文的跨域名 URL} & 同一投资者的跨站访问、研究主题与订单时点\\\bottomrule
+   \end{tabularx}
+-  \finding{跨域名 URL 为投资者微观信息获取行为提供高质量代理。}
++  \finding{跨域名 URL 网址连接数据为投资者微观信息获取行为提供高质量代理。}
+ \end{frame}
+ 
+ \begin{frame}[label=dimensions]{信息集：用四个维度刻画}
+   \crumb{Part 1}{1.2 注意力证据}{引言 pp.\,3--5}
+   \centering
+   \begin{tikzpicture}
+-    \node[storyfocus,text width=5.1cm] (root) at (0,0) {同一投资者（家庭）的网页链接记录};
++    \node[storyfocus,text width=5.1cm] (root) at (0,0) {拆解同一投资者（家庭）的网页链接记录};
+     \foreach \x/\branchname/\branchtext in {
+       -4.08/{深度 (Depth)}/{研究多久？},-1.36/{主题 (Topics)}/{看哪些信息？},
+        1.36/{异质性}/{股票和投资者如何不同？},4.08/{时机 (Timing)}/{何时、依何顺序？}} {
+diff --git a/paper/information-set-argument-v2/projection-20261120-user-edit/part-2.tex b/paper/information-set-argument-v2/projection-20261120-user-edit/part-2.tex
+index e0ef0af..6df0fde 100644
+--- a/paper/information-set-argument-v2/projection-20261120-user-edit/part-2.tex
++++ b/paper/information-set-argument-v2/projection-20261120-user-edit/part-2.tex
+@@ -10,17 +10,17 @@
+     \greatnum{20 亿}\;条 URL\par\smallskip
+     \textbf{数万户家庭}\par\small
+     美国，2007 年 1、2、3、6 月。\par
+-    观察月份因户而异；随机拨号等方式招募。}
++    随机拨号等方式招募。}
+   {\textbf{至少有一笔推定股票订单}\par\medskip
+     \greatnum{484}\;户\par\smallskip
+     \textbf{850 万点击}\quad\textbf{6 万小时}\par\smallskip
+-    \textbf{2,911 笔}推定普通股／ADR 订单}
++    \textbf{2,911 笔}推定股票订单}
+   \smallskip
+   {\color{wine}\rule{.94\linewidth}{.5pt}}\par\smallskip
+   {\small 匿名家庭 ID \(\mid\) 时间戳 \(\mid\) URL \(\mid\) 停留时长\par\smallskip
+-  8 家券商，7 家识别到订单；站外含 Yahoo Finance、CNBC、MarketWatch。}
++  8 家券商，含 Yahoo Finance、CNBC、MarketWatch等。}
+   \finding{\textbf{数据来自}数万户家庭的浏览器插件记录。\quad
+-  \textbf{缺少}后台成交确认与完整持仓。}
++  \textbf{缺少}交易绩效数据。}
+ \end{frame}
+ 
+ \newcommand{\udomain}[1]{\textcolor{quiet}{#1}}
+@@ -29,7 +29,7 @@
+ \newcommand{\uparam}[1]{\textcolor{samplegold}{#1}}
+ \newcommand{\utrade}[1]{\textcolor{wine}{#1}}
+ \begin{frame}[label=urls]{三类 URL 如何读出股票、主题与展示参数}
+-  \crumb{Part 2}{2.1 浏览样本与 URL}{Table IA1 第 20、13、7 行 · 原文构造例}
++  \crumb{Part 2}{2.1 浏览样本与 URL}{Table IA1}
+   {\small\textbf{1 下单}\quad\utrade{卖出 100 股}\quad\ucode{GOOG}\par}
+   {\fontsize{8}{10}\selectfont\ttfamily
+   \udomain{https://[broker-1].com}\upath{/invest/socreateentry?}\par
+@@ -39,12 +39,12 @@
+   {\fontsize{8}{10}\selectfont\ttfamily
+   \udomain{http://finance.yahoo.com}\upath{/q/ao?}\ucode{s=IMCL}\par}
+   \medskip
+-  {\small\textbf{3 图表}\quad\upath{盈利图}\quad\uparam{回看 1,095 天、前瞻 545 天}\par}
++  {\small\textbf{3 图表}\quad\upath{盈利图}\quad\uparam{回看 1,095 天、前瞻 545 天、成交量 EMA}\par}
+   {\fontsize{8}{10}\selectfont\ttfamily
+   \udomain{https://[broker-1].com}\upath{/stocks/earnings/update\_earningsChart.asp?}\par
+   \uparam{showQTRChange=1\&display=mountain\&overlay=}\par
+   \uparam{\&indicator=volume,1,13,EMA,13\&duration=1095\&daysforward=545\&year=2006}\par}
+-  \smallskip{\small IMCL 由相邻链接定位；参数还显示图形格式及成交量 EMA。}\par\medskip
++  \smallskip{\small }\par\medskip
+   {\footnotesize\udomain{域名：来源}\quad\upath{路径：主题}\quad\ucode{代码：股票}\quad
+    \uparam{参数：展示}\quad\utrade{下单字段：方向与数量}}
+ \end{frame}
+@@ -66,7 +66,7 @@
+ \subsection{2.2 记录整理与交易归属}
+ \begin{frame}[label=rules]{浏览会话与重复订单的整理}
+   \crumb{Part 2}{2.2 记录整理与交易归属}{Table IA1 · Steps 1、2 · 原文构造例}
+-  {\small 2007 年 3 月 23 日，22 条 URL 串起约 14 分钟的浏览。}\par\bigskip
++  {\small 预处理举例：2007 年 3 月 23 日，22 条 URL 串起约 14 分钟的浏览。}\par\bigskip
+   \begin{center}
+   \begin{tikzpicture}[x=.70cm,y=1cm,font=\scriptsize]
+     \foreach \a/\b/\c in {0/5.15/papergray,5.15/6.32/paperblue,6.32/8.05/paperblue,8.05/9.68/paperblue,9.68/11.87/papergray,11.87/14.33/paperrose}
+@@ -83,12 +83,11 @@
+   \leadrow{会话划分}{相邻点击间隔 \(\leq15\) 分钟，归入同一浏览会话。}
+   \medskip
+   \leadrow{订单合并}{同股、同向候选订单相隔 \(\leq30\) 分钟则合并，取末次时点。}
+-  \finding{这次会话研究过 IMCL，最后下单的是 GOOG。全部研究与交易标的研究需要区分。}
+ \end{frame}
+ 
+ \begin{frame}[label=assignment]{补齐代码，再把研究归到同股订单}
+   \crumb{Part 2}{2.2 记录整理与交易归属}{Step 8 · p.\,37 · 归属教学例}
+-  \small\textbf{补缺码：同会话、前后最近已匹配记录为同一股}\par\smallskip
++  \small\textbf{补股票代码缺失：同会话前后匹配确认}\par\smallskip
+   {\centering
+   \begin{tikzpicture}[node distance=7mm,font=\small]
+     \node[storybox,minimum height=.7cm,text width=2.2cm] (a) {IMCL 研究};
+@@ -97,7 +96,7 @@
+     \draw[storyarrow] (a)--(b);\draw[storyarrow] (b)--(c);
+     \draw[wine,dashed,-{Stealth}] (a.north) to[bend left=25] node[above,font=\scriptsize]{补配 IMCL} (b.north);
+   \end{tikzpicture}\par}\smallskip
+-  \small\textbf{归研究：对准下一笔同股交易（同一股票的教学例）}\par\smallskip
++  \small\textbf{特定研究时段，算到下一笔同股交易}\par\smallskip
+   {\centering
+   \begin{tikzpicture}[node distance=4mm,font=\small]
+     \node[storybox,text width=2.0cm,minimum height=.85cm] (t) {周二\\研究};
+@@ -106,7 +105,7 @@
+     \node[storyfocus,text width=2.0cm,minimum height=.85cm,right=of h] (f) {周五\\买入};
+     \draw[grapharrow] (t)--(w);\draw[grapharrow] (h)--(f);
+   \end{tikzpicture}\par}\smallskip
+-  {\small 不是固定归到次日；之后无同股交易，则归到末笔交易之后。}
+-  \finding{得到每位投资者、每只股票、带主题和时间的研究记录，以及可归属的订单时点。}
++  {\small 周四的算周五前的买入研究，而非周三交易的事后分析。}
++  \finding{得到每位投资者、每只股票、带主题、时间、订单的记录。}
+   \scriptsize\jump{appendix-4}{A4 · 原文处理步骤}
+ \end{frame}
+diff --git a/paper/information-set-argument-v2/projection-20261120-user-edit/part-3.tex b/paper/information-set-argument-v2/projection-20261120-user-edit/part-3.tex
+index b2f3b89..9e910a3 100644
+--- a/paper/information-set-argument-v2/projection-20261120-user-edit/part-3.tex
++++ b/paper/information-set-argument-v2/projection-20261120-user-edit/part-3.tex
+@@ -20,14 +20,14 @@
+         \node at (0,\y) {\layertext};
+       }
+     \end{tikzpicture}\par
+-    {\scriptsize 形状示意处理顺序与子样本，宽度无数量刻度。}
++    {\scriptsize }
+     \column{.39\textwidth}\small
+     \textcolor{sampleblue}{\textbf{484 户 · 总体投入}}\par
+-    估计研究总量与主题分布，不要求每条研究链接都匹配个股。\par\medskip
++    估计研究总量与主题分布（比如市场宏观研究）。\par\medskip
+     \textcolor{samplegold}{\textbf{50 户 · 高代码匹配}}\par
+-    研究 URL 大多能直接或经相邻记录匹配股票代码，可限定到所交易股票。
++    可限定匹配到交易股票的50个投资者数据。
+   \end{columns}
+-  \finding{后文并列总体与高匹配子样本。50 户按研究链接的代码匹配质量选取，并非只有这 50 户能识别订单。}
++  \finding{总体与高匹配子样本，用于不同的统计和实证}
+ \end{frame}
+ 
+ \begin{frame}[label=categories]{研究内容与混合页面的归类}
+@@ -38,14 +38,14 @@
+     风险统计、盈利、股利 & 其他基本面、分析师、知情持股\\
+     价格图、技术信号 & 公司官网、其他、未确定\\
+   \end{tabularx}\par\medskip
+-  \textbf{3 种混合格式：一页可以包含多个主题}\par\smallskip
++  \textbf{3 种混合格式：页面包含多个主题，怎么分配权重}\par\smallskip
+   \begin{tabularx}{\linewidth}{@{}L{.27\linewidth}Y@{}}
+-    \toprule 页面格式 & 时间如何分到具体主题\\\midrule
+-    综合行情快照 & 正文按各主题专门页面的参与比例分配（兴趣权重）。\\
+-    未确定类型的新闻 & 依据 RavenPack 新闻内容分类的分布分配。\\
+-    留言板 & 依据 Reddit r/stocks 帖子主题的分布分配。\\\bottomrule
++    \toprule 页面格式 & 使用时间如何分到具体主题\\\midrule
++    综合行情快照 & 正文按各主题在页面比例来分配。\\
++    未确定类型的新闻 & 依据 RavenPack 新闻来分类。\\
++    留言板 & 依据 Reddit r/stocks 帖子来主题。\\\bottomrule
+   \end{tabularx}
+-  \finding{按信息内容分类；快照、新闻与留言板先保留格式，再报告分配后的主题时间。}
++  \finding{按信息内容分类和预处理。}
+ \end{frame}
+ 
+ \newcommand{\depthbars}[5]{%
+@@ -60,15 +60,15 @@
+     r_i(S)=\frac{\text{投资者 }i\text{ 在 }S\text{ 的研究分钟}}{\text{投资者 }i\text{ 的订单笔数}},
+     \qquad \overline r_S=\frac{\sum_i r_i(S)}{N},\quad \operatorname{Med}_i r_i(S).
+   \]
+-  {\small \(i\)：投资者（家庭）；\(S\)：统计的股票范围。先按户计算，再跨户汇总。}
++  {\small \(i\)：投资者（家庭）；\(S\)：股票范围。先按户计算，再跨户汇总。}
+   {\centering
+   \begin{tikzpicture}[x=.046cm,y=.72cm,font=\small]
+     \depthbars{2}{484 户 · 全部股票}{sampleblue}{144.2}{36.4}
+     \depthbars{1}{50 户 · 全部股票}{samplegold}{96.8}{51.7}
+     \depthbars{0}{50 户 · 所交易股票}{samplegold}{29.1}{5.7}
+-    \node[anchor=west] at (0,-.39) {分钟／笔 \quad 浅色均值 \quad 深色中位数};
++    \node[anchor=west] at (0,-.39) {分钟／笔 \quad 深色中位数 \quad 浅色均值};
+   \end{tikzpicture}\par}
+-  \finding{同一 50 户：限定到交易标的，中位数由 51.7 降至 5.7 分钟。全部研究还含未交易股票及部分难配码记录。\textbf{均值远高于中位数，投入呈右偏长尾。}}
++  \finding{50 户：限定到交易标的，中位数由 51.7 降至 5.7 分钟。\textbf{均值远高于中位数，投入呈右偏长尾。}}
+   \scriptsize\jump{appendix-5}{A5 · 画像与时长原表}
+ \end{frame}
+ 
+@@ -107,7 +107,7 @@
+     \node at (122,.35) {其他财经};
+   \end{tikzpicture}
+   \end{center}
+-  \finding{一共 144.2 分钟／笔，按均值加总，约 61\% 发生在券商站外。}
++  \finding{ 144 分钟／笔，按均值加总，约 61\% 发生在券商站外。}
+ \end{frame}
+ 
+ \subsection{3.2 主题与窗口}
+@@ -132,7 +132,7 @@
+       \topicbars{0}{风险统计}{1}{0.0}
+     \end{tikzpicture}
+   \end{center}
+-  \finding{两列分别读“多少家庭看过”和“平均花多少时间”。图为直接分类的代表性项目；约 1\% 的风险统计覆盖对应 7 户。}
++  \finding{两列表示“多少家庭看过”和“平均花多少时间”。风险指标（beta等）只覆盖对应 7 户。}
+   \scriptsize\jump{appendix-1}{A1 · 主题原表}
+ \end{frame}
+ 
+@@ -145,17 +145,15 @@
+     {\setlength{\fboxsep}{1pt}\color{wine}\fbox{\includegraphics[width=.86\linewidth]{yahoo-chart.png}}}\par
+     {\setlength{\fboxsep}{1pt}\color{sampleteal}\fbox{\includegraphics[width=.86\linewidth]{yahoo-dividend.png}}}\par
+     {\setlength{\fboxsep}{1pt}\color{sampleteal}\fbox{\includegraphics[width=.86\linewidth]{yahoo-eps.png}}}\par
+-    {\scriptsize Yahoo Finance · 2026-11-18 · 同页裁剪}\par\endgroup
++    {\scriptsize Yahoo Finance · 2026-11-18 }\par\endgroup
+   \column{.44\textwidth}
+     \textbf{价格图的均值分钟／笔}\par
+     \greatnum{39.1}\enspace\(\to\)\enspace\greatnum{64.4}\par
+     {\small 直接分类 \hfill 兴趣权重插补}\par\smallskip
+-    {\small\textbf{视觉权重（备选）}\par
+-    按不同内容占据的展示行数分配。\par\smallskip
+-    \textbf{兴趣权重（正文）}\par
+-    按各主题专门页面的参与比例分配。}
++    {\textbf{采用兴趣权重的方法}\par
++    按照投资者主动打开不同的主题页面，作为时间的分配比例。}
+   \end{columns}
+-  \finding{\textcolor{wine}{价格图}与\textcolor{sampleteal}{EPS、股利等}同页出现。混合页分配后，价格图仍居首；64.4 使用兴趣权重。}
++  \finding{\textcolor{wine}{价格图}与\textcolor{sampleteal}{EPS、股利等}同页出现。混合页分配后，价格图仍居首；}
+   \small\jump{appendix-3}{A3 · 权重细节}
+ \end{frame}
+ 
+@@ -177,14 +175,14 @@
+   \renewcommand{\arraystretch}{1.06}
+   \begin{tabularx}{\linewidth}{@{}L{.26\linewidth}L{.18\linewidth}Y@{}}
+     \toprule 理论／信息假设 & 现有事实的关系 & 证据逻辑\\\midrule
+-    组合选择的风险输入 & 较不一致 & 主动查看风险统计约 1\%，显式风险量很少被调取。\\
+-    DSSW 噪声交易 & 部分一致 & 研究较薄且偏价格；无法直接判断信息价值。\\
+-    Hong--Stein & 待第四部分 & 需看不同投资者怎样组合新闻和价格。\\
+-    BSV 盈利信号 & 部分一致 & 盈利覆盖 40\%，直接投入较短。\\
++    MV CAPM & 较不一致 & 主动查看风险统计约 1\%。\\
++    DSSW 噪声交易 & 部分一致 & 研究较薄且偏价格；\\
++    Hong--Stein & 待第四部分 & 讨论不同投资者看待新闻和价格。\\
++    BSV 盈利信号 & 部分一致 & 盈利覆盖 40\%。\\
+     收益外推 & 输入一致 & 价格图覆盖 93\%，主动窗口常为数月到一年。\\
+-    股利信号 & 证据有限 & 股利覆盖 17\%，直接研究较少。\\
+-    有限注意力 & 待第四部分 & 需看财报与事件是否吸引集中关注。\\
+-    同质信息输入 & 较不一致 & 均值明显高于中位数，投入差异很大。\\
++    股利信号 & 证据有限 & 股利覆盖 17\%。\\
++    有限注意力 & 待第四部分 & 讨论财报与事件是否吸引集中关注。\\
++    同质信息输入 & 较不一致 & 均值明显高于中位数。\\
+     \bottomrule
+   \end{tabularx}
+   \smallskip
+diff --git a/paper/information-set-argument-v2/projection-20261120-user-edit/part-4a.tex b/paper/information-set-argument-v2/projection-20261120-user-edit/part-4a.tex
+index 535f483..c0e21f0 100644
+--- a/paper/information-set-argument-v2/projection-20261120-user-edit/part-4a.tex
++++ b/paper/information-set-argument-v2/projection-20261120-user-edit/part-4a.tex
+@@ -1,22 +1,21 @@
+ % !TeX program = xelatex
+ % !TeX root = main.tex
+ \section{实证比较}
+-\sectionlead{section-4}{四、实证比较}{研究投入呈右偏长尾，均值难以代表典型投资者。差异来自股票、投资者，还是交易时点？下面按三个层次展开。}
++\sectionlead{section-4}{四、实证比较}{研究投入呈右偏长尾，均值难以代表典型投资者。异质性来自哪里？股票、投资者，还是交易时点。}
+ 
+ \begin{frame}[label=empirical-why]{为什么进一步比较股票、投资者与交易情境}
+   \crumb{Part 4}{实证动机}{Tables 2--3 · V--VII}
+   \small
+   \begin{tabularx}{\linewidth}{@{}L{.29\linewidth}YL{.24\linewidth}@{}}
+     \toprule 已见事实 & 需要进一步回答 & 分析方向\\\midrule
+-    典型投入较薄，价格图常见 & 哪些股票吸引更多研究？主题随什么改变？ & 股票 \(\times\) 月\\\midrule
+-    均值远高于中位数；交易笔数与每笔研究相关 \(-0.10\) & 简单的交易频率解释不足，研究风格怎样共同出现？ & 投资者（家庭）主题矩阵\\\midrule
+-    总量统计没有给出下单时钟 & 何时开始研究？如何在主题间移动并走向下单？ & 相对订单时点与路径\\\bottomrule
++    价格图关注最常见，均值远高于中位数 & 哪些股票和主题吸引更多研究？ & 股票 \(\times\) 月\\\midrule
++    交易笔数与每笔研究相关 \(-0.10\) & 交易频率，不足解释研究偏好 & 投资者（家庭）主题矩阵\\\midrule
++    - & 研究和交易时点如何？ & 相对订单时点与路径\\\bottomrule
+   \end{tabularx}\par\medskip
+-  {\small 月面板仅四个月，股票比较使用行业固定效应，难以充分设置公司固定效应。}
+ \end{frame}
+ 
+ \subsection{4.1 股票与投资者}
+-\begin{frame}[label=slices]{同一批记录可以切成三种分析对象}
++\begin{frame}[label=slices]{三种分析对象依次研究}
+   \crumb{Part 4}{4.1 股票与投资者}{论文 V--VII}
+   \small
+   \begin{tabularx}{\linewidth}{@{}L{.24\linewidth}YY@{}}
+@@ -24,17 +23,18 @@
+     股票 \(\times\) 月 & \(\underbrace{(j,m)}_{\text{股票、月份}}\ \mid\ \underbrace{A,L,D}_{\text{三项关注量}}\) &
+       \textbf{关注分布}：前 1,000 大 CRSP 股票，月面板回归。\\\midrule
+     投资者（家庭） & \(\underbrace{i}_{\text{投资者}}\ \mid\ \underbrace{B_{i1},\ldots,B_{i,13}}_{\text{各主题列}}\ \mid\ S_i\) &
+-      \textbf{研究风格}：主题参与与投机标的倾向，PCA。\\\midrule
++      \textbf{研究风格}：研究的倾向，PCA主成分分析。\\\midrule
+     投资者 \(\times\) 股票 \(\times\) 订单 &
+       \((i,j,e)\) 投资者、股票、订单\newline \((\tau,k)\) 相对时点、主题 &
+-      \textbf{交易时序}：研究时点与主题路径，累积曲线及 Sankey。\\
++      \textbf{交易时序}：研究交易的路径。\\
+     \bottomrule
+   \end{tabularx}
+-  \finding{按股票、投资者和交易事件组织同一批记录，逐步考察研究异质性与交易时点特征。}
++  \finding{按股票、投资者和交易事件，逐步考察投资者行为的异质性。}
+ \end{frame}
+ 
+ \begin{frame}[t,label=design]{股票月回归区分广度、用时和内容}
+   \crumb{Part 4}{4.1 股票与投资者 · 股票月规格}{Table 4}
++  \vspace{-0.8em}
+   \[
+     Y_{jm}=\alpha+\beta z(\ln \mathrm{Cap}_{jm})+\gamma^\top Z_{jm}
+                +\delta_{\mathrm{FF49}(j)}+\varepsilon_{jm},
+@@ -42,13 +42,13 @@
+   \]
+   \small
+   \begin{tabularx}{\linewidth}{@{}L{.25\linewidth}Y@{}}
+-    \toprule \(A\) 覆盖率 (1--3) & 股票月里做过该股研究的投资者比例（百分点）。\\
+-    \(L\) 总用时 (4) & \(\ln(1+\text{匹配到该股票月的总研究分钟})\)。\\
+-    \(D\) 内容倾斜 (5--6) & 查看价格图或技术的比例，减查看盈利、股利、其他基本面、分析师或官网的比例。\\\bottomrule
++    \toprule \(A\) 覆盖率 (1--3) & 月内研究过该股的投资者比例（百分点）。\\
++    \(L\) 总用时 (4) & \(\ln(1+\text{研究该股票的时长})\)。\\
++    \(D\) 内容倾斜 (5--6) & 查看价格图的比例，减查看基本面信息的比例。\\\bottomrule
+   \end{tabularx}
+   \medskip
+-  {\small \(j\)：股票；\(m\)：月份。(1) 只放市值；扩展规格加事件、股票特征及 FF49 行业项。连续解释变量标准化，0/1 变量保持原尺度。}
+-  \finding{3,962 个股票月，原表 Newey--West 月度滞后 2 阶。\(A\) 和 \(L\) 对应关注广度与总投入，\(D\) 看主题构成。}
++  {\small \(j\)：股票；\(m\)：月份。(1) 只放市值；扩展规格加事件、股票特征及 FF49 行业项。}
++  \finding{3,962 个股票月，原表 Newey--West 月度滞后 2 阶。三个被解释变量，\(A\) 和 \(L\) 对应关注广度与总投入，\(D\) 看主题构成。}
+   \scriptsize\jump{appendix-2}{A2 · 回归全表}
+ \end{frame}
+ 
+@@ -57,7 +57,7 @@
+   \pair{\small\textbf{覆盖率 A · 百分点}\par
+     \begin{tikzpicture}[x=2.25cm,y=.7cm,font=\small]
+       \draw[quiet!40] (0,-.3)--(0,2.4);
+-      \foreach \y/\b/\t/\id in {2/1.03/14.42/{(1)},1/1.33/13.57/{(2)},0/1.13/11.35/{(3)}} {
++      \foreach \y/\b/\t/\id in {2/1.03/14.42/{(1 仅对数市值)},1/1.33/13.57/{(2 市值＋股票特征、行业固定效应)},0/1.13/11.35/{(3 在(2)基础上，加散户交易特征)}} {
+         \pgfmathsetmacro{\se}{1.96*\b/\t}
+         \node[anchor=east] at (0,\y) {\id};
+         \draw[sampleblue,thick] ({\b-\se},\y)--({\b+\se},\y);
+@@ -71,11 +71,11 @@
+       \draw[sampleteal,thick] (.427,1)--(.553,1);
+       \fill[sampleteal] (.49,1) circle[radius=1.7pt];
+       \node[above,font=\scriptsize] at (.49,1) {0.49\;(15.23)};
+-      \node[anchor=east] at (0,1) {(4)};
++      \node[anchor=east] at (0,1) {(4 完整的控制变量)};
+       \foreach \x in {0,.2,.4,.6} \node[below] at (\x,-.3) {\pgfmathprintnumber{\x}};
+     \end{tikzpicture}}
+   \medskip
+-  {\small 连续解释变量增加 1 个标准差。点为系数，括号为 \(t\)，线为近似 95\% 区间。}\par\medskip
++  {\small 连续解释变量增加 1 个标准差。点为系数，括号为 \(t值\)。}\par\medskip
+   \finding{不同规格下，市值与研究覆盖率、总用时均显著正相关。}
+ \end{frame}
+ 
+@@ -121,11 +121,11 @@
+       \coefrow{0}{-.91}{-.64}{-5.93}{S\&P500 成员}
+       \foreach \x in {-.8,-.4,0,.4} \node[below] at (\x,-.33) {\pgfmathprintnumber{\x}};
+     \end{tikzpicture}\par
+-    {\scriptsize 线段据表内舍入系数和 \(t\) 值推算近似 95\% 区间。}
+     \column{.29\textwidth}\small
+     \textbf{总用时 \(L\)，第 (4) 列}\par
+     财报月 \(+0.24\)、波动 \(+0.10\)、动量 \(+0.04\)（对数点）。\par\medskip
+-    动量在两列方向不同。总用时同时积累了看的人和他们的研究分钟。
++    动量，对不同被解释变量，方向不同。\par\medskip
++    总用时同时受到投资者和研究时长影响。
+   \end{columns}
+ \end{frame}
+ 
+@@ -143,7 +143,7 @@
+      \includegraphics[width=\linewidth]{fig2c.pdf}\par 2/19 宣布与 XM 合并
+   \end{columns}
+   \medskip
+-  {\small\textcolor{sampleblue}{深蓝实线／左轴：每日研究人数}；\textcolor{wine}{红虚线／右轴：Google Trends}（MSFT、iPhone、SIRI）。Apple 另有浅蓝虚线：AAPL 搜索。}
++  {\small\textcolor{sampleblue}{深蓝实线／左轴：每日研究人数}；\textcolor{wine}{红虚线／右轴：Google Trends}（MSFT、iPhone、SIRI）。}
+   \finding{财报、新品与并购日期附近，点击流研究与搜索关注同时上升。}
+ \end{frame}
+ 
+@@ -169,6 +169,6 @@
+     {\large\bfseries\color{wine}9.0\%}\;第 (6) 列\par\smallskip
+     同类扩展规格解释覆盖率时，\(R^2=48.4\%\)。
+   \end{columns}
+-  \finding{高波动、高动量股票更偏价格研究，但股票特征只解释少部分主题倾斜，需继续考察投资者风格。}
++  \finding{股票特征只解释很少部分（8\%)的主题倾斜，说明高波动股票偏价格研究； 异质性的解释，需要继续对投资者考察。}
+ \end{frame}
+ 
+diff --git a/paper/information-set-argument-v2/projection-20261120-user-edit/part-4b.tex b/paper/information-set-argument-v2/projection-20261120-user-edit/part-4b.tex
+index 66bc86e..2e342c9 100644
+--- a/paper/information-set-argument-v2/projection-20261120-user-edit/part-4b.tex
++++ b/paper/information-set-argument-v2/projection-20261120-user-edit/part-4b.tex
+@@ -3,14 +3,14 @@
+ \begin{frame}[label=pc-why]{同一投资者的研究主题如何共同出现}
+   \crumb{Part 4}{4.1 股票与投资者 · 投资者层}{VI · Table 5}
+   \pair{\textbf{股票月回答}\par\small
+-    哪些股票更常被看，主题倾斜随什么变化？\par
+-    一行是股票和月份，\(Y\) 是覆盖、用时或倾斜。}
++    什么股票和主题被常看？\par
++    是股票-月份的 panel，\(Y\) 是覆盖、用时。}
+   {\textbf{投资者（家庭）层回答}\par\small
+-    同一个人会一起看哪些主题？这些模式与所关注股票的类型是否同变？\par
+-    PCA 概括多列输入的主要变异方向。}
++    同一个人会一起看哪些主题？这些模式和他关注股票的类型是否共变？\par
++    所以采用 PCA模型，来概括多列输入的主要变异方向。}
+   \medskip
+-  \leadrow{交易频率只提供少量线索}{交易笔数与每笔研究分钟的 Pearson 相关为 \(-0.10\)，秩相关为 \(-0.22\)。}
+-  \finding{在投资者层用 PCA 概括主题参与及股票倾向的主要变异方向。}
++  \leadrow{交易频率不太有用}{因为交易笔数与每笔研究分钟的 Pearson 相关为 \(-0.10\)，秩相关为 \(-0.22\)。}
++  \finding{在投资者层，用 PCA 概括主题参与、股票倾向的主要变异方向。}
+ \end{frame}
+ 
+ \begin{frame}[label=pc-input]{PCA 输入：主题参与与投机标的倾向}
+@@ -20,7 +20,7 @@
+     \qquad X_i=(B_{i1},\ldots,B_{i,13},S_i).
+   \]
+   \small
+-  \textbf{输入格式教学例（非实际微观记录）}\par\smallskip
++  \textbf{输入格式演示例}\par\smallskip
+   \begin{tabularx}{\linewidth}{@{}l*{5}{Y}L{.19\linewidth}@{}}
+     \toprule 投资者 & 价格图 & 盈利 & 股利 & 分析师 & \(\cdots\) & 投机标的倾向\\\midrule
+     A & 1 & 0 & 0 & 1 & \(\cdots\) & \(S_A\)（连续）\\
+@@ -49,11 +49,11 @@
+         \fill[sampleblue!70] (0,\y-.17) rectangle (\v,\y+.17);
+         \node[anchor=west] at (\v,\y) {\pgfmathprintnumber[fixed,precision=2]{\v}};}
+       \end{scope}
+-    \end{tikzpicture}\par{\small 第一主成分 PC1：对输入降维所得的载荷。}
++    \end{tikzpicture}\par
+     \column{.35\textwidth}
+     \greatnum{26.81\%}\par
+     {\small 解释输入总变异\\特征值 3.75}\par\medskip
+-    {\small 13 项主题的载荷均为正，股票投机倾向近零。}
++    {\small 发现 13 项主题的载荷均为正，股票投机倾向近零。}
+   \end{columns}
+   \finding{第一主成分 PC1 刻画跨主题的共同参与：得分较高的投资者通常参与更多主题。}
+ \end{frame}
+@@ -74,13 +74,12 @@
+       \loadingbar{1}{盈利}{-.34}{sampleteal}
+       \loadingbar{0}{股利}{-.47}{sampleteal}
+     \end{tikzpicture}\par
+-    {\small 第二主成分 PC2：对输入降维所得的载荷。}
+     \column{.31\textwidth}
+     \greatnum{8.77\%}\par
+     {\small 解释输入总变异\\特征值 1.23}\par\medskip
+     {\small 研究快信息与偏向投机标的在同一轴上。盈利、股利靠相反一侧。}
+   \end{columns}
+-  \finding{第二主成分 PC2 刻画主题与标的的联合变异：快信息与投机标的同向，盈利和股利位于相反一侧。}
++  \finding{第二主成分 PC2 ，作者猜测解释为主题与标的的联合变异：快信息与投机标的同向，盈利和股利位于相反一侧。}
+ \end{frame}
+ 
+ \subsection{4.2 交易时点与路径}
+@@ -91,8 +90,8 @@
+     \draw[samplegold,line width=.75pt] (.382,.43) rectangle (.412,.68);
+     \draw[samplegold,line width=.75pt] (.890,.16) rectangle (.922,.55);
+   }\par}
+-  {\small 横轴：距本次交易的小时，\(0\) 为订单。纵轴：累计研究分钟。左侧均值与右侧中位数量程不同。}
+-  \finding{先读右图：约到交易前五天才见中位数累积，主要跳升临近下单；均值在更早时点也有累积。}
++  {\small 横轴：距本次交易的小时，\(0\) 为订单。纵轴：累计研究分钟。}
++  \finding{约到交易前五天才见中位数累积，主要跳升临近下单；均值在更早时点也有累积。}
+ \end{frame}
+ 
+ \begin{frame}[label=path]{新的同股路径常在首个主题后结束}
+@@ -120,5 +119,5 @@
+     \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5c.pdf}\par}
+   {\centering\small\textbf{D · 快信息，PC2 最高五分位}\par
+     \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5d.pdf}\par}
+-  {\small 慢信息组路径更宽；快信息组常见快照，或快照加价格图。线宽为路径数。}
++  {\small 慢信息组路径更宽；快信息组，一般在快照和价格图中多出现。线宽为路径数。}
+ \end{frame}
+diff --git a/paper/information-set-argument-v2/projection-20261120-user-edit/part-5.tex b/paper/information-set-argument-v2/projection-20261120-user-edit/part-5.tex
+index ea2fbd4..73269a2 100644
+--- a/paper/information-set-argument-v2/projection-20261120-user-edit/part-5.tex
++++ b/paper/information-set-argument-v2/projection-20261120-user-edit/part-5.tex
+@@ -1,10 +1,10 @@
+ % !TeX program = xelatex
+ % !TeX root = main.tex
+ \section{贡献与评价}
+-\sectionlead{section-5}{五、贡献与评价}{浏览轨迹给资产定价的信息输入提供了哪些约束？}
++\sectionlead{section-5}{五、贡献与评价}{浏览轨迹数据，给资产定价提供了哪些认识？}
+ 
+ \subsection{5.1 证据与局限}
+-\begin{frame}[label=scorecard]{五项事实怎样约束模型的信息输入}
++\begin{frame}[label=scorecard]{五项研究结论怎样约束模型的信息输入}
+   \crumb{Part 5}{5.1 证据与局限 · 记分卡}{论文 I、VIII · 汇报人综合}
+   \begin{columns}[T,onlytextwidth]
+     \column{.34\textwidth}\footnotesize
+@@ -19,14 +19,14 @@
+     \renewcommand{\arraystretch}{1.06}
+     \begin{tabularx}{\linewidth}{@{}L{.29\linewidth}Y@{}}
+       \toprule 文献输入 & 观测证据与判断\\\midrule
+-      组合选择 & 显式风险输入少见\\
++      MV, CAPM & 显式风险输入少见\\
+       DSSW & 薄且偏价格，部分一致\\
+       Hong--Stein & 风格有别，新闻和价格同侧\\
+       BSV & 部分一致：盈利覆盖 40\%\\
+       收益外推 & 价格输入一致\\
+-      股利信号 & 覆盖 17\%，证据有限\\
+-      有限注意力 & 财报、事件有关注峰值\\
+-      同质输入 & 投入右偏，研究风格分化\\
++      股利信号 & 覆盖 17\%\\
++      limited attention & 财报、事件有关注峰值\\
++      同质输入 & 投入右偏\\
+       \bottomrule
+     \end{tabularx}
+   \end{columns}
+@@ -35,9 +35,9 @@
+ \subsection{5.2 研究评价}
+ \begin{frame}[label=evaluation]{研究评价}
+   \crumb{Part 5}{5.2 研究评价}{汇报人评价}
+-  \leadrow{数据与测度}{利用跨域名 URL，细致刻画投资者的信息获取行为。}
++  \leadrow{数据与测度}{利用跨域名 URL，刻画投资者的信息获取行为。}
+   \bigskip
+-  \leadrow{理论联系}{用研究深度、主题和时点事实，对资产定价模型的信息输入假设作经验比较。}
++  \leadrow{理论联系}{用微观数据的注意力、主题和时点事实，对资产定价模型的信息输入假设作经验比较。}
+   \bigskip
+   \leadrow{不足}{未联接完整持仓、信念与实际成交，难以识别信息获取对决策的因果影响。}
+ \end{frame}
