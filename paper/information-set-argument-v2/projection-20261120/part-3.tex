@@ -52,16 +52,21 @@
   \scriptsize\jump{appendix-5}{A5 · 画像与时长原表}
 \end{frame}
 
+\newcommand{\profilebars}[4]{%
+  \node[anchor=west,font=\scriptsize\bfseries] at (0,#1+.92) {#2};
+  \fill[sampleblue!37] (0,#1+.32) rectangle (1,#1+.58);
+  \fill[sampleblue] (0,#1-.02) rectangle ({#4/#3},#1+.24);
+  \node[anchor=west,inner sep=2pt] at (1,#1+.45) {#3};
+  \node[anchor=west,inner sep=2pt] at ({#4/#3},#1+.11) {#4};}
 \begin{frame}[label=domains]{典型家庭交易不多，研究横跨多个站点}
   \crumb{Part 3}{3.1 研究投入}{Table 1 · Table 2 B}
   \pair{\small\textbf{样本画像 · 484 户}\par
-    \begin{tabularx}{\linewidth}{@{}Yrr@{}}\toprule
-      & 均值 & 中位数\\\midrule
-      月交易，笔 & 2.2 & 0.7\\
-      券商浏览，分钟／月 & 214.2 & 81.6\\
-      单笔金额，千美元 & 13.5 & 2.0\\\bottomrule
-    \end{tabularx}\par
-    {\scriptsize 有可读数量的 191 户用于计算金额。}}
+    \begin{tikzpicture}[x=3.05cm,y=.42cm,font=\scriptsize]
+      \profilebars{3.2}{股票交易 · 笔／月}{2.2}{0.7}
+      \profilebars{1.6}{券商浏览 · 分钟／月}{214.2}{81.6}
+      \profilebars{0}{交易金额 · 千美元／笔}{13.5}{2.0}
+    \end{tikzpicture}\par
+    {\scriptsize 每组内部同比例。浅为均值，深为中位数；金额按 191 户。}}
   {\small\textbf{每笔研究时间 · 484 户均值}\par
     \begin{tabularx}{\linewidth}{@{}Yr@{}}\toprule
     浏览来源 & 分钟／笔\\\midrule

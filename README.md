@@ -4,7 +4,9 @@
 
 ## 本轮研究文稿
 
-放映成品为[32页无水印人大 Beamer PDF](output/information-set-projection-20261118/个人投资者的信息集_组会放映.pdf)。编译入口、讲述时标和验收记录见[放映版源码说明](paper/information-set-argument-v2/projection-20261118/README.md)。
+11 月 20 日组会改版已单独成稿。入口包括[放映 PDF](output/information-set-projection-20261120/个人投资者的信息集_11-20组会放映.pdf)、[编译与讲述说明](paper/information-set-argument-v2/projection-20261120/README.md)和[语音校订及逐页改版方案](docs/2026-11-20_语音校订与逐页改版方案.md)。正文 41 页，备份 A1–A6。
+
+11 月 18 日的[32 页无水印人大 Beamer PDF](output/information-set-projection-20261118/个人投资者的信息集_组会放映.pdf)留作旧版对照，编译入口、讲述时标和验收记录见[旧版源码说明](paper/information-set-argument-v2/projection-20261118/README.md)。
 
 2026-11-18新版为[汇报叙事与视觉稿](paper/information-set-argument-v2/manuscript/汇报叙事与视觉稿.md)。同一份Markdown包含完整论证、32个展示单元、关键图件、读图顺序与版式参数，以及与《AI初始分析》的逐段比较。
 
