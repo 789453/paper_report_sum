@@ -6,6 +6,8 @@
 
 **当前交付是第二轮仔细微调。** [放映 PDF](output/information-set-projection-20261120-round2/个人投资者的信息集_11-20组会放映_第二轮.pdf)、[工程与交付入口](paper/information-set-argument-v2/projection-20261120-round2/README.md)、[语义校订](docs/第二轮微调_01_语义校订与执行规范.md)、[逐页清单](docs/第二轮微调_02_逐页调整清单.md)和[核查记录](docs/第二轮微调_03_核查记录.md)。正文 44 页，备份 A1–A6；六块 Markdown/TeX 分阶段修改并提交。另有完整口述稿及约 30 分钟预算。下列版本保留作历史对照。
 
+用户自行调整请使用独立的[用户微调版](paper/information-set-argument-v2/projection-20261120-user-edit/README.md)。复制起点与第二轮一致，附逐页文件定位和编译命令；在该副本修改 TeX 后重新生成 PDF。
+
 11 月 20 日组会改版已单独成稿。入口包括[放映 PDF](output/information-set-projection-20261120/个人投资者的信息集_11-20组会放映.pdf)、[编译与讲述说明](paper/information-set-argument-v2/projection-20261120/README.md)和[语音校订及逐页改版方案](docs/2026-11-20_语音校订与逐页改版方案.md)。正文 41 页，备份 A1–A6。
 
 11 月 18 日的[32 页无水印人大 Beamer PDF](output/information-set-projection-20261118/个人投资者的信息集_组会放映.pdf)留作旧版对照，编译入口、讲述时标和验收记录见[旧版源码说明](paper/information-set-argument-v2/projection-20261118/README.md)。
