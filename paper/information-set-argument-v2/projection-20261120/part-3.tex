@@ -1,0 +1,155 @@
+\section{总体事实}
+\sectionlead{section-3}{三、总体事实}{每笔交易研究多久、花在什么主题上、看多长的价格历史？}
+
+\subsection{3.1 研究投入}
+\begin{frame}[label=funnel]{两层样本回答不同的研究投入问题}
+  \crumb{Part 3}{3.1 研究投入}{II.A、II.C · Table 2}
+  \begin{columns}[T,onlytextwidth]
+    \column{.59\textwidth}\centering
+    \begin{tikzpicture}[x=1cm,y=.81cm,font=\small]
+      \foreach \y/\width/\shade/\layertext in {
+        4/3.16/8/{数万户 · 约 20 亿条 URL},
+        3/2.95/13/{\textbf{484 户} · 约 850 万条点击},
+        2/2.74/18/{约 3,000 小时研究},
+        1/2.53/23/{约 1,350 小时匹配标的},
+        0/2.32/28/{\textbf{50 户} · 高代码匹配子样本}} {
+        \path[fill=wine!\shade] (-\width,\y+.45)--(\width,\y+.45)--
+          ({\width-.17},\y-.45)--({-\width+.17},\y-.45)--cycle;
+        \node at (0,\y) {\layertext};
+      }
+    \end{tikzpicture}\par
+    {\scriptsize 形状示意处理顺序与子样本，宽度无数量刻度。}
+    \column{.39\textwidth}\small
+    \textbf{11 类内容}\par
+    风险、盈利、股利、其他基本面、分析师、知情持股、价格图、技术、公司官网、其他、未确定。\par\smallskip
+    \textbf{3 种混合格式}\par
+    快照、无法归类的新闻、留言板。
+  \end{columns}
+  \finding{484 户估计总体研究；高匹配的 50 户可把研究时长限定到实际推定交易的标的。}
+\end{frame}
+
+\newcommand{\depthbars}[5]{%
+  \node[anchor=east] at (0,#1+.26) {#2};
+  \fill[#3!38] (0,#1+.28) rectangle (#4,#1+.53);
+  \fill[#3] (0,#1-.02) rectangle (#5,#1+.23);
+  \node[anchor=west,text=#3] at (#4,#1+.40) {#4};
+  \node[anchor=west,text=#3,font=\small\bfseries] at (#5,#1+.09) {#5};}
+\begin{frame}[label=depth]{每笔研究分钟，先在户内计算}
+  \crumb{Part 3}{3.1 研究投入}{Table 2 B/C}
+  \[
+    r_i(S)=\frac{\text{家庭 }i\text{ 在 }S\text{ 的研究分钟}}{\text{家庭 }i\text{ 的订单笔数}},
+    \qquad \overline r_S=\frac{\sum_i r_i(S)}{N},\quad \operatorname{Med}_i r_i(S).
+  \]
+  \begin{center}
+  \begin{tikzpicture}[x=.046cm,y=.72cm,font=\small]
+    \depthbars{2}{484 户 · 全部股票}{sampleblue}{144.2}{36.4}
+    \depthbars{1}{50 户 · 全部股票}{samplegold}{96.8}{51.7}
+    \depthbars{0}{50 户 · 所交易股票}{samplegold}{29.1}{5.7}
+    \node[anchor=west] at (0,-.39) {分钟／笔 \quad 浅色均值 \quad 深色中位数};
+  \end{tikzpicture}
+  \end{center}
+  \finding{同一 50 户中，限定到交易标的后中位数降至 5.7 分钟。全股研究包含其他标的，以及难以配码的浏览。}
+  \scriptsize\jump{appendix-5}{A5 · 画像与时长原表}
+\end{frame}
+
+\begin{frame}[label=domains]{典型家庭交易不多，研究横跨多个站点}
+  \crumb{Part 3}{3.1 研究投入}{Table 1 · Table 2 B}
+  \pair{\small\textbf{样本画像 · 484 户}\par
+    \begin{tabularx}{\linewidth}{@{}Yrr@{}}\toprule
+      & 均值 & 中位数\\\midrule
+      月交易，笔 & 2.2 & 0.7\\
+      券商浏览，分钟／月 & 214.2 & 81.6\\
+      单笔金额，千美元 & 13.5 & 2.0\\\bottomrule
+    \end{tabularx}\par
+    {\scriptsize 有可读数量的 191 户用于计算金额。}}
+  {\small\textbf{每笔研究时间 · 484 户均值}\par
+    \begin{tabularx}{\linewidth}{@{}Yr@{}}\toprule
+    浏览来源 & 分钟／笔\\\midrule
+    券商 & 55.7\\
+    Yahoo Finance & 45.3\\
+    其他财经网站 & 41.9\\
+    公司官网 & 1.3\\\bottomrule
+    \end{tabularx}}
+  \medskip
+  \begin{center}
+  \begin{tikzpicture}[x=.068cm,y=.62cm,font=\small]
+    \fill[sampleblue!57] (0,0) rectangle (55.7,.7);
+    \fill[sampleblue!35] (55.7,0) rectangle (101,.7);
+    \fill[samplegold!43] (101,0) rectangle (142.9,.7);
+    \fill[samplegold] (142.9,0) rectangle (144.2,.7);
+    \node at (27,.35) {券商};
+    \node at (78,.35) {Yahoo};
+    \node at (122,.35) {其他财经};
+  \end{tikzpicture}
+  \end{center}
+  \finding{一共 144.2 分钟／笔，按均值加总，约 61\% 发生在券商站外。}
+\end{frame}
+
+\subsection{3.2 主题与窗口}
+\newcommand{\topicbars}[4]{%
+  \node[anchor=east] at (0,#1) {#2};
+  \fill[sampleblue!60] (0,#1-.17) rectangle (#3*.031,#1+.17);
+  \node[anchor=west,inner sep=2pt] at (#3*.031,#1) {#3\%};
+  \fill[samplegold!68] (4.38,#1-.17) rectangle (4.38+#4*.064,#1+.17);
+  \node[anchor=west,inner sep=2pt] at (4.38+#4*.064,#1) {#4};}
+\begin{frame}[label=topics]{价格图的参与范围和平均用时都居前}
+  \crumb{Part 3}{3.2 主题与窗口}{Table 3 · 484 户，全部股票}
+  \begin{center}
+    \begin{tikzpicture}[x=1.06cm,y=.56cm,font=\small]
+      \node[anchor=west,text=sampleblue,font=\small\bfseries] at (0,6.9) {参与家庭比例};
+      \node[anchor=west,text=samplegold,font=\small\bfseries] at (4.38,6.9) {均值分钟／交易};
+      \topicbars{6}{价格图}{93}{39.1}
+      \topicbars{5}{综合行情}{93}{37.0}
+      \topicbars{4}{分析师资料}{71}{12.5}
+      \topicbars{3}{其他基本面}{53}{2.6}
+      \topicbars{2}{盈利}{40}{1.7}
+      \topicbars{1}{股利}{17}{0.5}
+      \topicbars{0}{风险统计}{1}{0.0}
+    \end{tikzpicture}
+  \end{center}
+  \finding{两列分别读“多少家庭看过”和“平均花多少时间”。图为直接分类的代表性项目；约 1\% 的风险统计覆盖对应 7 户。}
+  \scriptsize\jump{appendix-1}{A1 · 主题原表}
+\end{frame}
+
+\begin{frame}[label=mixed]{综合行情的混合内容如何分到主题}
+  \crumb{Part 3}{3.2 主题与窗口}{Table 3 · Table IA2}
+  \begin{columns}[T,onlytextwidth]
+  \column{.46\textwidth}\small
+    \textbf{一张综合行情页（示意）}\par\smallskip
+    \fcolorbox{quiet!25}{papergray}{\parbox{.87\linewidth}{现价、成交量及价格图\\52 周区间、盈利、股利}}\par\smallskip
+    快照按页面内容分配；新闻用匹配的新闻标题；留言板用帖子主题估计。
+  \column{.50\textwidth}
+    \textbf{价格图的均值分钟／笔}\par
+    \greatnum{39.1}\enspace\(\to\)\enspace\greatnum{64.4}\par
+    {\small 直接分类 \hfill 分配混合内容后}\par\medskip
+    {\small 484 户，全部股票。快照、未知新闻、留言板的原始用时合计约占 42\%。}
+  \end{columns}
+  \finding{价格图在直接分类和插补后均居首；归因方式会改变时间占比。}
+  \small\jump{appendix-3}{A3 · 权重细节}
+\end{frame}
+
+\begin{frame}[label=windows]{含默认图时日内占主，主动调整多看数月}
+  \crumb{Part 3}{3.2 主题与窗口}{Figure 1 A/B · 484 户}
+  \pair{\small\textbf{A · 全部图表访问}\par
+    \annotatedpanel{3.95cm}{fig1a.pdf}{\draw[wine,line width=.65pt] (.14,.13) rectangle (.183,.93);}\par
+    {\small 约 73\% 是默认的 1 日窗口。}}
+  {\small\textbf{B · 只看主动调整}\par
+    \annotatedpanel{3.95cm}{fig1b.pdf}{\draw[wine,line width=.65pt] (.35,.13) rectangle (.66,.98);}\par
+    {\small 3 个月和 1 年是明显峰值。}}
+  \finding{先读实际展示长度，再读主动选择。两图纵轴都是各自面板内的访问次数占比。}
+\end{frame}
+
+\begin{frame}[label=averages]{总体分布之后，转向股票和投资者}
+  \crumb{Part 3}{小结与衔接}{Tables 2--3 · Figure 1}
+  \small
+  \begin{tabularx}{\linewidth}{@{}L{.21\linewidth}Y Y@{}}
+    \toprule 总体事实 & 可见证据 & 对文献输入的初步约束\\\midrule
+    典型研究较少 & 50 户、交易标的中位数 5.7 分钟／笔 & 有限注意力框架需要允许投入很薄\\
+    价格内容常见 & 价格图覆盖 93\%；风险统计约 1\% & 历史价格更常成为可见输入\\
+    默认展示集中 & 全部图表访问约 73\% 为 1 日窗 & 外推所用的历史长度可能随页面设计变化\\
+    \bottomrule
+  \end{tabularx}
+  \medskip
+  {\small\textbf{均值远高于中位数}\quad 全部股票 144.2 对 36.4；交易标的 29.1 对 5.7（分钟／笔，各按原样本）。}
+  \nextq{右尾是谁带来的？接下来分股票、投资者和交易事件三个层次。}
+\end{frame}

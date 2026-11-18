@@ -1,0 +1,25 @@
+\definecolor{sampleblue}{HTML}{235483}
+\definecolor{samplegold}{HTML}{94601B}
+\definecolor{sampleteal}{HTML}{226B60}
+\definecolor{sampleviolet}{HTML}{694787}
+\newcommand{\crumb}[3]{%
+  {\footnotesize\color{slate}\bfseries #1 \(\triangleright\) #2
+    \if\relax\detokenize{#3}\relax\else \(\triangleright\) {\normalfont #3}\fi\par}\medskip}
+\newcommand{\sectionlead}[3]{%
+  \frame[label=#1]{\vfill{\color{wine}\rule{.16\linewidth}{.8pt}}\par\medskip
+  {\LARGE\bfseries\color{wine} #2\par}\bigskip{\large #3\par}\vfill}}
+\newcommand{\jump}[2]{\hyperlink{#1}{\textcolor{wine}{#2}}}
+\newcommand{\leadrow}[2]{\par\smallskip\textcolor{slate}{\bfseries #1}\enspace #2\par}
+\newcommand{\pair}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}#2\end{minipage}\par}
+\newcommand{\annotatedpanel}[3]{%
+  \begin{tikzpicture}[baseline=(evidence.south)]
+  \node[inner sep=0pt,outer sep=0pt] (evidence)
+    {\includegraphics[width=\linewidth,height=#1,keepaspectratio]{#2}};
+  \begin{scope}[shift={(evidence.south west)},
+    x={($(evidence.south east)-(evidence.south west)$)},
+    y={($(evidence.north west)-(evidence.south west)$)}]
+    #3
+  \end{scope}
+  \end{tikzpicture}}

@@ -1,0 +1,117 @@
+\begin{frame}[plain]
+  \vfill
+  {\small\color{wine}\bfseries 科研组会\par}
+  \vspace{5mm}
+  {\fontsize{22}{26}\selectfont\bfseries On the Information Set of\\Individual Investors\par}
+  \vspace{3mm}
+  {\large\color{wine}个人投资者的信息集\par}
+  \vspace{3mm}
+  {\color{wine}\rule{.95\linewidth}{.75pt}}\par\medskip
+  Toomas Laarits \quad Jeffrey Wurgler\par
+  {\small NYU Stern School of Business \hfill 2026 年 4 月 27 日工作稿}\vfill
+\end{frame}
+
+\begin{frame}[label=authors]{作者与选文}
+  \crumb{开场}{作者与版本}{NBER WP 33625 · SSRN 5187645}
+  \leadrow{Jeffrey Wurgler}{NYU Stern，Nomura 金融学讲席教授。与 Malcolm Baker 编制投资者情绪指数，并以 \textit{Comovement} 研究指数纳入后股票收益的联动。}
+  \medskip
+  \leadrow{Toomas Laarits}{NYU Stern，金融学助理教授。}
+  \medskip
+  \begin{tabularx}{\linewidth}{@{}lY@{}}
+    2025 年工作稿 & \textit{The Research Behavior of Individual Investors}\\
+    2026 年 4 月 27 日 & \textit{On the Information Set of Individual Investors}
+  \end{tabularx}
+  \finding{本文沿着行为资产定价的研究脉络，利用浏览轨迹观察个人投资者从价格、财报等公开资料中实际取得哪些信息。}
+\end{frame}
+
+\section{研究问题}
+\sectionlead{section-1}{一、研究问题}{资产定价需要一个信息集。个人投资者实际获得的信息怎样观测？}
+
+\subsection{1.1 信息集}
+\begin{frame}[label=chain]{资产定价中的信息如何进入决策}
+  \crumb{Part 1}{1.1 信息集}{引言 pp.\,2--3}
+  \centering
+  \begin{tikzpicture}[node distance=3mm]
+    \node[storybox,text width=1.65cm] (menu) {信息供给};
+    \node[storyfocus,text width=1.65cm,right=of menu] (see) {信息获取};
+    \node[storybox,text width=1.65cm,right=of see] (belief) {信念形成};
+    \node[storybox,text width=1.65cm,right=of belief] (order) {投资决策};
+    \node[storybox,text width=1.65cm,right=of order] (price) {市场价格};
+    \draw[storyarrow] (menu)--(see);
+    \draw[grapharrow] (see)--(belief);
+    \draw[storyarrow] (belief)--(order);
+    \draw[storyarrow] (order)--(price);
+  \end{tikzpicture}\par\raggedright
+  \[
+    P_{j,t}=\mathbb{E}\!\left[M_{t+1}X_{j,t+1}\mid\mathcal I_t\right].
+  \]
+  {\small \(M\) 为随机折现因子，\(X\) 为支付，\(\mathcal I_t\) 为条件信息集。}
+  \medskip
+  \pair{\small\textbf{甲：}\; 查盈利预测 \(\to\) 上调现金流预期 \(\to\) 买入}
+       {\small\textbf{乙：}\; 看近期价格 \(\to\) 上调收益预期 \(\to\) 买入}
+  \finding{相同的订单方向可以来自不同的信息输入。本文在信念形成之前观察信息获取。}
+\end{frame}
+
+\begin{frame}[label=literature]{资产定价模型中的信息集假设}
+  \crumb{Part 1}{1.1 信息集}{引言与文献 pp.\,2--7}
+  \small
+  \begin{tabularx}{\linewidth}{@{}L{.31\linewidth}YY@{}}
+    \toprule 文献 & 关注的信息假设 & 常见的经验观察位置\\\midrule
+    Markowitz／Sharpe & 预期收益和风险量参与配置 & 组合权重、收益与风险\\
+    Hong--Stein (1999) & 新闻逐步扩散，价格信号引导动量交易 & 市场收益与价格延续／反转\\
+    Barberis et al. (2015) & 历史收益进入外推信念 & 预期调查、历史收益与价格\\
+    Barber--Odean (2008) & 显著事件和极端表现进入候选集合 & 新闻、成交量、极端收益与买单\\
+    \bottomrule
+  \end{tabularx}
+  \finding{直接看到投资者打开的资料，才可以比较这些模型强调的信息输入。}
+\end{frame}
+
+\subsection{1.2 注意力证据}
+\begin{frame}[label=proxies]{注意力代理能看到什么}
+  \crumb{Part 1}{1.2 注意力证据}{引言 pp.\,3--7}
+  \small
+  \leadrow{字母汤}{只知道有哪些字母，无法看出各字母出现多少、怎样组合。分散的注意力代理也有这个问题。}
+  \medskip
+  \begin{tabularx}{\linewidth}{@{}L{.29\linewidth}YY@{}}
+    \toprule 数据 & 可见对象 & 观察缺口\\\midrule
+    搜索量、新闻阅读量 & 股票或新闻受关注的时间和强度 & 谁读、实际打开哪些主题\\
+    单券商点击与账户活动 & 站内查阅与客户的订单或交易 & 跨站访问路径\\
+    本文的跨域名 URL & 家庭、时间、标的、主题与订单时点 & 线下渠道、已有知识与信念\\\bottomrule
+  \end{tabularx}
+  \finding{URL 可以把同一家庭的不同阅读主题与订单时点放在同一条轨迹中。}
+\end{frame}
+
+\begin{frame}[label=dimensions]{四个维度刻画实际获取的信息}
+  \crumb{Part 1}{1.2 注意力证据}{引言 pp.\,3--5}
+  \centering
+  \begin{tikzpicture}
+    \node[storyfocus,text width=5.1cm] (root) at (0,0) {同一家庭的高维浏览轨迹};
+    \foreach \x/\branchname/\branchtext in {
+      -4.08/{深度 (Depth)}/{研究多久？},-1.36/{主题 (Topics)}/{看哪些信息？},
+       1.36/{异质性}/{股票和家庭如何不同？},4.08/{时机 (Timing)}/{何时、依何顺序？}} {
+      \node[storybox,text width=2.28cm,minimum height=1.44cm] (b) at (\x,-2.08)
+        {\textbf{\branchname}\\[-1pt]\scriptsize \branchtext};
+      \draw[storyarrow] (root.south)--(0,-.91)-| (b.north);
+    }
+  \end{tikzpicture}\par\raggedright
+  \smallskip\centering{\small 异质性（Heterogeneity）比较研究标的和研究者两个层次。}\par
+  \finding{把四个维度放回同一轨迹，才能同时读深度、内容分布和交易情境。}
+\end{frame}
+
+\begin{frame}[label=agenda]{目录}
+  \crumb{报告路线}{研究问题到贡献与评价}{}
+  \begin{columns}[T,onlytextwidth]
+  \column{.51\textwidth}
+    \textbf{\jump{section-1}{一、研究问题}}\par
+    {\small 1.1 信息集\\1.2 注意力证据}\par\medskip
+    \textbf{\jump{section-2}{二、数据与测度}}\par
+    {\small 2.1 样本与网页供给\\2.2 URL 识别与交易配对}\par\medskip
+    \textbf{\jump{section-3}{三、总体事实}}\par
+    {\small 3.1 研究投入\\3.2 主题与窗口}
+  \column{.46\textwidth}
+    \textbf{\jump{section-4}{四、实证比较}}\par
+    {\small 4.1 股票与家庭\\4.2 交易时点与路径}\par\medskip
+    \textbf{\jump{section-5}{五、贡献与评价}}\par
+    {\small 5.1 证据与局限\\5.2 评价与延伸}
+  \end{columns}
+\end{frame}
