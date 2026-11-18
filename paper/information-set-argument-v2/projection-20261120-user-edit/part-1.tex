@@ -10,20 +10,20 @@
   \vspace{3mm}
   {\color{wine}\rule{.95\linewidth}{.75pt}}\par\medskip
   Toomas Laarits \quad Jeffrey Wurgler\par
-  {\small NYU Stern School of Business \hfill 2026 年 4 月 27 日 Working Paper}\par
+  {\small New York University \hfill 26 年 4 月 Working Paper}\par
   \vspace{4mm}{\small 汇报人：杨博远\quad 27国金博0}\vfill
 \end{frame}
 
 \begin{frame}[label=authors]{作者与选文}
   \crumb{开场}{作者与版本}{NBER WP 33625 · SSRN 5187645}
-  \leadrow{Jeffrey Wurgler}{NYU Stern，Nomura 金融学讲席教授；资产定价与行为金融领域的资深学者。}
+  \leadrow{Jeffrey Wurgler}{NYU 教授；资产定价与行为金融领域的资深学者。}
   \smallskip
   {\small
   \textbf{Baker--Wurgler (2006), \textit{Journal of Finance}}\par
   \textit{Investor Sentiment and the Cross-Section of Stock Returns}\par
-  综合投资者情绪指数；情绪与股票横截面收益。\par\smallskip
+  Baker--Wurgler；情绪指数。\par\smallskip
   \textbf{Barberis--Shleifer--Wurgler (2005), \textit{JFE}}\par
-  \textit{Comovement}：指数成分变动与股票收益联动。\par}
+  \textit{Comovement}：SP500指数成分变动与股票收益联动。\par}
   \smallskip
   \leadrow{Toomas Laarits}{NYU Stern，金融学助理教授。}
   \smallskip\small
@@ -56,9 +56,9 @@
   \]
   {\small 常用定价式。\(M\) 为随机折现因子，\(X\) 为支付，\(\mathcal I_t\) 为条件信息集。}
   \medskip
-  \pair{\small\textbf{甲（讲解例）：}\; 查盈利与基本面\\
+  \pair{\small\textbf{甲：}\; 查盈利与基本面\\
        \(\to\) 上调现金流预期 \(\to\) 买入}
-       {\small\textbf{乙（讲解例）：}\; 看近期价格下行\\
+       {\small\textbf{乙：}\; 看近期价格下行\\
        \(\to\) 预期跌势延续 \(\to\) 卖出}
   \finding{甲乙的预期不同，可能源于所依据的信息集不同。}
 \end{frame}
@@ -68,10 +68,10 @@
   \small
   \begin{tabularx}{\linewidth}{@{}L{.31\linewidth}YY@{}}
     \toprule 文献 & 关注的信息假设 & 常见经验观察\\\midrule
-    Markowitz／Sharpe & 预期收益和风险量参与配置 & 组合权重、收益与风险\\
-    Hong--Stein (1999) & 新闻逐步扩散，价格信号引导动量交易 & 价格延续与反转\\
+    Markowitz／Sharpe & 预期收益和风险 M-V & 组合权重、收益与风险\\
+    Hong--Stein (1999) & 新闻逐步扩散，引导动量交易 & 价格延续与反转\\
     Barberis et al. (2015) & 历史收益进入外推信念 & 预期调查与历史收益\\
-    Barber--Odean (2008) & 显著事件和极端表现进入候选集合 & 新闻、成交量与买单\\
+    Barber--Odean (2008) & 显著事件和极端表现的影响 & 新闻、成交量与买单\\
     \bottomrule
   \end{tabularx}
   \finding{特定资产定价模型依赖特定的信息集与信息假设。}
@@ -81,22 +81,22 @@
 \begin{frame}[label=proxies]{注意力代理能看到什么}
   \crumb{Part 1}{1.2 注意力证据}{引言 pp.\,3--7}
   \small
-  现有注意力与信息集测度，多依赖搜索、新闻阅读和单券商记录等零散代理。
+  现有注意力的信息集测度，间接且零散。
   \medskip
   \begin{tabularx}{\linewidth}{@{}L{.32\linewidth}Y@{}}
     \toprule 数据 & 可见对象\\\midrule
-    搜索量、新闻阅读量 & 股票或新闻受关注的时间和强度\\
-    单券商点击与账户活动 & 站内查阅，以及客户的订单或交易\\
+    搜索量、新闻阅读量 & 受关注的时间和强度\\
+    单券商点击与账户活动 & 站内查阅客户交易\\
     \textbf{本文的跨域名 URL} & 同一投资者的跨站访问、研究主题与订单时点\\\bottomrule
   \end{tabularx}
-  \finding{跨域名 URL 为投资者微观信息获取行为提供高质量代理。}
+  \finding{跨域名 URL 网址连接数据为投资者微观信息获取行为提供高质量代理。}
 \end{frame}
 
 \begin{frame}[label=dimensions]{信息集：用四个维度刻画}
   \crumb{Part 1}{1.2 注意力证据}{引言 pp.\,3--5}
   \centering
   \begin{tikzpicture}
-    \node[storyfocus,text width=5.1cm] (root) at (0,0) {同一投资者（家庭）的网页链接记录};
+    \node[storyfocus,text width=5.1cm] (root) at (0,0) {拆解同一投资者（家庭）的网页链接记录};
     \foreach \x/\branchname/\branchtext in {
       -4.08/{深度 (Depth)}/{研究多久？},-1.36/{主题 (Topics)}/{看哪些信息？},
        1.36/{异质性}/{股票和投资者如何不同？},4.08/{时机 (Timing)}/{何时、依何顺序？}} {

@@ -3,14 +3,14 @@
 \begin{frame}[label=pc-why]{同一投资者的研究主题如何共同出现}
   \crumb{Part 4}{4.1 股票与投资者 · 投资者层}{VI · Table 5}
   \pair{\textbf{股票月回答}\par\small
-    哪些股票更常被看，主题倾斜随什么变化？\par
-    一行是股票和月份，\(Y\) 是覆盖、用时或倾斜。}
+    什么股票和主题被常看？\par
+    是股票-月份的 panel，\(Y\) 是覆盖、用时。}
   {\textbf{投资者（家庭）层回答}\par\small
-    同一个人会一起看哪些主题？这些模式与所关注股票的类型是否同变？\par
-    PCA 概括多列输入的主要变异方向。}
+    同一个人会一起看哪些主题？这些模式和他关注股票的类型是否共变？\par
+    所以采用 PCA模型，来概括多列输入的主要变异方向。}
   \medskip
-  \leadrow{交易频率只提供少量线索}{交易笔数与每笔研究分钟的 Pearson 相关为 \(-0.10\)，秩相关为 \(-0.22\)。}
-  \finding{在投资者层用 PCA 概括主题参与及股票倾向的主要变异方向。}
+  \leadrow{交易频率不太有用}{因为交易笔数与每笔研究分钟的 Pearson 相关为 \(-0.10\)，秩相关为 \(-0.22\)。}
+  \finding{在投资者层，用 PCA 概括主题参与、股票倾向的主要变异方向。}
 \end{frame}
 
 \begin{frame}[label=pc-input]{PCA 输入：主题参与与投机标的倾向}
@@ -20,7 +20,7 @@
     \qquad X_i=(B_{i1},\ldots,B_{i,13},S_i).
   \]
   \small
-  \textbf{输入格式教学例（非实际微观记录）}\par\smallskip
+  \textbf{输入格式演示例}\par\smallskip
   \begin{tabularx}{\linewidth}{@{}l*{5}{Y}L{.19\linewidth}@{}}
     \toprule 投资者 & 价格图 & 盈利 & 股利 & 分析师 & \(\cdots\) & 投机标的倾向\\\midrule
     A & 1 & 0 & 0 & 1 & \(\cdots\) & \(S_A\)（连续）\\
@@ -49,11 +49,11 @@
         \fill[sampleblue!70] (0,\y-.17) rectangle (\v,\y+.17);
         \node[anchor=west] at (\v,\y) {\pgfmathprintnumber[fixed,precision=2]{\v}};}
       \end{scope}
-    \end{tikzpicture}\par{\small 第一主成分 PC1：对输入降维所得的载荷。}
+    \end{tikzpicture}\par
     \column{.35\textwidth}
     \greatnum{26.81\%}\par
     {\small 解释输入总变异\\特征值 3.75}\par\medskip
-    {\small 13 项主题的载荷均为正，股票投机倾向近零。}
+    {\small 发现 13 项主题的载荷均为正，股票投机倾向近零。}
   \end{columns}
   \finding{第一主成分 PC1 刻画跨主题的共同参与：得分较高的投资者通常参与更多主题。}
 \end{frame}
@@ -74,13 +74,12 @@
       \loadingbar{1}{盈利}{-.34}{sampleteal}
       \loadingbar{0}{股利}{-.47}{sampleteal}
     \end{tikzpicture}\par
-    {\small 第二主成分 PC2：对输入降维所得的载荷。}
     \column{.31\textwidth}
     \greatnum{8.77\%}\par
     {\small 解释输入总变异\\特征值 1.23}\par\medskip
     {\small 研究快信息与偏向投机标的在同一轴上。盈利、股利靠相反一侧。}
   \end{columns}
-  \finding{第二主成分 PC2 刻画主题与标的的联合变异：快信息与投机标的同向，盈利和股利位于相反一侧。}
+  \finding{第二主成分 PC2 ，作者猜测解释为主题与标的的联合变异：快信息与投机标的同向，盈利和股利位于相反一侧。}
 \end{frame}
 
 \subsection{4.2 交易时点与路径}
@@ -91,8 +90,8 @@
     \draw[samplegold,line width=.75pt] (.382,.43) rectangle (.412,.68);
     \draw[samplegold,line width=.75pt] (.890,.16) rectangle (.922,.55);
   }\par}
-  {\small 横轴：距本次交易的小时，\(0\) 为订单。纵轴：累计研究分钟。左侧均值与右侧中位数量程不同。}
-  \finding{先读右图：约到交易前五天才见中位数累积，主要跳升临近下单；均值在更早时点也有累积。}
+  {\small 横轴：距本次交易的小时，\(0\) 为订单。纵轴：累计研究分钟。}
+  \finding{约到交易前五天才见中位数累积，主要跳升临近下单；均值在更早时点也有累积。}
 \end{frame}
 
 \begin{frame}[label=path]{新的同股路径常在首个主题后结束}
@@ -120,5 +119,5 @@
     \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5c.pdf}\par}
   {\centering\small\textbf{D · 快信息，PC2 最高五分位}\par
     \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5d.pdf}\par}
-  {\small 慢信息组路径更宽；快信息组常见快照，或快照加价格图。线宽为路径数。}
+  {\small 慢信息组路径更宽；快信息组，一般在快照和价格图中多出现。线宽为路径数。}
 \end{frame}

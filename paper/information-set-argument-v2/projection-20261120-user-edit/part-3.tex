@@ -20,14 +20,14 @@
         \node at (0,\y) {\layertext};
       }
     \end{tikzpicture}\par
-    {\scriptsize 形状示意处理顺序与子样本，宽度无数量刻度。}
+    {\scriptsize }
     \column{.39\textwidth}\small
     \textcolor{sampleblue}{\textbf{484 户 · 总体投入}}\par
-    估计研究总量与主题分布，不要求每条研究链接都匹配个股。\par\medskip
+    估计研究总量与主题分布（比如市场宏观研究）。\par\medskip
     \textcolor{samplegold}{\textbf{50 户 · 高代码匹配}}\par
-    研究 URL 大多能直接或经相邻记录匹配股票代码，可限定到所交易股票。
+    可限定匹配到交易股票的50个投资者数据。
   \end{columns}
-  \finding{后文并列总体与高匹配子样本。50 户按研究链接的代码匹配质量选取，并非只有这 50 户能识别订单。}
+  \finding{总体与高匹配子样本，用于不同的统计和实证}
 \end{frame}
 
 \begin{frame}[label=categories]{研究内容与混合页面的归类}
@@ -38,14 +38,14 @@
     风险统计、盈利、股利 & 其他基本面、分析师、知情持股\\
     价格图、技术信号 & 公司官网、其他、未确定\\
   \end{tabularx}\par\medskip
-  \textbf{3 种混合格式：一页可以包含多个主题}\par\smallskip
+  \textbf{3 种混合格式：页面包含多个主题，怎么分配权重}\par\smallskip
   \begin{tabularx}{\linewidth}{@{}L{.27\linewidth}Y@{}}
-    \toprule 页面格式 & 时间如何分到具体主题\\\midrule
-    综合行情快照 & 正文按各主题专门页面的参与比例分配（兴趣权重）。\\
-    未确定类型的新闻 & 依据 RavenPack 新闻内容分类的分布分配。\\
-    留言板 & 依据 Reddit r/stocks 帖子主题的分布分配。\\\bottomrule
+    \toprule 页面格式 & 使用时间如何分到具体主题\\\midrule
+    综合行情快照 & 正文按各主题在页面比例来分配。\\
+    未确定类型的新闻 & 依据 RavenPack 新闻来分类。\\
+    留言板 & 依据 Reddit r/stocks 帖子来主题。\\\bottomrule
   \end{tabularx}
-  \finding{按信息内容分类；快照、新闻与留言板先保留格式，再报告分配后的主题时间。}
+  \finding{按信息内容分类和预处理。}
 \end{frame}
 
 \newcommand{\depthbars}[5]{%
@@ -60,15 +60,15 @@
     r_i(S)=\frac{\text{投资者 }i\text{ 在 }S\text{ 的研究分钟}}{\text{投资者 }i\text{ 的订单笔数}},
     \qquad \overline r_S=\frac{\sum_i r_i(S)}{N},\quad \operatorname{Med}_i r_i(S).
   \]
-  {\small \(i\)：投资者（家庭）；\(S\)：统计的股票范围。先按户计算，再跨户汇总。}
+  {\small \(i\)：投资者（家庭）；\(S\)：股票范围。先按户计算，再跨户汇总。}
   {\centering
   \begin{tikzpicture}[x=.046cm,y=.72cm,font=\small]
     \depthbars{2}{484 户 · 全部股票}{sampleblue}{144.2}{36.4}
     \depthbars{1}{50 户 · 全部股票}{samplegold}{96.8}{51.7}
     \depthbars{0}{50 户 · 所交易股票}{samplegold}{29.1}{5.7}
-    \node[anchor=west] at (0,-.39) {分钟／笔 \quad 浅色均值 \quad 深色中位数};
+    \node[anchor=west] at (0,-.39) {分钟／笔 \quad 深色中位数 \quad 浅色均值};
   \end{tikzpicture}\par}
-  \finding{同一 50 户：限定到交易标的，中位数由 51.7 降至 5.7 分钟。全部研究还含未交易股票及部分难配码记录。\textbf{均值远高于中位数，投入呈右偏长尾。}}
+  \finding{50 户：限定到交易标的，中位数由 51.7 降至 5.7 分钟。\textbf{均值远高于中位数，投入呈右偏长尾。}}
   \scriptsize\jump{appendix-5}{A5 · 画像与时长原表}
 \end{frame}
 
@@ -107,7 +107,7 @@
     \node at (122,.35) {其他财经};
   \end{tikzpicture}
   \end{center}
-  \finding{一共 144.2 分钟／笔，按均值加总，约 61\% 发生在券商站外。}
+  \finding{ 144 分钟／笔，按均值加总，约 61\% 发生在券商站外。}
 \end{frame}
 
 \subsection{3.2 主题与窗口}
@@ -132,7 +132,7 @@
       \topicbars{0}{风险统计}{1}{0.0}
     \end{tikzpicture}
   \end{center}
-  \finding{两列分别读“多少家庭看过”和“平均花多少时间”。图为直接分类的代表性项目；约 1\% 的风险统计覆盖对应 7 户。}
+  \finding{两列表示“多少家庭看过”和“平均花多少时间”。风险指标（beta等）只覆盖对应 7 户。}
   \scriptsize\jump{appendix-1}{A1 · 主题原表}
 \end{frame}
 
@@ -145,17 +145,15 @@
     {\setlength{\fboxsep}{1pt}\color{wine}\fbox{\includegraphics[width=.86\linewidth]{yahoo-chart.png}}}\par
     {\setlength{\fboxsep}{1pt}\color{sampleteal}\fbox{\includegraphics[width=.86\linewidth]{yahoo-dividend.png}}}\par
     {\setlength{\fboxsep}{1pt}\color{sampleteal}\fbox{\includegraphics[width=.86\linewidth]{yahoo-eps.png}}}\par
-    {\scriptsize Yahoo Finance · 2026-11-18 · 同页裁剪}\par\endgroup
+    {\scriptsize Yahoo Finance · 2026-11-18 }\par\endgroup
   \column{.44\textwidth}
     \textbf{价格图的均值分钟／笔}\par
     \greatnum{39.1}\enspace\(\to\)\enspace\greatnum{64.4}\par
     {\small 直接分类 \hfill 兴趣权重插补}\par\smallskip
-    {\small\textbf{视觉权重（备选）}\par
-    按不同内容占据的展示行数分配。\par\smallskip
-    \textbf{兴趣权重（正文）}\par
-    按各主题专门页面的参与比例分配。}
+    {\textbf{采用兴趣权重的方法}\par
+    按照投资者主动打开不同的主题页面，作为时间的分配比例。}
   \end{columns}
-  \finding{\textcolor{wine}{价格图}与\textcolor{sampleteal}{EPS、股利等}同页出现。混合页分配后，价格图仍居首；64.4 使用兴趣权重。}
+  \finding{\textcolor{wine}{价格图}与\textcolor{sampleteal}{EPS、股利等}同页出现。混合页分配后，价格图仍居首；}
   \small\jump{appendix-3}{A3 · 权重细节}
 \end{frame}
 
@@ -177,14 +175,14 @@
   \renewcommand{\arraystretch}{1.06}
   \begin{tabularx}{\linewidth}{@{}L{.26\linewidth}L{.18\linewidth}Y@{}}
     \toprule 理论／信息假设 & 现有事实的关系 & 证据逻辑\\\midrule
-    组合选择的风险输入 & 较不一致 & 主动查看风险统计约 1\%，显式风险量很少被调取。\\
-    DSSW 噪声交易 & 部分一致 & 研究较薄且偏价格；无法直接判断信息价值。\\
-    Hong--Stein & 待第四部分 & 需看不同投资者怎样组合新闻和价格。\\
-    BSV 盈利信号 & 部分一致 & 盈利覆盖 40\%，直接投入较短。\\
+    MV CAPM & 较不一致 & 主动查看风险统计约 1\%。\\
+    DSSW 噪声交易 & 部分一致 & 研究较薄且偏价格；\\
+    Hong--Stein & 待第四部分 & 讨论不同投资者看待新闻和价格。\\
+    BSV 盈利信号 & 部分一致 & 盈利覆盖 40\%。\\
     收益外推 & 输入一致 & 价格图覆盖 93\%，主动窗口常为数月到一年。\\
-    股利信号 & 证据有限 & 股利覆盖 17\%，直接研究较少。\\
-    有限注意力 & 待第四部分 & 需看财报与事件是否吸引集中关注。\\
-    同质信息输入 & 较不一致 & 均值明显高于中位数，投入差异很大。\\
+    股利信号 & 证据有限 & 股利覆盖 17\%。\\
+    有限注意力 & 待第四部分 & 讨论财报与事件是否吸引集中关注。\\
+    同质信息输入 & 较不一致 & 均值明显高于中位数。\\
     \bottomrule
   \end{tabularx}
   \smallskip
