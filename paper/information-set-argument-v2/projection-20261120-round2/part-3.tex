@@ -1,5 +1,5 @@
-\section{总体事实}
-\sectionlead{section-3}{三、总体事实}{每笔交易研究多久、花在什么主题上、看多长的价格历史？}
+\section{描述性统计}
+\sectionlead{section-3}{三、描述性统计}{研究深度、主题分布与价格回看窗口}
 
 \subsection{3.1 研究投入}
 \begin{frame}[label=funnel]{两层样本回答不同的研究投入问题}
@@ -9,10 +9,10 @@
     \begin{tikzpicture}[x=1cm,y=.81cm,font=\small]
       \foreach \y/\width/\shade/\layertext in {
         4/3.16/8/{数万户 · 约 20 亿条 URL},
-        3/2.95/13/{\textbf{484 户} · 约 850 万条点击},
-        2/2.74/18/{约 3,000 小时研究},
-        1/2.53/23/{约 1,350 小时匹配标的},
-        0/2.32/28/{\textbf{50 户} · 高代码匹配子样本}} {
+        3/2.95/13/{\textcolor{sampleblue}{\textbf{484 户}} · 约 850 万条点击},
+        2/2.74/18/{约 \textbf{3,000 小时}研究},
+        1/2.53/23/{约 \textbf{1,350 小时}匹配标的},
+        0/2.32/28/{\textcolor{samplegold}{\textbf{50 户}} · 高代码匹配子样本}} {
         \path[fill=wine!\shade] (-\width,\y+.45)--(\width,\y+.45)--
           ({\width-.17},\y-.45)--({-\width+.17},\y-.45)--cycle;
         \node at (0,\y) {\layertext};
@@ -20,12 +20,30 @@
     \end{tikzpicture}\par
     {\scriptsize 形状示意处理顺序与子样本，宽度无数量刻度。}
     \column{.39\textwidth}\small
-    \textbf{11 类内容}\par
-    风险、盈利、股利、其他基本面、分析师、知情持股、价格图、技术、公司官网、其他、未确定。\par\smallskip
-    \textbf{3 种混合格式}\par
-    快照、无法归类的新闻、留言板。
+    \textcolor{sampleblue}{\textbf{484 户 · 总体投入}}\par
+    估计研究总量与主题分布，不要求每条研究链接都匹配个股。\par\medskip
+    \textcolor{samplegold}{\textbf{50 户 · 高代码匹配}}\par
+    研究 URL 大多能直接或经相邻记录匹配股票代码，可限定到所交易股票。
   \end{columns}
-  \finding{484 户估计总体研究；高匹配的 50 户可把研究时长限定到实际推定交易的标的。}
+  \finding{后文并列总体与高匹配子样本。50 户按研究链接的代码匹配质量选取，并非只有这 50 户能识别订单。}
+\end{frame}
+
+\begin{frame}[label=categories]{研究内容与混合页面的归类}
+  \crumb{Part 3}{3.1 研究投入 · 内容分类}{II.C · Table 3 · Table IA2}
+  \small
+  \textbf{11 类内容}\par\smallskip
+  \begin{tabularx}{\linewidth}{@{}YY@{}}
+    风险统计、盈利、股利 & 其他基本面、分析师、知情持股\\
+    价格图、技术信号 & 公司官网、其他、未确定\\
+  \end{tabularx}\par\medskip
+  \textbf{3 种混合格式：一页可以包含多个主题}\par\smallskip
+  \begin{tabularx}{\linewidth}{@{}L{.27\linewidth}Y@{}}
+    \toprule 页面格式 & 时间如何分到具体主题\\\midrule
+    综合行情快照 & 正文按各主题专门页面的参与比例分配（兴趣权重）。\\
+    未确定类型的新闻 & 依据 RavenPack 新闻内容分类的分布分配。\\
+    留言板 & 依据 Reddit r/stocks 帖子主题的分布分配。\\\bottomrule
+  \end{tabularx}
+  \finding{按信息内容分类；快照、新闻与留言板先保留格式，再报告分配后的主题时间。}
 \end{frame}
 
 \newcommand{\depthbars}[5]{%
@@ -37,18 +55,18 @@
 \begin{frame}[label=depth]{每笔研究分钟，先在户内计算}
   \crumb{Part 3}{3.1 研究投入}{Table 2 B/C}
   \[
-    r_i(S)=\frac{\text{家庭 }i\text{ 在 }S\text{ 的研究分钟}}{\text{家庭 }i\text{ 的订单笔数}},
+    r_i(S)=\frac{\text{投资者 }i\text{ 在 }S\text{ 的研究分钟}}{\text{投资者 }i\text{ 的订单笔数}},
     \qquad \overline r_S=\frac{\sum_i r_i(S)}{N},\quad \operatorname{Med}_i r_i(S).
   \]
-  \begin{center}
+  {\small \(i\)：投资者（家庭）；\(S\)：统计的股票范围。先按户计算，再跨户汇总。}
+  {\centering
   \begin{tikzpicture}[x=.046cm,y=.72cm,font=\small]
     \depthbars{2}{484 户 · 全部股票}{sampleblue}{144.2}{36.4}
     \depthbars{1}{50 户 · 全部股票}{samplegold}{96.8}{51.7}
     \depthbars{0}{50 户 · 所交易股票}{samplegold}{29.1}{5.7}
     \node[anchor=west] at (0,-.39) {分钟／笔 \quad 浅色均值 \quad 深色中位数};
-  \end{tikzpicture}
-  \end{center}
-  \finding{同一 50 户中，限定到交易标的后中位数降至 5.7 分钟。全股研究包含其他标的，以及难以配码的浏览。}
+  \end{tikzpicture}\par}
+  \finding{同一 50 户：限定到交易标的，中位数由 51.7 降至 5.7 分钟。全部研究还含未交易股票及部分难配码记录。\textbf{均值远高于中位数，投入呈右偏长尾。}}
   \scriptsize\jump{appendix-5}{A5 · 画像与时长原表}
 \end{frame}
 
@@ -108,7 +126,7 @@
       \topicbars{4}{分析师资料}{71}{12.5}
       \topicbars{3}{其他基本面}{53}{2.6}
       \topicbars{2}{盈利}{40}{1.7}
-      \topicbars{1}{股利}{17}{0.5}
+      \topicbars{1}{股利}{17}{0.6}
       \topicbars{0}{风险统计}{1}{0.0}
     \end{tikzpicture}
   \end{center}
@@ -116,20 +134,23 @@
   \scriptsize\jump{appendix-1}{A1 · 主题原表}
 \end{frame}
 
-\begin{frame}[label=mixed]{综合行情的混合内容如何分到主题}
+\begin{frame}[t,label=mixed]{综合行情的混合内容如何分到主题}
   \crumb{Part 3}{3.2 主题与窗口}{Table 3 · Table IA2}
   \begin{columns}[T,onlytextwidth]
-  \column{.46\textwidth}\small
-    \textbf{一张综合行情页（示意）}\par\smallskip
-    \fcolorbox{quiet!25}{papergray}{\parbox{.87\linewidth}{现价、成交量及价格图\\52 周区间、盈利、股利}}\par\smallskip
-    快照按页面内容分配；新闻用匹配的新闻标题；留言板用帖子主题估计。
-  \column{.50\textwidth}
+  \column{.53\textwidth}\small
+    \textbf{AAPL 综合行情页 · 当代实例}\par\smallskip
+    \includegraphics[width=\linewidth,height=3.5cm,keepaspectratio]{yahoo-snapshot.png}\par
+    {\scriptsize Yahoo Finance · 2026-11-18 页面截图}
+  \column{.44\textwidth}
     \textbf{价格图的均值分钟／笔}\par
     \greatnum{39.1}\enspace\(\to\)\enspace\greatnum{64.4}\par
-    {\small 直接分类 \hfill 分配混合内容后}\par\medskip
-    {\small 484 户，全部股票。快照、未知新闻、留言板的原始用时合计约占 42\%。}
+    {\small 直接分类 \hfill 兴趣权重插补}\par\medskip
+    {\small\textbf{视觉权重（备选）}\par
+    按不同内容占据的展示行数分配。\par\smallskip
+    \textbf{兴趣权重（正文）}\par
+    按各主题专门页面的参与比例分配。}
   \end{columns}
-  \finding{价格图在直接分类和插补后均居首；归因方式会改变时间占比。}
+  \finding{价格图和 EPS、股利等同页出现。混合页分配后，价格图仍居首；64.4 使用论文的兴趣权重。}
   \small\jump{appendix-3}{A3 · 权重细节}
 \end{frame}
 
@@ -141,20 +162,25 @@
   {\small\textbf{B · 只看主动调整}\par
     \annotatedpanel{3.95cm}{fig1b.pdf}{\draw[wine,line width=.65pt] (.35,.13) rectangle (.66,.98);}\par
     {\small 3 个月和 1 年是明显峰值。}}
-  \finding{先读实际展示长度，再读主动选择。两图纵轴都是各自面板内的访问次数占比。}
+  \finding{综合行情页先呈现默认日内图。主动改变窗口时，投资者更常选择数月到一年的历史。}
+  {\scriptsize 两图纵轴分别为各自面板内的访问次数占比。}
 \end{frame}
 
-\begin{frame}[label=averages]{总体分布之后，转向股票和投资者}
-  \crumb{Part 3}{小结与衔接}{Tables 2--3 · Figure 1}
-  \small
-  \begin{tabularx}{\linewidth}{@{}L{.21\linewidth}Y Y@{}}
-    \toprule 总体事实 & 可见证据 & 对文献输入的初步约束\\\midrule
-    典型研究较少 & 50 户、交易标的中位数 5.7 分钟／笔 & 有限注意力框架需要允许投入很薄\\
-    价格内容常见 & 价格图覆盖 93\%；风险统计约 1\% & 历史价格更常成为可见输入\\
-    默认展示集中 & 全部图表访问约 73\% 为 1 日窗 & 外推所用的历史长度可能随页面设计变化\\
+\begin{frame}[label=averages]{描述性事实与模型的信息输入}
+  \crumb{Part 3}{小结与衔接}{Tables 2--3 · Figure 1 · 输入假设的比较}
+  \footnotesize
+  \begin{tabularx}{\linewidth}{@{}L{.26\linewidth}L{.18\linewidth}Y@{}}
+    \toprule 理论／信息假设 & 现有事实的关系 & 证据逻辑\\\midrule
+    组合选择的风险输入 & 较不一致 & 主动查看风险统计约 1\%，显式风险量很少被调取。\\
+    DSSW 噪声交易 & 部分一致 & 研究较薄且偏价格；无法直接判断信息价值。\\
+    Hong--Stein & 待第四部分 & 需看不同投资者怎样组合新闻和价格。\\
+    BSV 盈利信号 & 部分一致 & 盈利覆盖 40\%，直接投入较短。\\
+    收益外推 & 输入一致 & 价格图覆盖 93\%，主动窗口常为数月到一年。\\
+    股利信号 & 证据有限 & 股利覆盖 17\%，直接研究较少。\\
+    有限注意力 & 待第四部分 & 需看财报与事件是否吸引集中关注。\\
+    同质信息输入 & 较不一致 & 均值明显高于中位数，投入差异很大。\\
     \bottomrule
   \end{tabularx}
-  \medskip
-  {\small\textbf{均值远高于中位数}\quad 全部股票 144.2 对 36.4；交易标的 29.1 对 5.7（分钟／笔，各按原样本）。}
-  \nextq{右尾是谁带来的？接下来分股票、投资者和交易事件三个层次。}
+  \smallskip
+  {\small 均值／中位数：全样本全部股票 \textbf{144.2／36.4}；50 户交易标的 \textbf{29.1／5.7} 分钟／笔。}
 \end{frame}

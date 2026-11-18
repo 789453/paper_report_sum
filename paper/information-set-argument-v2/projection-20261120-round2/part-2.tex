@@ -13,8 +13,8 @@
     \greatnum{484}\;户\par\smallskip
     \textbf{850 万点击}\quad\textbf{6 万小时}\par\smallskip
     \textbf{2,911 笔}推定普通股／ADR 订单}
-  \medskip
-  \begin{center}\color{wine}\rule{.94\linewidth}{.5pt}\end{center}
+  \smallskip
+  {\color{wine}\rule{.94\linewidth}{.5pt}}\par\smallskip
   {\small 匿名家庭 ID \(\mid\) 时间戳 \(\mid\) URL \(\mid\) 停留时长\par\smallskip
   8 家券商，7 家识别到订单；站外含 Yahoo Finance、CNBC、MarketWatch。}
   \finding{\textbf{数据来自}数万户家庭的浏览器插件记录。\quad
@@ -30,8 +30,9 @@
   \crumb{Part 2}{2.1 浏览样本与 URL}{Table IA1 第 20、13、7 行 · 原文构造例}
   {\small\textbf{1 下单}\quad\utrade{卖出 100 股}\quad\ucode{GOOG}\par}
   {\fontsize{8}{10}\selectfont\ttfamily
-  \udomain{https://[broker-1].com}\upath{/invest/socreateentry?}\utrade{ordertype="sell"}\ucode{\&symbol=GOOG}\utrade{\&shares=100}\par}
-  \medskip
+  \udomain{https://[broker-1].com}\upath{/invest/socreateentry?}\par
+  \utrade{ordertype="sell"}\ucode{\&symbol=GOOG}\utrade{\&shares=100}\par}
+  \smallskip
   {\small\textbf{2 研究}\quad\upath{分析师意见}\quad\ucode{IMCL}\par}
   {\fontsize{8}{10}\selectfont\ttfamily
   \udomain{http://finance.yahoo.com}\upath{/q/ao?}\ucode{s=IMCL}\par}
@@ -65,7 +66,7 @@
   \crumb{Part 2}{2.2 记录整理与交易归属}{Table IA1 · Steps 1、2 · 原文构造例}
   {\small 2007 年 3 月 23 日，22 条 URL 串起约 14 分钟的浏览。}\par\bigskip
   \begin{center}
-  \begin{tikzpicture}[x=.75cm,y=1cm,font=\scriptsize]
+  \begin{tikzpicture}[x=.70cm,y=1cm,font=\scriptsize]
     \foreach \a/\b/\c in {0/5.15/papergray,5.15/6.32/paperblue,6.32/8.05/paperblue,8.05/9.68/paperblue,9.68/11.87/papergray,11.87/14.33/paperrose}
       \fill[\c] (\a,0) rectangle (\b,.60);
     \foreach \x/\n in {0/2:31:11,5.15/2:36:20,8.05/2:39:14,11.87/2:43:03,14.33/2:45:31}
@@ -86,25 +87,23 @@
 \begin{frame}[label=assignment]{补齐代码，再把研究归到同股订单}
   \crumb{Part 2}{2.2 记录整理与交易归属}{Step 8 · p.\,37 · 归属教学例}
   \small\textbf{补缺码：同会话、前后最近已匹配记录为同一股}\par\smallskip
-  \begin{center}
+  {\centering
   \begin{tikzpicture}[node distance=7mm,font=\small]
     \node[storybox,minimum height=.7cm,text width=2.2cm] (a) {IMCL 研究};
     \node[storyfocus,minimum height=.7cm,text width=2.2cm,right=of a] (b) {缺码新闻};
     \node[storybox,minimum height=.7cm,text width=2.2cm,right=of b] (c) {IMCL 研究};
     \draw[storyarrow] (a)--(b);\draw[storyarrow] (b)--(c);
     \draw[wine,dashed,-{Stealth}] (a.north) to[bend left=25] node[above,font=\scriptsize]{补配 IMCL} (b.north);
-  \end{tikzpicture}
-  \end{center}
+  \end{tikzpicture}\par}\smallskip
   \small\textbf{归研究：对准下一笔同股交易（同一股票的教学例）}\par\smallskip
-  \begin{center}
+  {\centering
   \begin{tikzpicture}[node distance=4mm,font=\small]
     \node[storybox,text width=2.0cm,minimum height=.85cm] (t) {周二\\研究};
     \node[storyfocus,text width=2.0cm,minimum height=.85cm,right=of t] (w) {周三\\卖出};
     \node[storybox,text width=2.0cm,minimum height=.85cm,right=of w] (h) {周四\\研究};
     \node[storyfocus,text width=2.0cm,minimum height=.85cm,right=of h] (f) {周五\\买入};
     \draw[grapharrow] (t)--(w);\draw[grapharrow] (h)--(f);
-  \end{tikzpicture}
-  \end{center}
+  \end{tikzpicture}\par}\smallskip
   {\small 不是固定归到次日；之后无同股交易，则归到末笔交易之后。}
   \finding{得到每位投资者、每只股票、带主题和时间的研究记录，以及可归属的订单时点。}
   \scriptsize\jump{appendix-4}{A4 · 原文处理步骤}
