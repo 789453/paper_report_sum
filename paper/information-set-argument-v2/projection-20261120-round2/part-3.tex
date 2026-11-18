@@ -139,36 +139,40 @@
   \begin{columns}[T,onlytextwidth]
   \column{.53\textwidth}\small
     \textbf{AAPL 综合行情页 · 当代实例}\par\smallskip
-    \includegraphics[width=\linewidth,height=3.5cm,keepaspectratio]{yahoo-snapshot.png}\par
-    {\scriptsize Yahoo Finance · 2026-11-18 页面截图}
+    \begingroup\setlength{\parskip}{0pt}
+    {\setlength{\fboxsep}{1pt}\color{wine}\fbox{\includegraphics[width=.86\linewidth]{yahoo-chart.png}}}\par
+    {\setlength{\fboxsep}{1pt}\color{sampleteal}\fbox{\includegraphics[width=.86\linewidth]{yahoo-dividend.png}}}\par
+    {\setlength{\fboxsep}{1pt}\color{sampleteal}\fbox{\includegraphics[width=.86\linewidth]{yahoo-eps.png}}}\par
+    {\scriptsize Yahoo Finance · 2026-11-18 · 同页裁剪}\par\endgroup
   \column{.44\textwidth}
     \textbf{价格图的均值分钟／笔}\par
     \greatnum{39.1}\enspace\(\to\)\enspace\greatnum{64.4}\par
-    {\small 直接分类 \hfill 兴趣权重插补}\par\medskip
+    {\small 直接分类 \hfill 兴趣权重插补}\par\smallskip
     {\small\textbf{视觉权重（备选）}\par
     按不同内容占据的展示行数分配。\par\smallskip
     \textbf{兴趣权重（正文）}\par
     按各主题专门页面的参与比例分配。}
   \end{columns}
-  \finding{价格图和 EPS、股利等同页出现。混合页分配后，价格图仍居首；64.4 使用论文的兴趣权重。}
+  \finding{\textcolor{wine}{价格图}与\textcolor{sampleteal}{EPS、股利等}同页出现。混合页分配后，价格图仍居首；64.4 使用兴趣权重。}
   \small\jump{appendix-3}{A3 · 权重细节}
 \end{frame}
 
 \begin{frame}[label=windows]{含默认图时日内占主，主动调整多看数月}
   \crumb{Part 3}{3.2 主题与窗口}{Figure 1 A/B · 484 户}
   \pair{\small\textbf{A · 全部图表访问}\par
-    \annotatedpanel{3.95cm}{fig1a.pdf}{\draw[wine,line width=.65pt] (.14,.13) rectangle (.183,.93);}\par
+    \annotatedpanel{3.80cm}{fig1a.pdf}{\draw[wine,line width=.65pt] (.14,.13) rectangle (.183,.93);}\par
     {\small 约 73\% 是默认的 1 日窗口。}}
   {\small\textbf{B · 只看主动调整}\par
-    \annotatedpanel{3.95cm}{fig1b.pdf}{\draw[wine,line width=.65pt] (.35,.13) rectangle (.66,.98);}\par
+    \annotatedpanel{3.80cm}{fig1b.pdf}{\draw[wine,line width=.65pt] (.35,.13) rectangle (.66,.98);}\par
     {\small 3 个月和 1 年是明显峰值。}}
-  \finding{综合行情页先呈现默认日内图。主动改变窗口时，投资者更常选择数月到一年的历史。}
-  {\scriptsize 两图纵轴分别为各自面板内的访问次数占比。}
+  \finding{默认日内图之外，主动调整者多看数月到一年。两图均为各自面板内的访问次数占比。}
 \end{frame}
 
 \begin{frame}[label=averages]{描述性事实与模型的信息输入}
   \crumb{Part 3}{小结与衔接}{Tables 2--3 · Figure 1 · 输入假设的比较}
   \footnotesize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.06}
   \begin{tabularx}{\linewidth}{@{}L{.26\linewidth}L{.18\linewidth}Y@{}}
     \toprule 理论／信息假设 & 现有事实的关系 & 证据逻辑\\\midrule
     组合选择的风险输入 & 较不一致 & 主动查看风险统计约 1\%，显式风险量很少被调取。\\
