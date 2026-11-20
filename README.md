@@ -4,6 +4,8 @@
 
 ## 本轮研究文稿
 
+11 月 20 日必要调整版采用已确认的 44 页主 PPT 为基线。[逐页对照](docs/2026-11-20_必要调整逐页对照.md) · [TeX 工程](paper/information-set-argument-v2/projection-20261120-necessary/README.md) · [放映 PDF](output/information-set-projection-20261120-necessary/个人投资者的信息集_11-20必要调整版.pdf)。下方定稿讲稿仍对应上一个版本。
+
 用户已确认第 25、32 页微调版为定稿；[最终配套口述讲稿（Markdown，30 分钟）](output/information-set-projection-20261120-user-final/科研组会口述讲稿_定稿配套_30分钟.md)逐页对应正文 1–44 页，含指图动作及累计时间。
 
 最新为按用户手改生成的[汇报总结版 PDF](output/information-set-projection-20261120-user-final/个人投资者的信息集_用户定稿_汇报总结版.pdf)，[TeX 入口](paper/information-set-argument-v2/projection-20261120-user-final/README.md)与[对照记录](docs/2026-11-18_用户定稿对照与总结页调整.md)。其余历史版本继续保留。

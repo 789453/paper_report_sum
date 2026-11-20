@@ -55,19 +55,27 @@
   {\centering\small\textbf{Table 2 · 研究活动}\par
     \includegraphics[width=\linewidth,height=5.2cm,keepaspectratio]{table2.pdf}\par}
   \small 金额仅为 191 户；Table 2 C 为高匹配 50 户，D 为非研究性金融浏览。
-  \par\smallskip\jump{depth}{返回 · 分母与研究范围}
+  \par\smallskip\jump{depth}{返回 · 分母与研究范围}\quad\jump{appendix-tail}{查看 · 分位数图}
 \end{frame}
 
-\begin{frame}[label=appendix-6]{A6 · 原文表述差异与采用口径}
-  \crumb{备份}{以 2026 年 4 月 27 日稿为准}{Tables 4–5、IA1 · Figures 3、5}
-  \footnotesize
-  \begin{tabularx}{\linewidth}{@{}L{.23\linewidth}YY@{}}\toprule
-  位置 & 表述差异 & 上屏口径\\\midrule
-  附录／IA1 第 20 行 & 附录段落举买入，示例 URL 和正文写 sell & 按 URL 读 GOOG 卖出。\\
-  V／Table 4 & 正文小结谈近期收益；列间方向不同 & 按列读：广度动量负，(4)--(6) 动量正。\\
-  Table 4 拟合度 & 正文使用较宽的用时措辞 & 广度 \(R^2\) 从 .315 到 .447，增 .132。\\
-  VI／Table 5 & 正文写研究对象，表注写交易倾向 & 正文解释研究对象，表注歧义保留。\\
-  VII／Figures 3、5 & 五天措辞、快慢组的列举顺序 & Fig. 3 约到交易前五天才出现中位数累积；Fig. 5 C 慢、D 快。\\\bottomrule
-  \end{tabularx}\par\medskip
-  \jump{evaluation}{返回 · 汇报人评价}
+\begin{frame}[label=appendix-tail]{A5 补图 · 每笔研究时间的右偏长尾}
+  \crumb{备份}{研究时间分位数}{Table 2 C · p.\,47}
+  {\small 高匹配 50 户，所交易股票。每户用研究分钟除以订单笔数。}\par\medskip
+  {\centering
+  \begin{tikzpicture}[x=.051cm,y=.59cm,font=\small]
+    \draw[quiet!60] (0,-.55)--(164,-.55);
+    \foreach \x in {0,40,80,120,160}{
+      \draw[quiet!45] (\x,-.55)--(\x,-.66) node[below,font=\scriptsize]{\x};}
+    \draw[sampleblue,dashed] (29.1,0)--(29.1,4.4)
+      node[above,anchor=west,font=\scriptsize]{均值 29.1};
+    \foreach \y/\labeltext/\value in {4/第5分位/0.0,3/第25分位/1.7,2/中位数/5.7,1/第75分位/31.5,0/第95分位/157.4}{
+      \node[anchor=east] at (-2,\y) {\labeltext};
+      \draw[quiet!15] (0,\y)--(160,\y);
+      \draw[wine!60,line width=1pt] (0,\y)--(\value,\y);
+      \fill[wine] (\value,\y) circle[radius=2pt];
+      \node[anchor=west,text=wine,font=\small\bfseries] at (\value,\y) {\value};}
+  \end{tikzpicture}\par}
+  {\scriptsize 横轴：分钟／笔。点为 Table 2 C 报告的分位数，虚线为均值。}\par
+  \finding{中位数仅 5.7 分钟，第 95 分位达 157.4 分钟。上分位间距明显拉长。}
+  \scriptsize\jump{depth}{返回 · 每笔研究分钟}\quad\jump{appendix-5}{A5 · 原表}
 \end{frame}

@@ -6,30 +6,35 @@
     什么股票和主题被常看？\par
     是股票-月份的 panel，\(Y\) 是覆盖、用时。}
   {\textbf{投资者（家庭）层回答}\par\small
-    同一个人会一起看哪些主题？这些模式和他关注股票的类型是否共变？\par
-    所以采用 PCA模型，来概括多列输入的主要变异方向。}
+    同一个人会一起看哪些主题？这些模式和他关注股票的类型是否共变？}
   \medskip
   \leadrow{交易频率不太有用}{因为交易笔数与每笔研究分钟的 Pearson 相关为 \(-0.10\)，秩相关为 \(-0.22\)。}
-  \finding{在投资者层，用 PCA 概括主题参与、股票倾向的主要变异方向。}
+  \finding{在投资者层，用 PCA（主成分分析模型）概括主题参与、股票倾向的主要变异方向。}
 \end{frame}
 
-\begin{frame}[label=pc-input]{PCA 输入：主题参与与投机标的倾向}
+\begin{frame}[t,label=pc-input]{PCA 输入：主题参与与投机标的倾向}
   \crumb{Part 4}{4.1 股票与投资者 · 输入矩阵}{VI · Table 5}
+  \vspace{-.65em}
+  \setlength{\abovedisplayskip}{3pt}
+  \setlength{\belowdisplayskip}{4pt}
   \[
     B_{ik}=\mathbf{1}\{m_{ik}>2\},
-    \qquad X_i=(B_{i1},\ldots,B_{i,13},S_i).
+    \qquad X_i=(B_{i1},\ldots,B_{i,13},S_i),
+    \qquad R=\frac{Z^\top Z}{n-1}.
   \]
   \small
-  \textbf{输入格式演示例}\par\smallskip
-  \begin{tabularx}{\linewidth}{@{}l*{5}{Y}L{.19\linewidth}@{}}
-    \toprule 投资者 & 价格图 & 盈利 & 股利 & 分析师 & \(\cdots\) & 投机标的倾向\\\midrule
-    A & 1 & 0 & 0 & 1 & \(\cdots\) & \(S_A\)（连续）\\
-    B & 1 & 1 & 1 & 0 & \(\cdots\) & \(S_B\)（连续）\\
-    C & 0 & 1 & 0 & 1 & \(\cdots\) & \(S_C\)（连续）\\\bottomrule
-  \end{tabularx}\par\medskip
-  \(m_{ik}\)：投资者 \(i\) 在主题 \(k\) 的月均研究分钟，跨可匹配股票加总。\textbf{严格大于 2 分钟记 1，否则记 0。}\par\smallskip
-  实际输入：13 个主题指示列，加连续的 \(S_i\)。\(S_i\) 高偏小、新、高波动股；低偏大、成熟、分红股。
-  \small\jump{appendix-6}{A6 · 表注与正文措辞}
+  \setlength{\parskip}{1pt}
+  \renewcommand{\arraystretch}{1.06}
+  \textbf{输入格式例子}\par\smallskip
+  \begin{tabularx}{\linewidth}{@{}l*{4}{Y}L{.21\linewidth}@{}}
+    \toprule 投资者 & 价格图 & 盈利 & 分析师 & \(\cdots\) & 投机标的倾向\\\midrule
+    A & 1 & 0 & 1 & \(\cdots\) & \(S_A\)（连续）\\
+    B & 1 & 1 & 0 & \(\cdots\) & \(S_B\)（连续）\\
+    C & 0 & 1 & 1 & \(\cdots\) & \(S_C\)（连续）\\\bottomrule
+  \end{tabularx}\par\smallskip
+  \(m_{ik}\) 为该户在该主题的月均研究分钟。\textbf{严格大于 2 分钟记 1，否则记 0。}\par
+  实际输入为 13 个主题指标和连续的 \(S_i\)。\(S_i\) 高偏小、新、高波动股，低偏大、成熟、分红股。\par
+  \(Z\) 为按列标准化的输入矩阵，\(n\) 为投资者数。\(R\) 的特征向量给出主成分方向。
 \end{frame}
 
 \newcommand{\loadingbar}[4]{%
@@ -55,7 +60,7 @@
     {\small 解释输入总变异\\特征值 3.75}\par\medskip
     {\small 发现 13 项主题的载荷均为正，股票投机倾向近零。}
   \end{columns}
-  \finding{第一主成分 PC1 刻画跨主题的共同参与：得分较高的投资者通常参与更多主题。}
+  \finding{第一主成分 PC1 被命名为研究强度：得分较高的投资者通常参与更多主题。}
 \end{frame}
 
 \begin{frame}[label=pc-two]{第二主成分把快信息与投机标的联系起来}
@@ -79,17 +84,16 @@
     {\small 解释输入总变异\\特征值 1.23}\par\medskip
     {\small 研究快信息与偏向投机标的在同一轴上。盈利、股利靠相反一侧。}
   \end{columns}
-  \finding{第二主成分 PC2 ，作者猜测解释为主题与标的的联合变异：快信息与投机标的同向，盈利和股利位于相反一侧。}
+  \finding{第二主成分 PC2，作者猜测命名为投机性偏好。}
 \end{frame}
 
 \subsection{4.2 交易时点与路径}
 \begin{frame}[label=timing]{投资者在同股交易前的研究时间}
   \crumb{Part 4}{4.2 交易时点与路径 · 研究何时发生}{Figure 3 · 50 户}
-  {\centering
-  \annotatedpanel{4.14cm}{fig3.pdf}{
-    \draw[samplegold,line width=.75pt] (.382,.43) rectangle (.412,.68);
-    \draw[samplegold,line width=.75pt] (.890,.16) rectangle (.922,.55);
-  }\par}
+  \pair{\centering\small\textbf{均值}\par
+    \includegraphics[width=\linewidth,height=4.04cm,keepaspectratio]{fig3-mean-plot.png}\par}
+  {\centering\small\textbf{中位数}\par
+    \includegraphics[width=\linewidth,height=4.04cm,keepaspectratio]{fig3-median-plot.png}\par}
   {\small 横轴：距本次交易的小时，\(0\) 为订单。纵轴：累计研究分钟。}
   \finding{约到交易前五天才见中位数累积，主要跳升临近下单；均值在更早时点也有累积。}
 \end{frame}
@@ -98,11 +102,7 @@
   \crumb{Part 4}{4.2 交易时点与路径 · 主题之间的跳转}{Figure 4}
   \begin{columns}[T,onlytextwidth]
     \column{.61\textwidth}\centering
-    \annotatedpanel{4.6cm}{fig4.pdf}{
-       \draw[wine,line width=.55pt] (.01,.26) rectangle (.106,.91);
-       \draw[wine,line width=.55pt] (.226,.118) rectangle (.319,.586);
-       \draw[wine,line width=.55pt] (.907,.456) rectangle (.984,.517);
-    }
+    \includegraphics[width=\linewidth,height=4.6cm,keepaspectratio]{fig4-plot.png}
     \column{.36\textwidth}\small
     \leadrow{入口}{快照、价格图、新闻较常见。}
     \leadrow{第二列 END}{最粗一支，表示首个主题后没有新增的计入主题。}
@@ -116,8 +116,10 @@
 \begin{frame}[label=fast-slow]{按研究风格分组后，快信息组路径更窄}
   \crumb{Part 4}{4.2 交易时点与路径 · 按 PC2 分组}{Figure 5 C/D}
   \pair{\centering\small\textbf{C · 慢信息，PC2 最低五分位}\par
-    \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5c.pdf}\par}
+    \includegraphics[width=\linewidth,height=3.68cm,keepaspectratio]{fig5c-plot.png}\par}
   {\centering\small\textbf{D · 快信息，PC2 最高五分位}\par
-    \includegraphics[width=\linewidth,height=3.88cm,keepaspectratio]{fig5d.pdf}\par}
+    \includegraphics[width=\linewidth,height=3.68cm,keepaspectratio]{fig5d-plot.png}\par}
+  {\small 按投资者得分 \(\mathrm{score}_{i,2}=z_i^\top v_2\) 取最低和最高五分位。
+  \(z_i\) 为该投资者的标准化输入，\(v_2\) 为 PC2 方向。}\par\smallskip
   {\small 慢信息组路径更宽；快信息组，一般在快照和价格图中多出现。线宽为路径数。}
 \end{frame}
