@@ -1,0 +1,204 @@
+% !TeX program = xelatex
+% !TeX root = main.tex
+\section{实证比较}
+\sectionlead{section-4}{四、实证比较}{异质性来自哪里？股票、投资者，还是交易时点。}
+
+\begin{frame}[label=empirical-why]{为什么进一步比较股票、投资者与交易情境}
+  \crumb{Part 4}{实证动机}{Tables 2--3 · V--VII}
+  \small
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabularx}{\linewidth}{@{}L{.29\linewidth}YL{.24\linewidth}@{}}
+    \toprule\rowcolor{wine!10}
+    \textbf{已见事实} & \textbf{需要进一步实证} & \textbf{分析方向}\\\midrule
+    价格图关注最常见 & 哪些股票和主题吸引更多研究？ & \textcolor{wine}{\textbf{股票 \(\times\) 月}}\\
+    \rowcolor{wine!5}均值远高于中位数 & 投资者偏好由什么解释？ & \textcolor{wine}{\textbf{投资者（家庭）\(\times\) 主题}}\\
+    \multicolumn{1}{c}{\textcolor{quiet}{\textemdash}} & 研究和交易时点如何？ & \textcolor{wine}{\textbf{订单路径}}\\\bottomrule
+  \end{tabularx}\par\medskip
+\end{frame}
+
+\subsection{4.1 股票与投资者}
+\begin{frame}[label=slices]{三种分析对象依次研究}
+  \crumb{Part 4}{4.1 股票与投资者}{论文 V--VII}
+  \small
+  \begin{tabularx}{\linewidth}{@{}L{.24\linewidth}YY@{}}
+    \toprule 一行是什么 & 字段示意 & 问题和方法\\\midrule
+    股票 \(\times\) 月 & \(\underbrace{(j,m)}_{\text{股票、月份}}\ \mid\ \underbrace{A,L,D}_{\text{三项关注量}}\) &
+      \textbf{关注分布}：前 1,000 大 CRSP 股票，月面板回归。\\\midrule
+    投资者（家庭） & \(\underbrace{i}_{\text{投资者}}\ \mid\ \underbrace{B_{i1},\ldots,B_{i,13}}_{\text{各主题列}}\ \mid\ S_i\) &
+      \textbf{研究风格}：主题倾向，PCA 主成分分析。\\\midrule
+    投资者 \(\times\) 股票 \(\times\) 订单 &
+      \((i,j,e)\) 对齐投资者、时点、主题 &
+      \textbf{交易时序}：路径分析。\\
+    \bottomrule
+  \end{tabularx}
+  \finding{按股票、投资者和交易事件，逐步考察投资者行为的异质性。}
+\end{frame}
+
+\begin{frame}[t,label=design]{股票月回归区分广度、用时和内容}
+  \crumb{Part 4}{4.1 股票与投资者 · 股票月规格}{Table 4}
+  \vspace{-0.8em}
+  \[
+    Y_{jm}=\alpha+\beta z(\ln \mathrm{Cap}_{jm})+\gamma^\top Z_{jm}
+               +\delta_{\mathrm{FF49}(j)}+\varepsilon_{jm},
+    \qquad Y \in \{A,L,D\}.
+  \]
+  \small
+  \begin{tabularx}{\linewidth}{@{}L{.25\linewidth}Y@{}}
+    \toprule \(A\) 覆盖率 (1--3) & 月内研究过该股的投资者比例（百分点）。\\
+    \(L\) 总用时 (4) & \(\ln(1+\text{研究该股票的时长})\)。\\
+    \(D\) 内容倾斜 (5--6) & 查看价格图的比例，减查看基本面信息的比例。\\\bottomrule
+  \end{tabularx}
+  \medskip
+  {\small \(j\)：股票；\(m\)：月份。(1) 只放市值；扩展规格加事件、股票特征及 FF49 行业项。}
+  \finding{3,962 个股票月，原表 Newey--West 月度滞后 2 阶。三个被解释变量，\(A\) 和 \(L\) 对应关注广度与总投入，\(D\) 看主题构成。}
+  \scriptsize\jump{appendix-2}{A2 · 回归全表}
+\end{frame}
+
+\begin{frame}[label=size-coefficients]{市值与研究覆盖率、总用时的关系}
+  \crumb{Part 4}{4.1 股票与投资者 · 市值系数}{据 Table 4 (1)--(4) 重绘}
+  \pair{\small\textbf{覆盖率 A · 百分点}\par
+    \begin{tikzpicture}[x=1.40cm,y=.95cm,font=\small]
+      \draw[quiet!40] (0,-.3)--(0,2.4);
+      \foreach \y/\b/\t/\id in {2/1.03/14.42/{(1 仅对数市值)},1/1.33/13.57/{(2 市值＋股票特征、行业固定效应)},0/1.13/11.35/{(3 在(2)基础上，加散户交易特征)}} {
+        \pgfmathsetmacro{\se}{1.96*\b/\t}
+        \node[anchor=east,align=right,text width=2.48cm,font=\fontsize{7}{8.5}\selectfont] at (0,\y) {\id};
+        \draw[sampleblue,thick] ({\b-\se},\y)--({\b+\se},\y);
+        \fill[sampleblue] (\b,\y) circle[radius=1.7pt];
+        \node[above,font=\scriptsize] at (\b,\y) {\b\;(\t)};}
+      \foreach \x in {0,.5,1,1.5} \node[below] at (\x,-.3) {\pgfmathprintnumber{\x}};
+    \end{tikzpicture}}
+  {\small\textbf{总用时 L · 对数点}\par
+    \begin{tikzpicture}[x=5.0cm,y=.7cm,font=\small]
+      \draw[quiet!40] (0,-.3)--(0,2.4);
+      \draw[sampleteal,thick] (.427,1)--(.553,1);
+      \fill[sampleteal] (.49,1) circle[radius=1.7pt];
+      \node[above,font=\scriptsize] at (.49,1) {0.49\;(15.23)};
+      \node[anchor=east,align=right,text width=1.85cm,font=\fontsize{7}{8.5}\selectfont] at (0,1) {(4 完整的控制变量)};
+      \foreach \x in {0,.2,.4,.6} \node[below] at (\x,-.3) {\pgfmathprintnumber{\x}};
+    \end{tikzpicture}}
+  \medskip
+  {\small 连续解释变量增加 1 个标准差。点为系数，括号为 \(t\) 值。}\par\medskip
+  \finding{不同规格下，市值与研究覆盖率、总用时均显著正相关。}
+\end{frame}
+
+\begin{frame}[label=size]{仅市值解释约三成的覆盖率变异}
+  \crumb{Part 4}{4.1 股票与投资者 · 解释度与量级}{Table 4 (1)--(4)}
+  \pair{
+    \textbf{覆盖率 \(R^2\)}\par
+    \begin{tikzpicture}[x=6.85cm,y=.69cm,font=\small]
+      \foreach \y/\r/\id in {2/.315/{(1)},1/.447/{(2)},0/.484/{(3)}} {
+        \fill[sampleblue!32] (0,\y) rectangle (\r,\y+.48);
+        \node[anchor=west] at (0,\y+.24) {\id};
+        \node[anchor=west] at (\r,\y+.24) {\r};}
+    \end{tikzpicture}\par
+    {\small (1) 市值；(2) 加基本特征与行业；(3) 加散户参与度。}}
+  {\textbf{关注者比例的量级}\par\medskip
+    {\fontsize{20}{22}\selectfont\bfseries\color{wine}1.01\% \(\to\) 2.04\%\par}
+    {\small 市值（对数）提高 1 个标准差，覆盖率拟合值高 1.03 个百分点，\(t=14.42\)。}\par\medskip
+    {\small 总用时规格的市值系数仍为正（0.49 对数点）。}}
+  \medskip
+  \finding{规模可能同时反映媒体曝光、流动性和熟悉度。接着看规模相近的股票之间还有哪些差别。}
+\end{frame}
+
+\newcommand{\coefrow}[5]{%
+  \pgfmathsetmacro{\cihalf}{1.96*abs(#3/#4)}
+  \node[anchor=east,inner sep=2pt] at (#2,#1) {#5};
+  \draw[sampleblue,semithick] ({#3-\cihalf},#1)--({#3+\cihalf},#1);
+  \fill[sampleblue] (#3,#1) circle[radius=1.52pt];}
+% Table 4 pp.49--50, columns (2) and (4): coefficients, t values and 5% stars.
+\newcommand{\adjustedpoint}[4]{%
+  \pgfmathsetmacro{\halfwidth}{1.96*abs(#2/#3)}%
+  \draw[#4,semithick] ({#2-\halfwidth},#1)--({#2+\halfwidth},#1);
+  \fill[#4] (#2,#1) circle[radius=1.55pt];}
+\begin{frame}[label=adjusted]{控制规模后，财报与波动仍关联更多研究}
+  \crumb{Part 4}{4.1 股票与投资者 · 控制后的比较}{Table 4 (2)、(4)}
+  {\centering
+  \begin{tikzpicture}[x=1cm,y=.425cm,scale=.98,font=\small]
+    \node[font=\small\bfseries] at (3.95,8.2) {覆盖率 \(A\)（百分点）};
+    \node[font=\small\bfseries] at (8.55,8.2) {总用时 \(L\)（对数点）};
+    \foreach \y/\lab in {7/财报月,6/波动率,5/新闻,4/对数价格,3/上月收益,2/动量,1/分红,0/{S\&P 500 成员}} {
+      \node[anchor=east,inner sep=2pt] at (1.67,\y) {\lab};
+      \draw[quiet!10] (1.74,\y)--(6.09,\y);
+      \draw[quiet!10] (6.54,\y)--(10.78,\y);
+    }
+    \begin{scope}[shift={(4.74,0)},x=3.38cm]
+      \draw[quiet!50] (0,-.42)--(0,7.50);
+      \draw[quiet!35] (-.88,-.42)--(.40,-.42);
+      \foreach \xx in {-.8,-.4,0,.4} {
+        \node[below,font=\scriptsize] at (\xx,-.42) {\pgfmathprintnumber{\xx}};}
+      \adjustedpoint{7}{.30}{6.25}{sampleblue}
+      \adjustedpoint{6}{.15}{4.92}{sampleblue}
+      \adjustedpoint{5}{.02}{.80}{quiet!50}
+      \adjustedpoint{4}{-.17}{-2.57}{sampleblue}
+      \adjustedpoint{3}{-.11}{-3.97}{sampleblue}
+      \adjustedpoint{2}{-.07}{-2.10}{sampleblue}
+      \adjustedpoint{1}{-.23}{-2.95}{sampleblue}
+      \adjustedpoint{0}{-.64}{-5.93}{sampleblue}
+    \end{scope}
+    \begin{scope}[shift={(8.57,0)},x=6.43cm]
+      \draw[quiet!50] (0,-.42)--(0,7.50);
+      \draw[quiet!35] (-.316,-.42)--(.344,-.42);
+      \foreach \xx in {-.2,0,.2} {
+        \node[below,font=\scriptsize] at (\xx,-.42) {\pgfmathprintnumber{\xx}};}
+      \adjustedpoint{7}{.24}{8.73}{sampleblue}
+      \adjustedpoint{6}{.10}{5.35}{sampleblue}
+      \adjustedpoint{5}{.05}{3.44}{sampleblue}
+      \adjustedpoint{4}{-.04}{-1.80}{quiet!50}
+      \adjustedpoint{3}{-.02}{-1.65}{quiet!50}
+      \adjustedpoint{2}{.04}{2.18}{sampleblue}
+      \adjustedpoint{1}{-.22}{-5.30}{sampleblue}
+      \adjustedpoint{0}{-.14}{-3.10}{sampleblue}
+    \end{scope}
+  \end{tikzpicture}\par}
+  {\scriptsize\textcolor{sampleblue}{深蓝：5\% 显著}\quad
+    \textcolor{quiet}{灰：未达 5\%}\quad 横线：近似 95\% 置信区间。}\par\smallskip
+  {\small 动量，对覆盖和用时的解释系数，方向不同。\par
+  总用时，混合了投资者异质性的影响。}
+\end{frame}
+
+\begin{frame}[label=event]{财报、新品和并购附近出现日度关注尖峰}
+  \crumb{Part 4}{4.1 股票与投资者 · 事件时间}{Figure 2 · 484 户}
+  \begin{columns}[T,onlytextwidth]
+    \column{.325\textwidth}\centering\small
+     \textbf{A · Microsoft}\par
+     \includegraphics[width=\linewidth]{fig2a-plot.png}\par 1/25 季度财报
+    \column{.325\textwidth}\centering\small
+     \textbf{B · Apple}\par
+     \includegraphics[width=\linewidth]{fig2b-plot.png}\par 1/9 iPhone、1/17 财报
+    \column{.325\textwidth}\centering\small
+     \textbf{C · Sirius}\par
+     \includegraphics[width=\linewidth]{fig2c-plot.png}\par 2/19 宣布与 XM 合并
+  \end{columns}
+  \medskip
+  {\small\textcolor{sampleblue}{深蓝实线／左轴：每日研究人数}；\textcolor{wine}{红虚线／右轴：Google Trends}（MSFT、iPhone、SIRI）。}
+  \finding{财报、新品与并购日期附近，点击流研究与搜索关注同时上升。}
+\end{frame}
+
+\begin{frame}[label=tilt]{股票特征对“看什么”的解释度较低}
+  \crumb{Part 4}{4.1 股票与投资者 · 内容倾斜}{Table 4 (5)--(6)}
+  {\small\textbf{被解释变量 \(D\)}＝看过价格类信息的投资者比例－看过基本面类的。\par\smallskip
+  \textcolor{slate}{\textbf{\(D\) 代表投机性偏好（研究内容倾斜）}：越高表示研究越偏价格类信息。}}\par\medskip
+  \begin{columns}[T,onlytextwidth]
+    \column{.61\textwidth}\small
+    \textbf{价格覆盖率减基本面覆盖率，第 (6) 列}\par
+    \begin{tikzpicture}[x=13cm,y=.52cm,font=\scriptsize]
+      \draw[quiet!45] (0,-.33)--(0,3.44);
+      \coefrow{3}{-.206}{.06}{4.63}{波动率}
+      \coefrow{2}{-.206}{.05}{2.33}{动量}
+      \coefrow{1}{-.206}{-.10}{-2.42}{分析师覆盖}
+      \coefrow{0}{-.206}{.03}{.61}{市值（对数）}
+      \foreach \x in {-.2,-.1,0,.1} \node[below] at (\x,-.34) {\pgfmathprintnumber{\x}};
+    \end{tikzpicture}\par
+    \column{.36\textwidth}\small
+    \textbf{内容倾斜 \(D\) 的 \(R^2\)}\par\smallskip
+    \begin{tabularx}{\linewidth}{@{}Yr@{}}
+      \toprule 规格 & \(R^2\)\\\midrule
+      第 (5) 列 & {\large\bfseries\color{wine}7.9\%}\\
+      第 (6) 列 & {\large\bfseries\color{wine}9.0\%}\\\bottomrule
+    \end{tabularx}\par\smallskip
+    {\small 对照：覆盖率 \(A\) 的第 (3) 列，\(R^2=48.4\%\)。}
+  \end{columns}
+  \finding{股票特征只解释很少部分（8\%）的主题倾斜，说明异质性的解释，需要继续对投资者考察。}
+\end{frame}
+
