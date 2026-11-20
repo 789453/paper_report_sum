@@ -26,3 +26,6 @@
 
 采用Sims的听众导向与独立交流目的，Motta和Schlag的图表讲解与演练，MIT/Broad对视觉要点的组织方法。学术论坛的逐问题叙述作为经验对照，社区S09补充证据来源和答案出现时机。学术指南中的统一页数或模板不移植到本项目。  
 [Sims 2024](https://sites.nd.edu/esims/files/2024/01/slides_presentations_2024.pdf) · [EUI How to Present](https://www.eui.eu/Documents/DepartmentsCentres/Economics/RulesForms/HowToPresent.pdf) · [MIT/Broad Slideshow](https://mitcommlab.mit.edu/broad/commkit/slideshow/) · [同行讨论](https://www.reddit.com/r/AskAcademia/comments/17aazd7/questions_on_presenting_an_oral_presentation_at_a/)
+# 放映页写作提示
+
+放映页只写面向听众的研究内容。禁止写“按原例改写”“据某表改写”“用某标的示意”等制作备注、编辑说明或 AI 留痕。示例替换、证据出处和处理说明记在源码注释或对照 Markdown。保留读图所需的图例、表头、单位与实质性定义。
