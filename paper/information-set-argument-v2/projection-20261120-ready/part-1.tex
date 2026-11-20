@@ -1,0 +1,130 @@
+% !TeX program = xelatex
+% !TeX root = main.tex
+\begin{frame}[plain]
+  \vfill
+  {\small\color{wine}\bfseries 科研组会\par}
+  \vspace{5mm}
+  {\fontsize{22}{26}\selectfont\bfseries On the Information Set of\\Individual Investors\par}
+  \vspace{3mm}
+  {\large\color{wine}个人投资者的信息集\par}
+  \vspace{3mm}
+  {\color{wine}\rule{.95\linewidth}{.75pt}}\par\medskip
+  Toomas Laarits \quad Jeffrey Wurgler\par
+  {\small New York University \hfill 26 年 4 月 Working Paper}\par
+  \vspace{4mm}{\small 汇报人：杨博远\quad 27国金博0}\vfill
+\end{frame}
+
+\begin{frame}[label=authors]{作者与选文}
+  \crumb{开场}{作者与版本}{NBER WP 33625 · SSRN 5187645}
+  \leadrow{Jeffrey Wurgler}{NYU 教授；行为资产定价的资深学者。}
+  \smallskip
+  {\small
+  \textbf{Baker--Wurgler (2006), \textit{Journal of Finance}}\par
+  \textit{Investor Sentiment and the Cross-Section of Stock Returns}\par
+  Baker--Wurgler 情绪指数\par\smallskip
+  \textbf{Barberis--Shleifer--Wurgler (2005), \textit{JFE}}\par
+  \textit{Comovement}：SP500指数成分变动与股票收益联动。\par}
+  \smallskip
+  \leadrow{Toomas Laarits}{NYU Stern，助理教授。}
+  \smallskip\small
+  \begin{tabularx}{\linewidth}{@{}lY@{}}
+    2025 Working Paper & \textit{The Research Behavior of Individual Investors}\\
+    2026-04-27 版本 & \textit{On the Information Set of Individual Investors}
+  \end{tabularx}
+\end{frame}
+
+\section{研究问题}
+\sectionlead{section-1}{一、研究问题}{资产定价需要一个信息集。个人投资者实际获得的信息怎样观测？}
+
+\subsection{1.1 信息集}
+\begin{frame}[label=chain]{资产定价中的信息如何进入决策}
+  \crumb{Part 1}{1.1 信息集}{引言 pp.\,2--3}
+  \centering
+  \begin{tikzpicture}[node distance=3mm]
+    \node[storybox,text width=1.65cm] (menu) {信息供给};
+    \node[storyfocus,text width=1.65cm,right=of menu] (see) {信息获取};
+    \node[storybox,text width=1.65cm,right=of see] (belief) {信念形成};
+    \node[storybox,text width=1.65cm,right=of belief] (order) {投资决策};
+    \node[storybox,text width=1.65cm,right=of order] (price) {市场价格};
+    \draw[storyarrow] (menu)--(see);
+    \draw[grapharrow] (see)--(belief);
+    \draw[storyarrow] (belief)--(order);
+    \draw[storyarrow] (order)--(price);
+  \end{tikzpicture}\par\raggedright
+  \[
+    P_{j,t}=\mathbb{E}\!\left[M_{t+1}X_{j,t+1}\mid\mathcal I_t\right].
+  \]
+  {\small 定价式，\(M\) 为随机折现因子，\(X\) 为支付，\(\mathcal I_t\) 为条件信息集。}
+  \medskip
+  \pair{\small\textbf{甲：}\; 查盈利与基本面\\
+       \(\to\) 上调现金流预期 \(\to\) 买入}
+       {\small\textbf{乙：}\; 看近期价格下行\\
+       \(\to\) 预期跌势延续 \(\to\) 卖出}
+  \finding{甲乙的期望价格不同，可能源于所依据的信息集不同。}
+\end{frame}
+
+\begin{frame}[label=literature]{资产定价模型中的信息集假设}
+  \crumb{Part 1}{1.1 信息集}{引言与文献 pp.\,2--7}
+  \small
+  \begin{tabularx}{\linewidth}{@{}L{.31\linewidth}YY@{}}
+    \toprule 文献 & 关注的信息假设 & 常见经验观察\\\midrule
+    Markowitz／Sharpe & 预期收益和风险 M-V & 组合权重、收益与风险\\
+    Hong--Stein (1999) & 新闻逐步扩散，引导动量交易 & 价格延续与反转\\
+    Barberis et al. (2015) & 历史收益进入外推信念 & 预期调查与历史收益\\
+    Barber--Odean (2008) & 显著事件和极端表现的影响 & 新闻、成交量与买单\\
+    \bottomrule
+  \end{tabularx}
+  \finding{特定资产定价模型依赖特定的信息集与信息假设。}
+\end{frame}
+
+\subsection{1.2 注意力证据}
+\begin{frame}[label=proxies]{注意力代理能看到什么}
+  \crumb{Part 1}{1.2 注意力证据}{引言 pp.\,3--7}
+  \small
+  现有注意力的信息集测度，间接且零散。
+  \medskip
+  \begin{tabularx}{\linewidth}{@{}L{.36\linewidth}Y@{}}
+    \toprule 数据 & 可见对象\\\midrule
+    搜索量、新闻阅读量 & 受关注的时间和强度\\
+    单券商点击与账户活动 & 站内查阅客户交易\\
+    \mbox{\footnotesize\bfseries 本文的网址链接URL数据} & 同一投资者的跨站访问、研究主题与订单时点\\\bottomrule
+  \end{tabularx}
+  \medskip
+  {\footnotesize 链接示例\enspace
+    \texttt{http://finance.yahoo.com/q/ao?s=AAPL}}\par
+  \finding{网址链接数据为投资者微观信息获取行为提供高质量代理。}
+\end{frame}
+
+\begin{frame}[label=dimensions]{信息集：用四个维度刻画}
+  \crumb{Part 1}{1.2 注意力证据}{引言 pp.\,3--5}
+  \centering
+  \begin{tikzpicture}
+    \node[storyfocus,text width=5.1cm] (root) at (0,0) {拆解同一投资者（家庭）的网页链接记录};
+    \foreach \x/\branchname/\branchtext in {
+      -4.08/{深度 (Depth)}/{研究多久？},-1.36/{主题 (Topics)}/{看哪些信息？},
+       1.36/{异质性}/{股票和投资者如何不同？},4.08/{时机 (Timing)}/{何时、依何顺序？}} {
+      \node[storybox,text width=2.28cm,minimum height=1.44cm] (b) at (\x,-2.08)
+        {\textbf{\branchname}\\[-1pt]\scriptsize \branchtext};
+      \draw[storyarrow] (root.south)--(0,-.91)-| (b.north);
+    }
+  \end{tikzpicture}\par\raggedright
+  \finding{本文侧重测度与描述性实证，用多个维度刻画信息集。}
+\end{frame}
+
+\begin{frame}[label=agenda]{目录}
+  \crumb{报告路线}{研究问题到贡献与评价}{}
+  \begin{columns}[T,onlytextwidth]
+  \column{.51\textwidth}
+    \textbf{\jump{section-1}{一、研究问题}}\par
+    {\small 1.1 信息集\\1.2 注意力证据}\par\medskip
+    \textbf{\jump{section-2}{二、数据与测度}}\par
+    {\small 2.1 浏览样本与 URL\\2.2 记录整理与交易归属}\par\medskip
+    \textbf{\jump{section-3}{三、描述性统计}}\par
+    {\small 3.1 研究投入\\3.2 主题与窗口}
+  \column{.46\textwidth}
+    \textbf{\jump{section-4}{四、实证比较}}\par
+    {\small 4.1 股票与投资者\\4.2 交易时点与路径}\par\medskip
+    \textbf{\jump{section-5}{五、贡献与评价}}\par
+    {\small 5.1 证据与局限\\5.2 研究评价}
+  \end{columns}
+\end{frame}

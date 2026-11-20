@@ -1,0 +1,111 @@
+% !TeX program = xelatex
+% !TeX root = main.tex
+\section{数据与测度}
+\sectionlead{section-2}{二、数据与测度}{怎样从网页链接记录识别投资者研究的标的、内容和订单时点？}
+
+\subsection{2.1 浏览样本与 URL}
+\begin{frame}[label=sample]{网页浏览数据描述}
+  \crumb{Part 2}{2.1 浏览样本与 URL}{II.A · Table 1}
+  \pair{\textbf{原始在线家庭面板}\par\medskip
+    \greatnum{20 亿}\;条 URL\par\smallskip
+    \textbf{数万户家庭}\par\small
+    美国，2007 年 1、2、3、6 月。\par
+    随机拨号等方式招募。}
+  {\textbf{至少有一笔推定股票订单}\par\medskip
+    \greatnum{484}\;户\par\smallskip
+    \textbf{850 万点击}\quad\textbf{6 万小时}\par\smallskip
+    \textbf{2,911 笔}推定股票订单}
+  \smallskip
+  {\color{wine}\rule{.94\linewidth}{.5pt}}\par\smallskip
+  {\small 匿名家庭 ID \(\mid\) 时间戳 \(\mid\) URL \(\mid\) 停留时长}
+  \finding{\textbf{数据来自}志愿家庭的浏览器\textbf{插件}记录。\quad
+  \textbf{没有}交易绩效数据。}
+\end{frame}
+
+\newcommand{\udomain}[1]{\textcolor{quiet}{#1}}
+\newcommand{\upath}[1]{\textcolor{sampleteal}{#1}}
+\newcommand{\ucode}[1]{\textcolor{sampleblue}{#1}}
+\newcommand{\uparam}[1]{\textcolor{samplegold}{#1}}
+\newcommand{\utrade}[1]{\textcolor{wine}{#1}}
+\begin{frame}[label=urls]{三类 URL 如何读出股票、主题与展示参数}
+  \crumb{Part 2}{2.1 浏览样本与 URL}{Table IA1}
+  {\small\textbf{1 下单}\quad\utrade{卖出 100 股}\quad\ucode{GOOG}\par}
+  {\fontsize{8}{10}\selectfont\ttfamily
+  \udomain{https://[broker-1].com}\upath{/invest/socreateentry?}\par
+  \utrade{ordertype="sell"}\ucode{\&symbol=GOOG}\utrade{\&shares=100}\par}
+  \smallskip
+  {\small\textbf{2 主题}\quad\upath{分析师意见}\quad\ucode{AAPL（Analyst opinion）}\par}
+  {\fontsize{8}{10}\selectfont\ttfamily
+  \udomain{http://finance.yahoo.com}\upath{/q/ao?}\ucode{s=AAPL}\par}
+  \medskip
+  {\small\textbf{3 图表}\quad\upath{盈利图}\quad\uparam{回看 1,095 天、前瞻 545 天、成交量 EMA}\par}
+  {\fontsize{8}{10}\selectfont\ttfamily
+  \udomain{https://[broker-1].com}\upath{/stocks/earnings/update\_earningsChart.asp?}\par
+  \uparam{showQTRChange=1\&display=mountain\&overlay=}\par
+  \uparam{\&indicator=volume,1,13,EMA,13\&duration=1095\&daysforward=545\&year=2006}\par}
+  % Table IA1 line 13 originally uses IMCL. This deck uses AAPL in the example.
+  \medskip
+  {\footnotesize\udomain{域名：来源}\quad\upath{路径：主题}\quad\ucode{代码：股票}\quad
+   \uparam{参数：展示}\quad\utrade{下单字段：方向与数量}}
+\end{frame}
+
+\begin{frame}[label=yahoo]{Yahoo Finance 的分析师页面保留相似结构}
+  \crumb{Part 2}{2.1 浏览样本与 URL}{Figure A1}
+  {\centering
+  \annotatedpanel{4.10cm}{a1.pdf}{
+    \draw[wine,semithick,-{Stealth[length=1.2mm]}] (.438,.943)--(.561,.855);
+    \draw[wine,semithick,-{Stealth[length=1.2mm]}] (.438,.773)--(.561,.982);
+    \draw[sampleteal,semithick,-{Stealth[length=1.2mm]}] (.438,.593)--(.561,.598);
+    \draw[samplegold,semithick,-{Stealth[length=1.2mm]}] (.438,.358)--(.561,.258);
+  }\par}
+  {\small\textbf{2007 年 2 月 23 日}\hfill\textbf{2026 年 4 月 15 日}\par}\smallskip
+  \pair{\small\textbf{网站页面}\quad 模块变化不大，Yahoo 仍是重要信息平台。}
+       {\small\textbf{用户行为}\quad 移动端、社交媒体与 AI 咨询兴起，获取信息的方式已改变。}
+\end{frame}
+
+\subsection{2.2 记录整理与交易归属}
+\begin{frame}[label=rules]{浏览会话与重复订单的整理}
+  \crumb{Part 2}{2.2 记录整理与交易归属}{Table IA1 · Steps 1、2 · 原文构造例}
+  {\small 预处理举例：22 条 URL 串起约 14 分钟的浏览。}\par\bigskip
+  \begin{center}
+  \begin{tikzpicture}[x=.70cm,y=1cm,font=\scriptsize]
+    \foreach \a/\b/\c in {0/5.15/papergray,5.15/6.32/paperblue,6.32/8.05/paperblue,8.05/9.68/paperblue,9.68/11.87/papergray,11.87/14.33/paperrose}
+      \fill[\c] (\a,0) rectangle (\b,.60);
+    \foreach \x/\n in {0/2:31:11,5.15/2:36:20,8.05/2:39:14,11.87/2:43:03,14.33/2:45:31}
+      \draw[quiet] (\x,0)--(\x,-.08) node[below]{\n};
+    \node at (2.58,.30) {赛车};\node at (5.73,.30) {市场};
+    \node[align=center] at (7.18,.30) {券商\\AAPL};
+    \node[align=center] at (8.87,.30) {Yahoo\\AAPL};
+    \node at (10.78,.30) {赛车};\node at (12.7,.30) {GOOG};
+    \draw[wine,thick] (13.85,-.03)--(13.85,.88) node[above left]{2:45:02 卖出 100 股};
+  \end{tikzpicture}
+  \end{center}\medskip
+  \leadrow{会话划分}{相邻点击间隔 \(\leq15\) 分钟，归入同一浏览会话。}
+  \medskip
+  \leadrow{订单合并}{同股、同向候选订单相隔 \(\leq30\) 分钟则合并，取末次时点。}
+\end{frame}
+
+\begin{frame}[label=assignment]{补齐代码，再把研究归到同股订单}
+  \crumb{Part 2}{2.2 记录整理与交易归属}{Step 8 · p.\,37 · 归属教学例}
+  \small\textbf{补股票代码缺失：同会话前后匹配确认}\par\smallskip
+  {\centering
+  \begin{tikzpicture}[node distance=7mm,font=\small]
+    \node[storybox,minimum height=.7cm,text width=2.2cm] (a) {AAPL 研究};
+    \node[storyfocus,minimum height=.7cm,text width=2.2cm,right=of a] (b) {缺码新闻};
+    \node[storybox,minimum height=.7cm,text width=2.2cm,right=of b] (c) {AAPL 研究};
+    \draw[storyarrow] (a)--(b);\draw[storyarrow] (b)--(c);
+    \draw[wine,dashed,-{Stealth}] (a.north) to[bend left=25] node[above,font=\scriptsize]{补配 AAPL} (b.north);
+  \end{tikzpicture}\par}\smallskip
+  \small\textbf{特定研究时段，算到下一笔同股交易}\par\smallskip
+  {\centering
+  \begin{tikzpicture}[node distance=4mm,font=\small]
+    \node[storybox,text width=2.0cm,minimum height=.85cm] (t) {周二\\研究};
+    \node[storyfocus,text width=2.0cm,minimum height=.85cm,right=of t] (w) {周三\\卖出};
+    \node[storybox,text width=2.0cm,minimum height=.85cm,right=of w] (h) {周四\\研究};
+    \node[storyfocus,text width=2.0cm,minimum height=.85cm,right=of h] (f) {周五\\买入};
+    \draw[grapharrow] (t)--(w);\draw[grapharrow] (h)--(f);
+  \end{tikzpicture}\par}\smallskip
+  {\small 周四的算周五前的买入研究，而非周三交易的事后分析。}
+  \finding{得到每位投资者、每只股票、带主题、时间、订单的记录。}
+  \scriptsize\jump{appendix-3}{A3 · 原文处理步骤}
+\end{frame}

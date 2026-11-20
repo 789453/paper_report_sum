@@ -4,7 +4,9 @@
 
 ## 本轮研究文稿
 
-当前放映文件为[11 月 20 日终校版](output/information-set-projection-20261120-final-polish/个人投资者的信息集_11-20终校版.pdf)，配套[逐页对照](docs/2026-11-20_放映稿终校逐页对照.md)和[TeX 工程](paper/information-set-argument-v2/projection-20261120-final-polish/README.md)。[组会三问](docs/2026-11-20_组会三问_PCA得分与样本口径.md)单独回答 PC2 得分、50 户样本和第 5 分位的 0.0。
+当前放映文件为[11 月 20 日放映微调版](output/information-set-projection-20261120-ready/个人投资者的信息集_11-20放映微调版.pdf)，配套[逐页对照和附录索引](docs/2026-11-20_放映微调与附录排序.md)及[TeX 工程](paper/information-set-argument-v2/projection-20261120-ready/README.md)。
+
+上一版为[11 月 20 日终校版](output/information-set-projection-20261120-final-polish/个人投资者的信息集_11-20终校版.pdf)，配套[逐页对照](docs/2026-11-20_放映稿终校逐页对照.md)和[TeX 工程](paper/information-set-argument-v2/projection-20261120-final-polish/README.md)。[组会三问](docs/2026-11-20_组会三问_PCA得分与样本口径.md)单独回答 PC2 得分、50 户样本和第 5 分位的 0.0。
 
 11 月 20 日必要调整版采用已确认的 44 页主 PPT 为基线。[逐页对照](docs/2026-11-20_必要调整逐页对照.md) · [TeX 工程](paper/information-set-argument-v2/projection-20261120-necessary/README.md) · [放映 PDF](output/information-set-projection-20261120-necessary/个人投资者的信息集_11-20必要调整版.pdf)。下方定稿讲稿仍对应上一个版本。
 
